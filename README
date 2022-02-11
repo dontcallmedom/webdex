@@ -1,0 +1,3 @@
+ Tool to generate a site collecting the terms defined across Web specifications, with links to where they are defined and which specifications they are linked from.
+
+Built from data gathered in [webref](https://github.com/w3c/webref/).

@@ -35,17 +35,62 @@ const humanReadableTypes = new Map([
   ['extended-attribute', 'WebIDL extended attribute']
 ]);
 
+const typeOfForGivenType = {
+  "attr-value": "element-attr",
+  "enum-value": "enum",
+  "element-attr": "element",
+  "dict-member": "dictionary",
+  "method": "interface",
+  "attribute": "interface",
+  "const": "interface",
+  "value": ["descriptor", "property"]
+};
+
+function cleanTerm(rawTerm) {
+  return rawTerm.toLowerCase()
+  // some terms come surrounded by quotes, but we deal with that
+  // when displaying them based on their types
+    .replace(/^"/, '').replace(/"$/, '')
+    .replace(/^\[\[([^\]]+)\]\]/, '$1')
+    .replace(/^<([^>]+)>$/, '$1')
+    .replace(/^::?/, '')
+    .replace(/^@@?/, '')
+    .replace(/^'/, '').replace(/'$/, '')
+    .replace(/^%/, '');
+}
+
 function composeDisplayName(displayTerm, type, _for, text=false) {
   let prefix='', suffix='',
       humanReadableFor = _for ? html`<code>${_for}</code>` : '',
-      typeDescComp='',
+      typeDescComp= '',
+      forWrap = '',
       wrap ='';
+
+  if (_for) {
+    const typeOfFor = Array.isArray(typeOfForGivenType[type]) ? typeOfForGivenType[type] : (typeOfForGivenType[type] ? [typeOfForGivenType[type]] : undefined);
+    if (typeOfFor) {
+      const candidates = termIndex.get(cleanTerm(_for)) ?? {};
+      // looking for one term with termid that matches @@typeOfFor
+      const re = new RegExp(`@@(${typeOfFor.join('|')})$`);
+      const matchingCandidates = Object.keys(candidates).filter(termId => termId.match(re));
+      // we only know how to deal if there is a single match
+      if (matchingCandidates.length === 1) {
+        const targetTerm = termIndex.get(cleanTerm(_for))[matchingCandidates[0]];
+        const page = cleanTerm(targetTerm.dfns[0].linkingText[0])[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
+        forWrap = html`<a href="${page}#${targetTerm.displayTerm}@@${matchingCandidates[0]}">`;
+      } else if (matchingCandidates.length > 1) {
+        console.error(`multiple candidates for ${displayTerm} of type ${type} with scope of type ${typeOfFor}`);
+      }
+    }
+
+  }
+
   switch(type) {
   case 'const':
   case 'dict-member':
   case 'attribute':
   case 'method':
-    prefix = html`${_for}.`;
+    prefix = html`${forWrap}${_for}${forWrap ? html`</a>` : ''}.`;
     break;
   case 'constructor':
     prefix = html`new `;
@@ -66,7 +111,7 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
     break;
   case 'element-attr':
     if (_for) {
-      humanReadableFor = html`<code>${_for}</code> element`;
+      humanReadableFor = html`${forWrap}<code>${_for}</code>${forWrap ? html`</a>` : ''} element`;
     }
     break;
   }
@@ -82,7 +127,7 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
     case 'element-attr':
     case 'event':
     case 'function':
-      typeDescComp = html` for ${humanReadableFor}${qualification}`;
+      typeDescComp = html` for ${forWrap}${humanReadableFor}${forWrap ? html`</a>` : ''}${qualification}`;
       break;
     }
   }
@@ -112,17 +157,7 @@ ${content}`);
       if (dfn.access === "private") continue;
       if (dfn.type === "argument") continue;
       // only use the first linkingText
-      const term = dfn.linkingText[0]
-            .toLowerCase()
-      // some terms come surrounded by quotes, but we deal with that
-      // when displaying them based on their types
-            .replace(/^"/, '').replace(/"$/, '')
-            .replace(/^\[\[([^\]]+)\]\]/, '$1')
-            .replace(/^<([^>]+)>$/, '$1')
-            .replace(/^::?/, '')
-            .replace(/^@@?/, '')
-            .replace(/^'/, '').replace(/'$/, '')
-            .replace(/^%/, '');
+      const term = cleanTerm(dfn.linkingText[0]);
       const displayTerm = dfn.linkingText[0].replace(/^"/, '').replace(/"$/, '');
       const termEntry = termIndex.get(term) ?? {};
       let termIds = [];
@@ -158,7 +193,6 @@ ${content}`);
     for (const link of fullLinks) {
       const [term, termIds] = linksIndex.get(link) || [];
       if (link === "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#allowed-to-use") {
-        console.log(term, termIds);
       }
       if (!term) continue;
       for (let termId of termIds) {
@@ -181,7 +215,8 @@ ${letters.get(entry).sort().map(term => {
   return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {
                   const {displayTerm, type, _for, dfns, refs} = termIndex.get(term)[termId];
-                  return html`<dt>${composeDisplayName(displayTerm, type, _for)}</dt>
+                  const webidlpedia = ['interface', 'dictionary', 'enum', 'typedef'].includes(type) ? html`<dd><a href='https://dontcallmedom.github.io/webidlpedia/names/${displayTerm}.html' title='${displayTerm} entry on WebIDLpedia'>WebIDLPedia</a></dd>` : '';
+                  return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for)}</dt>
 <dd>${dfns.map(dfn => {
                     return html`
                     <strong><a href=${dfn.href}>${dfn.spec}</a></strong> `;
@@ -189,7 +224,7 @@ ${letters.get(entry).sort().map(term => {
 ${refs.map(ref => {
                     return html`
                     <a href=${ref.url}>${ref.title}</a> `;
-            })}</dd>`;
+            })}</dd>${webidlpedia}`;
           })}`;
 })}
 </dl>`;

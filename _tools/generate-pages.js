@@ -13,6 +13,7 @@ const humanReadableTypes = new Map([
   ["descriptor", "CSS descriptor"],
   ["selector", "CSS selector"],
   ["type", "CSS type"],
+  ["property", "CSS property"],
   ["function", "CSS function"],
   ["dfn", "concept"],
   ["const", "WebIDL constant"],
@@ -25,13 +26,72 @@ const humanReadableTypes = new Map([
   ["abstract-op", "abstract operation"],
   ["http-header", "HTTP header"],
   ['attr-value', 'value'],
-  ['element-attr', 'attribute'],
+  ['element-attr', 'markup attribute'],
   ['typedef', 'WebIDL type alias'],
   ['dict-member', 'WebIDL dictionary member'],
   ['callback', 'WebIDL callback'],
   ["constructor", "WebIDL constructor"],
+  ["element", "markup element"],
   ['extended-attribute', 'WebIDL extended attribute']
 ]);
+
+function composeDisplayName(displayTerm, type, _for, text=false) {
+  let prefix='', suffix='',
+      humanReadableFor = _for ? html`<code>${_for}</code>` : '',
+      typeDescComp='',
+      wrap ='';
+  switch(type) {
+  case 'const':
+  case 'dict-member':
+  case 'attribute':
+  case 'method':
+    prefix = html`${_for}.`;
+    break;
+  case 'constructor':
+    prefix = html`new `;
+    if (!displayTerm.match(/\)$/)) {
+      suffix = html`()`;
+    }
+    break;
+  case 'http-header':
+    suffix = html`:`;
+    break;
+  case 'enum-value':
+    wrap = html`"`;
+    break;
+  case 'attr-value':
+    if (_for && _for.includes('/')) {
+      humanReadableFor= html`<code>${_for.split('/')[1]}</code> attribute of <code>${_for.split('/')[0]}</code> element`;
+    }
+    break;
+  case 'element-attr':
+    if (_for) {
+      humanReadableFor = html`<code>${_for}</code> element`;
+    }
+    break;
+  }
+  if (_for) {
+    let qualification = '';
+    switch(type) {
+    case 'enum-value':
+      qualification = html` WebIDL enumeration`;
+      // intentional non-break;
+    case 'dfn':
+    case 'value':
+    case 'attr-value':
+    case 'element-attr':
+    case 'event':
+    case 'function':
+      typeDescComp = html` for ${humanReadableFor}${qualification}`;
+      break;
+    }
+  }
+  const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
+  if (text) {
+    return [displayTerm, prefix];
+  }
+  return html`<code class=prefix>${prefix}</code><strong>${type !== 'dfn' ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${type !== 'dfn' ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
+}
 
 async function generatePage(path, title, content) {
   await fs.writeFile(path, `---
@@ -69,7 +129,8 @@ ${content}`);
       if (dfn.for.length === 0) dfn.for.push(undefined);
       for (const _for of dfn.for) {
         const termId = [_for ? _for : spec.series.shortname, dfn.type].join('@@');
-        const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for, dfns: [], refs: [], displayTerm};
+        const [, prefix] = composeDisplayName(displayTerm, dfn.type, _for, true);
+        const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for, dfns: [], refs: [], displayTerm, sortTerm: `${displayTerm}-${prefix}`};
         subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});
         if (!termEntry[termId]) {
           termEntry[termId] =  subtermEntry;
@@ -77,9 +138,9 @@ ${content}`);
         termIds.push(termId);
       }
       linksIndex.set(dfn.href, [term, termIds]);
-      // Account for HTML multipage/single page alternatives
-      // TODO: ES spec too?
-      if (dfn.href.startsWith('https://html.spec.whatwg.org/multipage/')) {
+      // Account for HTML & ES multipage/single page alternatives
+      if (dfn.href.startsWith('https://html.spec.whatwg.org/multipage/') ||
+         dfn.href.startsWith('https://tc39.es/ecma262/multipage/')) {
         const singlePageUrl = dfn.href.replace(/\/multipage\/[^#]+#/, '\/#');
         linksIndex.set(singlePageUrl, [term, termIds]);
       }
@@ -117,14 +178,10 @@ ${content}`);
     const title =  entry === 'other' ? 'Terms starting with a non-letter' : `Terms starting with letter ${entry}`;
     const content = html`<dl>
 ${letters.get(entry).sort().map(term => {
-  return html`${Object.keys(termIndex.get(term)).sort((a,b) => a[0].localeCompare(b[0]))
+  return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {
-                  const {displayTerm, shortname, type, _for, dfns, refs} = termIndex.get(term)[termId];
-                  const prefix = ['const', 'dict-member', 'attribute', 'method'].includes(type) ? html`<code>${_for}.</code>` : (type === 'constructor' ? html`new ` : '');
-                  const suffix = type === 'constructor' & !term.match(/\)$/) ? html`()` : (type === 'http-header' ? html`:` : (type === 'enum-value' ? html`"` : ''));
-                  const humanReadableFor = _for ? (type === 'attr-value' && _for.includes('/') ? html`<code>${_for.split('/')[1]}</code> attribute of <code>${_for.split('/')[0]}</code> element`: (type === 'element-attr' ? html`<code>${_for}</code> element` : html`<code>${_for}</code>`)) : '';
-                  const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${['dfn', 'value', 'attr-value', 'element-attr', 'event', 'enum-value'].includes(type) && _for ? html` for ${humanReadableFor}` : ''}${type === 'enum-value' ? html` WebIDL enumeration` : ''}</em>)`;
-                  return html`<dt><span class=prefix>${prefix}</span>${(type === 'enum-value' ? html`"` : '')}<strong>${type !== 'dfn' ? html`<code>`: ''}${displayTerm}${type !== 'dfn' ? html`</code>`: ''}</strong>${suffix}${typeDesc}</dt>
+                  const {displayTerm, type, _for, dfns, refs} = termIndex.get(term)[termId];
+                  return html`<dt>${composeDisplayName(displayTerm, type, _for)}</dt>
 <dd>${dfns.map(dfn => {
                     return html`
                     <strong><a href=${dfn.href}>${dfn.spec}</a></strong> `;

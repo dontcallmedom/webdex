@@ -23,7 +23,7 @@ const humanReadableTypes = new Map([
   ["dictionary", "WebIDL dictionary"],
   ["enum", "WebIDL enumeration"],
   ["enum-value", "value"],
-  ["abstract-op", "abstract operation"],
+  ["abstract-op", "algorithm"],
   ["http-header", "HTTP header"],
   ['attr-value', 'value'],
   ['element-attr', 'markup attribute'],
@@ -43,8 +43,23 @@ const typeOfForGivenType = {
   "method": "interface",
   "attribute": "interface",
   "const": "interface",
-  "value": ["descriptor", "property"]
+  "event": "interface",
+  "value": ["descriptor", "property", "type", "function"]
 };
+
+// if a term of a given type appears several times,
+// they designate the same thing
+const exclusiveNamespace = [
+  "http-header",
+  "selector",
+  "at-rule",
+  "css-descriptor",
+  "property",
+  "type",
+  "interface", "dictionary", "typedef", "enum", "caalback",
+  "constructor",
+  "extended-attribute"
+];
 
 function cleanTerm(rawTerm) {
   return rawTerm.toLowerCase()
@@ -163,7 +178,8 @@ ${content}`);
       let termIds = [];
       if (dfn.for.length === 0) dfn.for.push(undefined);
       for (const _for of dfn.for) {
-        const termId = [_for ? _for : spec.series.shortname, dfn.type].join('@@');
+        const scope = _for ? _for : (exclusiveNamespace.includes(dfn.type) ? '' : spec.series.shortname);
+        const termId = [scope, dfn.type].join('@@');
         const [, prefix] = composeDisplayName(displayTerm, dfn.type, _for, true);
         const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for, dfns: [], refs: [], displayTerm, sortTerm: `${displayTerm}-${prefix}`};
         subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});

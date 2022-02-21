@@ -78,7 +78,7 @@ function cleanTerm(rawTerm) {
     .replace(/^%/, '');
 }
 
-function getScopingTermId(type, _for, displayTerm) {
+function getScopingTermId(type, _for, displayTerm, dfns) {
   if (_for) {
     let _forFor;
     // TODO: how would this work if the term used for scoping contains a '/' ?
@@ -87,24 +87,38 @@ function getScopingTermId(type, _for, displayTerm) {
     }
     const typeOfFor = typeOfForGivenType.get(type);
     const candidates = termIndex.get(cleanTerm(_for)) ?? {};
-    // looking for one term with termid that matches @@typeOfFor
-    let re;
-    if (_forFor) {
-      re = new RegExp(`^${_forFor}@@(${typeOfFor ? typeOfFor.join('|') : '[^@]*'})$`);
-    } else if (typeOfFor) {
-      re = new RegExp(`(^@@|%%)(${typeOfFor.join('|')})$`);
-    } else {
-      // if no known type and no hierarchy, look for a matching unscoped term
-      re = new RegExp(`(^@@|%%)[^@]*$`);
+    if (Object.keys(candidates).length === 1) {
+      return [cleanTerm(_for), Object.keys(candidates)[0]];
     }
-    const matchingCandidates = Object.keys(candidates).filter(termId => termId.match(re));
-    // we only know how to deal if there is a single match
+    const matchingCandidates = Object.keys(candidates).filter(termId => {
+      const candidate = candidates[termId];
+      // Using exact match only (deals e.g. "<position>" vs "position")
+      if (!candidate.dfns[0].linkingText.includes(_for)) return false;
+      // if this is part of a hierarchy, ensure it is matched
+      if (_forFor) return candidate._for.includes(_forFor);
+      if (typeOfFor) return typeOfFor.includes(candidate.type);
+      // if no known type and no hierarchy, look for a matching unscoped term
+      if (candidate._for.length === 0) return true;
+      return false;
+    });
+    // we only know how to deal with the situation where there is a single match
     if (matchingCandidates.length === 1) {
       return [cleanTerm(_for), matchingCandidates[0]];
     } else if (matchingCandidates.length > 1) {
-      console.error(`multiple candidates for scope named ${_forFor ? _forFor + '/' : '' }${_for}, typed ${typeOfFor} for term ${displayTerm} of type ${type}: ${matchingCandidates.join(', ')} match ${re}`);
+      // Is one of the specs where the scoping term is defined
+      // the same as where the initial term is?
+      // If so, assume this is the best candidate
+      const sameSpecCandidates = matchingCandidates.filter(termId => termIndex.get(cleanTerm(_for))[termId].dfns.map(d => d.spec).find(s => dfns.map(d => d.spec).includes(s)));
+      if (sameSpecCandidates.length === 1) {
+        return [cleanTerm(_for), sameSpecCandidates[0]];
+      }
+      console.error(`multiple candidates for scope named |${_forFor ? _forFor + '/' : '' }${_for}|, typed <${typeOfFor}> for term '${displayTerm}' of type <${type}>: "${matchingCandidates.join('", "')}"`);
     } else if (matchingCandidates.length === 0) {
-      console.error(`unknown scope named ${_for}, typed ${typeOfFor} for term ${displayTerm} of type ${type}, no match for ${re}`);
+      if (Object.keys(candidates).length === 0) {
+        console.error(`unrecognized scope named |${_for}| for term '${displayTerm}'`);
+      } else {
+        console.error(`unknown scope named |${_for}|, typed <${typeOfFor}> for term '${displayTerm}' of type <${type}>, no match`);
+      }
     }
   }
   return [];
@@ -118,7 +132,7 @@ function getPrefix(type, _for) {
   case 'dict-member':
   case 'attribute':
   case 'method':
-    return `${_for}.`;
+    return `${_for}`;
     break;
   case 'constructor':
     return `new `;
@@ -127,24 +141,30 @@ function getPrefix(type, _for) {
   return '';
 }
 
-function composeDisplayName(displayTerm, type, _for, text=false) {
-  let prefix='', suffix='',
-      humanReadableFor = _for ? html`<code>${_for}</code>` : '',
+function wrapWithLink(markup, link) {
+  if (!link) return markup;
+  return html`<a href='${link}'>${markup}</a>`;
+}
+
+function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
+  let displayPrefix='', suffix='',
+      humanReadableScopeItems = _for.map(_f => html`<code>${_f}</code>`),
       typeDescComp= '',
-      forWrap = '',
+      forLinks = {},
       wrap ='';
 
-  if (_for) {
-    const [scope, targetTermId] = getScopingTermId(type, _for, displayTerm);
+  for (let _f of _for) {
+    const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
     if (targetTermId) {
       const targetTerm = termIndex.get(scope)[targetTermId];
       const page = cleanTerm(targetTerm.dfns[0].linkingText[0])[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
-      forWrap = html`<a href="${page}#${targetTerm.displayTerm}@@${targetTermId.replace(/%/g, '%25')}">`;
+      forLinks[_f] = `${page}#${targetTerm.displayTerm}@@${targetTermId.replace(/%/g, '%25')}`;
       if (targetTerm.type === 'dfn') {
-        humanReadableFor = html`${_for}`;
+        humanReadableScopeItems = _for.map(_f => wrapWithLink(html`${_f}`, forLinks[_f]));
+      } else {
+        humanReadableScopeItems = _for.map(_f => wrapWithLink(html`<code>${_f}</code>`, forLinks[_f]));
       }
     }
-
   }
 
   switch(type) {
@@ -152,10 +172,13 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
   case 'dict-member':
   case 'attribute':
   case 'method':
-    prefix = html`${forWrap}${_for}${forWrap ? html`</a>` : ''}.`;
+    displayPrefix = html`${wrapWithLink(html`${prefix}`, forLinks[prefix])}.`;
+    if (type === 'method' && !displayTerm.match(/\)$/)) {
+      suffix = html`()`;
+    }
     break;
   case 'constructor':
-    prefix = html`new `;
+    displayPrefix = html`${prefix}`;
     if (!displayTerm.match(/\)$/)) {
       suffix = html`()`;
     }
@@ -167,27 +190,19 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
     wrap = html`"`;
     break;
   case 'attr-value':
-    if (_for && _for.includes('/')) {
-      humanReadableFor= html`<code>${_for.split('/')[1]}</code> attribute of <code>${_for.split('/')[0]}</code> element`;
-    }
+    humanReadableScopeItems = _for.map(_f => _f.includes('/') ? html`${wrapWithLink(html`<code>${_f.split('/')[1]}</code>`, forLinks[_f.split('/')[1]])} attribute of <code>${_f.split('/')[0]}</code> element` : wrapWithLink(html`<code>${_f}</code>`, forLinks[_f]));
     break;
   case 'element-attr':
-    if (_for) {
-      humanReadableFor = html`${forWrap}<code>${_for}</code>${forWrap ? html`</a>` : ''} element`;
-    }
+    humanReadableScopeItems = _for.map(_f => html`${wrapWithLink(html`<code>${_f}</code>`, forLinks[_f])} element`);
     break;
   case 'value':
-    if (_for && _for.includes('/')) {
-      // TODO: is this always a descriptor and an at-rule?
-      // Make more robust
-      humanReadableFor= html`<code>${_for.split('/')[1]}</code> descriptor of <code>${_for.split('/')[0]}</code> @rule`;
-    }
-
+    humanReadableScopeItems = _for.map(_f => _f.includes('/') ? html`${wrapWithLink(html`<code>${_f.split('/')[1]}</code>`, forLinks[_f.split('/')[1]])} descriptor of <code>${_f.split('/')[0]}</code> @rule` : wrapWithLink(html`<code>${_f}</code>`, forLinks[_f]));
+    break;
   }
 
-  if (_for && !prefix) {
-    let qualification = type === 'enum-value' ? html` WebIDL enumeration` : '';
-    typeDescComp = html` for ${forWrap}${humanReadableFor}${forWrap ? html`</a>` : ''}${qualification}`;
+  if (_for.length && !prefix) {
+    let qualification = type === 'enum-value' ? html` WebIDL enumeration${_for.length > 1 ? 's' : ''}` : '';
+    typeDescComp = html` for ${html.join(humanReadableScopeItems, ', ')} ${qualification}`;
   }
   const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
   let isCode = true;
@@ -196,7 +211,7 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
   } else if (type === 'abstract-op' && displayTerm.includes(' ') && !displayTerm.includes('(')) {
     isCode = false;
   }
-  return html`<code class=prefix>${prefix}</code><strong>${isCode ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${isCode ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
+  return html`<code class=prefix>${displayPrefix}</code><strong>${isCode ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${isCode ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
 }
 
 async function generatePage(path, title, content) {
@@ -221,51 +236,49 @@ ${content}`);
       const term = cleanTerm(dfn.linkingText[0]);
       const displayTerm = dfn.linkingText[0].replace(/^"/, '').replace(/"$/, '');
       const termEntry = termIndex.get(term) ?? {};
-      let termIds = [];
-      if (dfn.for.length === 0) dfn.for.push(undefined);
-      for (const _for of dfn.for) {
-        let termId;
-        if (_for) {
-          termId = `${_for}@@${dfn.type}`;
-        } else if (exclusiveNamespace.includes(dfn.type)) {
+      let termId;
+      let prefixes = [];
+      if (dfn.for.length === 0) {
+        if (exclusiveNamespace.includes(dfn.type)) {
           termId = `@@${dfn.type}`;
         } else {
           termId = `${spec.series.shortname}%%${dfn.type}`;
         }
-        const [, prefix] = getPrefix(dfn.type, _for);
-        const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for, dfns: [], refs: [], displayTerm, sortTerm: `${displayTerm}-${prefix}`};
-        subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});
-        if (!termEntry[termId]) {
-          termEntry[termId] =  subtermEntry;
-        }
-        termIds.push(termId);
+      } else {
+        prefixes = dfn.for.map(_for => getPrefix(dfn.type, _for)).filter(x => x).sort();
+        // by convention, we use the first 'for' by alphabetical order
+        termId = `${dfn.for.sort()[0]}@${dfn.type}`;
       }
-      linksIndex.set(dfn.href, [term, termIds]);
+      const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for: dfn.for, dfns: [], prefixes: [], refs: [], displayTerm, sortTerm: `${displayTerm}-${prefixes[0] ?? ''}`};
+      subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});
+      subtermEntry.prefixes = subtermEntry.prefixes.concat(prefixes);
+      if (!termEntry[termId]) {
+        termEntry[termId] =  subtermEntry;
+      }
+      linksIndex.set(dfn.href, [term, termId]);
       // Account for HTML & ES multipage/single page alternatives
       if (dfn.href.startsWith('https://html.spec.whatwg.org/multipage/') ||
          dfn.href.startsWith('https://tc39.es/ecma262/multipage/')) {
         const singlePageUrl = dfn.href.replace(/\/multipage\/[^#]+#/, '\/#');
-        linksIndex.set(singlePageUrl, [term, termIds]);
+        linksIndex.set(singlePageUrl, [term, termId]);
       }
       if (!termIndex.has(term)) {
         termIndex.set(term, termEntry);
       }
     }
   }
-
+  // await fs.writeFile('terms.json', JSON.stringify([...termIndex.entries()], null, 2));
   for (const spec of results) {
     const fullLinks = Object.keys(spec.links).reduce((acc, link) => {
       acc.push(spec.links[link].map(frag => link + "#" + frag));
       return acc;
     }, []).flat();
     for (const link of fullLinks) {
-      const [term, termIds] = linksIndex.get(link) || [];
+      const [term, termId] = linksIndex.get(link) || [];
       if (link === "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#allowed-to-use") {
       }
       if (!term) continue;
-      for (let termId of termIds) {
-        termIndex.get(term)[termId].refs.push({title: spec.shortTitle, url: spec.nightly.url});
-        }
+      termIndex.get(term)[termId].refs.push({title: spec.shortTitle, url: spec.nightly.url});
     }
   }
 
@@ -282,9 +295,10 @@ ${content}`);
 ${letters.get(entry).sort().map(term => {
   return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {
-                  const {displayTerm, type, _for, dfns, refs} = termIndex.get(term)[termId];
+                  const {displayTerm, type, _for, dfns, prefixes, refs} = termIndex.get(term)[termId];
                   const webidlpedia = ['interface', 'dictionary', 'enum', 'typedef'].includes(type) ? html`<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/${displayTerm}.html' title='${displayTerm} entry on WebIDLpedia'>WebIDLPedia</a></dd>` : '';
-                  return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for)}</dt>
+                  return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for, prefixes[0] || '', dfns)}</dt>
+${prefixes.slice(1).map(p => html`<dt>${composeDisplayName(displayTerm, type, _for, p, dfns)}</dt>`)}
 <dd>Defined in ${dfns.map(dfn => {
                     return html`
                     <strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong> `;

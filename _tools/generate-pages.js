@@ -35,17 +35,19 @@ const humanReadableTypes = new Map([
   ['extended-attribute', 'WebIDL extended attribute']
 ]);
 
-const typeOfForGivenType = {
-  "attr-value": "element-attr",
-  "enum-value": "enum",
-  "element-attr": "element",
-  "dict-member": "dictionary",
-  "method": "interface",
-  "attribute": "interface",
-  "const": "interface",
-  "event": "interface",
-  "value": ["descriptor", "property", "type", "function"]
-};
+const typeOfForGivenType = new Map([
+  ["attr-value", ["element-attr"]],
+  ["enum-value", ["enum"]],
+  ["element-attr", ["element"]],
+  ["dict-member", ["dictionary"]],
+  ["method", ["interface", "namespace"]],
+  ["attribute", ["interface", "namespace"]],
+  ["const", ["interface", "namespace"]],
+  ["event", ["interface"]],
+  ["descriptor", ["at-rule"]],
+  ["value", ["descriptor", "property", "type", "function"]]
+]);
+
 
 // if a term of a given type appears several times,
 // they designate the same thing
@@ -56,7 +58,7 @@ const exclusiveNamespace = [
   "css-descriptor",
   "property",
   "type",
-  "interface", "dictionary", "typedef", "enum", "caalback",
+  "interface", "dictionary", "typedef", "enum", "callback",
   "constructor",
   "extended-attribute"
 ];
@@ -74,6 +76,55 @@ function cleanTerm(rawTerm) {
     .replace(/^%/, '');
 }
 
+function getScopingTermId(type, _for, displayTerm) {
+  if (_for) {
+    let _forFor;
+    // TODO: how would this work if the term used for scoping contains a '/' ?
+    if (_for.includes('/')) {
+      [_forFor, _for] = _for.split('/');
+    }
+    const typeOfFor = typeOfForGivenType.get(type);
+    const candidates = termIndex.get(cleanTerm(_for)) ?? {};
+    // looking for one term with termid that matches @@typeOfFor
+    let re;
+    if (_forFor) {
+      re = new RegExp(`^${_forFor}@@(${typeOfFor ? typeOfFor.join('|') : '[^@]*'})$`);
+    } else if (typeOfFor) {
+      re = new RegExp(`(^@@|%%)(${typeOfFor.join('|')})$`);
+    } else {
+      // if no known type and no hierarchy, look for a matching unscoped term
+      re = new RegExp(`(^@@|%%)[^@]*$`);
+    }
+    const matchingCandidates = Object.keys(candidates).filter(termId => termId.match(re));
+    // we only know how to deal if there is a single match
+    if (matchingCandidates.length === 1) {
+      return [cleanTerm(_for), matchingCandidates[0]];
+    } else if (matchingCandidates.length > 1) {
+      console.error(`multiple candidates for scope named ${_forFor ? _forFor + '/' : '' }${_for}, typed ${typeOfFor} for term ${displayTerm} of type ${type}: ${matchingCandidates.join(', ')} match ${re}`);
+    } else if (matchingCandidates.length === 0) {
+      console.error(`unknown scope named ${_for}, typed ${typeOfFor} for term ${displayTerm} of type ${type}, no match for ${re}`);
+    }
+  }
+  return [];
+}
+
+function getPrefix(type, _for) {
+  if (!_for) return '';
+
+  switch(type) {
+  case 'const':
+  case 'dict-member':
+  case 'attribute':
+  case 'method':
+    return `${_for}.`;
+    break;
+  case 'constructor':
+    return `new `;
+    break;
+  }
+  return '';
+}
+
 function composeDisplayName(displayTerm, type, _for, text=false) {
   let prefix='', suffix='',
       humanReadableFor = _for ? html`<code>${_for}</code>` : '',
@@ -82,19 +133,13 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
       wrap ='';
 
   if (_for) {
-    const typeOfFor = Array.isArray(typeOfForGivenType[type]) ? typeOfForGivenType[type] : (typeOfForGivenType[type] ? [typeOfForGivenType[type]] : undefined);
-    if (typeOfFor) {
-      const candidates = termIndex.get(cleanTerm(_for)) ?? {};
-      // looking for one term with termid that matches @@typeOfFor
-      const re = new RegExp(`@@(${typeOfFor.join('|')})$`);
-      const matchingCandidates = Object.keys(candidates).filter(termId => termId.match(re));
-      // we only know how to deal if there is a single match
-      if (matchingCandidates.length === 1) {
-        const targetTerm = termIndex.get(cleanTerm(_for))[matchingCandidates[0]];
-        const page = cleanTerm(targetTerm.dfns[0].linkingText[0])[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
-        forWrap = html`<a href="${page}#${targetTerm.displayTerm}@@${matchingCandidates[0]}">`;
-      } else if (matchingCandidates.length > 1) {
-        console.error(`multiple candidates for ${displayTerm} of type ${type} with scope of type ${typeOfFor}`);
+    const [scope, targetTermId] = getScopingTermId(type, _for, displayTerm);
+    if (targetTermId) {
+      const targetTerm = termIndex.get(scope)[targetTermId];
+      const page = cleanTerm(targetTerm.dfns[0].linkingText[0])[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
+      forWrap = html`<a href="${page}#${targetTerm.displayTerm}@@${targetTermId.replace(/%/g, '%25')}">`;
+      if (targetTerm.type === 'dfn') {
+        humanReadableFor = html`${_for}`;
       }
     }
 
@@ -129,27 +174,20 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
       humanReadableFor = html`${forWrap}<code>${_for}</code>${forWrap ? html`</a>` : ''} element`;
     }
     break;
-  }
-  if (_for) {
-    let qualification = '';
-    switch(type) {
-    case 'enum-value':
-      qualification = html` WebIDL enumeration`;
-      // intentional non-break;
-    case 'dfn':
-    case 'value':
-    case 'attr-value':
-    case 'element-attr':
-    case 'event':
-    case 'function':
-      typeDescComp = html` for ${forWrap}${humanReadableFor}${forWrap ? html`</a>` : ''}${qualification}`;
-      break;
+  case 'value':
+    if (_for && _for.includes('/')) {
+      // TODO: is this always a descriptor and an at-rule?
+      // Make more robust
+      humanReadableFor= html`<code>${_for.split('/')[1]}</code> descriptor of <code>${_for.split('/')[0]}</code> @rule`;
     }
+
+  }
+
+  if (_for && !prefix) {
+    let qualification = type === 'enum-value' ? html` WebIDL enumeration` : '';
+    typeDescComp = html` for ${forWrap}${humanReadableFor}${forWrap ? html`</a>` : ''}${qualification}`;
   }
   const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
-  if (text) {
-    return [displayTerm, prefix];
-  }
   return html`<code class=prefix>${prefix}</code><strong>${type !== 'dfn' ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${type !== 'dfn' ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
 }
 
@@ -178,9 +216,15 @@ ${content}`);
       let termIds = [];
       if (dfn.for.length === 0) dfn.for.push(undefined);
       for (const _for of dfn.for) {
-        const scope = _for ? _for : (exclusiveNamespace.includes(dfn.type) ? '' : spec.series.shortname);
-        const termId = [scope, dfn.type].join('@@');
-        const [, prefix] = composeDisplayName(displayTerm, dfn.type, _for, true);
+        let termId;
+        if (_for) {
+          termId = `${_for}@@${dfn.type}`;
+        } else if (exclusiveNamespace.includes(dfn.type)) {
+          termId = `@@${dfn.type}`;
+        } else {
+          termId = `${spec.series.shortname}%%${dfn.type}`;
+        }
+        const [, prefix] = getPrefix(dfn.type, _for);
         const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for, dfns: [], refs: [], displayTerm, sortTerm: `${displayTerm}-${prefix}`};
         subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});
         if (!termEntry[termId]) {

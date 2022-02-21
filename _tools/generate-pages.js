@@ -40,12 +40,14 @@ const typeOfForGivenType = new Map([
   ["enum-value", ["enum"]],
   ["element-attr", ["element"]],
   ["dict-member", ["dictionary"]],
-  ["method", ["interface", "namespace"]],
+  ["method", ["interface", "namespace", "callback"]],
   ["attribute", ["interface", "namespace"]],
-  ["const", ["interface", "namespace"]],
+  ["const", ["interface", "namespace", "callback"]],
   ["event", ["interface"]],
   ["descriptor", ["at-rule"]],
-  ["value", ["descriptor", "property", "type", "function"]]
+  ["value", ["descriptor", "property", "type", "function", "at-rule"]],
+  ["function", ["descriptor", "property", "type", "function", "at-rule"]],
+  ["type", ["descriptor", "property", "function"]]
 ]);
 
 

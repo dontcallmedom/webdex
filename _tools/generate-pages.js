@@ -188,7 +188,8 @@ function composeDisplayName(displayTerm, type, _for, text=false) {
     typeDescComp = html` for ${forWrap}${humanReadableFor}${forWrap ? html`</a>` : ''}${qualification}`;
   }
   const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
-  return html`<code class=prefix>${prefix}</code><strong>${type !== 'dfn' ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${type !== 'dfn' ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
+  const isCode = type !== 'dfn' || (type === 'abstract-op' && !displayTerm.includes(' '));
+  return html`<code class=prefix>${prefix}</code><strong>${isCode ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${isCode ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
 }
 
 async function generatePage(path, title, content) {

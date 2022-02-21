@@ -233,14 +233,14 @@ ${letters.get(entry).sort().map(term => {
                   const {displayTerm, type, _for, dfns, refs} = termIndex.get(term)[termId];
                   const webidlpedia = ['interface', 'dictionary', 'enum', 'typedef'].includes(type) ? html`<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/${displayTerm}.html' title='${displayTerm} entry on WebIDLpedia'>WebIDLPedia</a></dd>` : '';
                   return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for)}</dt>
-<dd>${dfns.map(dfn => {
+<dd>Defined in ${dfns.map(dfn => {
                     return html`
-                    <strong><a href=${dfn.href}>${dfn.spec}</a></strong> `;
-            })}
-${refs.map(ref => {
+                    <strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong> `;
+            })}</dd>
+${refs.length ? html`<dd>Referenced in ${refs.map(ref => {
                     return html`
-                    <a href=${ref.url}>${ref.title}</a> `;
-            })}</dd>${webidlpedia}`;
+                    <a href=${ref.url} title='${displayTerm} is referenced by ${ref.title}'>${ref.title}</a> `;
+            })}</dd>` : ''}${webidlpedia}`;
           })}`;
 })}
 </dl>`;

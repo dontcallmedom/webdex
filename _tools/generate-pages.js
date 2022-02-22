@@ -190,7 +190,8 @@ function wrapWithCode(markup, bool, className) {
 
 
 function getLink(term, termId) {
-  const targetTerm = termIndex.get(term)[termId];
+  const targetTerm = termIndex.get(term) ? termIndex.get(term)[termId] : undefined;
+  if (!targetTerm) return;
   const page = (cleanTerm(targetTerm.dfns[0].linkingText[0]) || '""')[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
   return `${page}#${targetTerm.displayTerm}@@${termId.replace(/%/g, '%25')}`;
 }
@@ -215,32 +216,67 @@ function composeRelatedTermName(term, termId, scope) {
   return html`<code>${prefix}</code>${htmlTerm}`
 }
 
+function markupScope(scope, withType) {
+  if (!scope) return '';
+  if (Array.isArray(scope)) {
+    return html`${markupScope(scope[0], true)} of ${markupScope(scope[1], true)}`;
+  } else if (scope.term && scope.termId) {
+    const {term, termId} = scope;
+    const targetTerm = termIndex.get(term)[termId];
+    const type = humanReadableTypes.get(targetTerm.type)?.split(' ')?.slice(1)?.join(' ')
+          ?? targetTerm.type;
+    return html`${wrapWithLink(wrapWithCode(targetTerm.displayTerm,
+                                     isCode(targetTerm.displayTerm, targetTerm.type)),
+                        getLink(term, termId))}${withType ? html` ${type}` : ''}`;
+  } else {
+    return wrapWithCode(scope, true);
+  }
+}
+
 function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   let displayPrefix='', suffix='',
+      scopeItems = _for.slice(),
       humanReadableScopeItems = _for.map(_f => html`<code>${_f}</code>`),
       typeDescComp= '',
-      forLinks = {},
       wrap ='';
-
-  for (let _f of _for) {
-    const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
-    if (targetTermId) {
-      const targetTerm = termIndex.get(scope)[targetTermId];
-      forLinks[_f] = getLink(scope, targetTermId);
-      if (targetTerm.type === 'dfn') {
-        humanReadableScopeItems = _for.map(_f => wrapWithLink(html`${_f}`, forLinks[_f]));
+  for (let i = 0 ; i < scopeItems.length; i++) {
+    const _f = scopeItems[i];
+    if (_f.includes('/')) {
+      const [supScope, subScope] = _f.split('/');
+      const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
+      if (targetTermId) {
+        scopeItems[i] = [{term: scope, termId: targetTermId}];
+        const scopeTerm = termIndex.get(scope)[targetTermId];
+        const [superScope, superTargetTermId] = getScopingTermId(scopeTerm.type, supScope, scopeTerm.displayTerm, scopeTerm.dfns);
+        if (superTargetTermId) {
+          scopeItems[i].push({term: superScope, termId: superTargetTermId});
+        } else {
+          scopeItems[i].push(supScope);
+        }
       } else {
-        humanReadableScopeItems = _for.map(_f => wrapWithLink(html`<code>${_f}</code>`, forLinks[_f]));
+        scopeItems[i] = [supScope, subScope];
+      }
+    } else {
+      const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
+      if (targetTermId) {
+        scopeItems[i] = {term: scope, termId: targetTermId};
       }
     }
   }
+  humanReadableScopeItems = scopeItems.map(markupScope);
 
   switch(type) {
   case 'const':
   case 'dict-member':
   case 'attribute':
   case 'method':
-    displayPrefix = html`${wrapWithLink(html`${prefix.slice(0, -1)}`, forLinks[prefix.slice(0, -1)])}.`;
+    const scopeForPrefix = Object.values(scopeItems).find(s => s.term === cleanTerm(prefix.slice(0, -1)));
+    if (scopeForPrefix) {
+      displayPrefix = html`${wrapWithLink(html`${prefix.slice(0, -1)}`, getLink(scopeForPrefix.term, scopeForPrefix.termId))}.`;
+    } else {
+      console.error(displayTerm, _for, prefix, scopeForPrefix, JSON.stringify(scopeForPrefix, null, 2));
+      prefix = null;
+    }
     if (type === 'method' && !displayTerm.match(/\)$/)) {
       suffix = html`()`;
     }
@@ -256,15 +292,6 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     break;
   case 'enum-value':
     wrap = html`"`;
-    break;
-  case 'attr-value':
-    humanReadableScopeItems = _for.map(_f => _f.includes('/') ? html`${wrapWithLink(html`<code>${_f.split('/')[1]}</code>`, forLinks[_f.split('/')[1]])} attribute of <code>${_f.split('/')[0]}</code> element` : wrapWithLink(html`<code>${_f}</code>`, forLinks[_f]));
-    break;
-  case 'element-attr':
-    humanReadableScopeItems = _for.map(_f => html`${wrapWithLink(html`<code>${_f}</code>`, forLinks[_f])} element`);
-    break;
-  case 'value':
-    humanReadableScopeItems = _for.map(_f => _f.includes('/') ? html`${wrapWithLink(html`<code>${_f.split('/')[1]}</code>`, forLinks[_f.split('/')[1]])} descriptor of <code>${_f.split('/')[0]}</code> @rule` : wrapWithLink(html`<code>${_f}</code>`, forLinks[_f]));
     break;
   }
 

@@ -112,7 +112,7 @@ function cleanTerm(rawTerm) {
 function sortByArea([relatedTerm1, relatedTermId1], [relatedTerm2, relatedTermId2]) {
   const {type: type1} = termIndex.get(relatedTerm1)[relatedTermId1];
   const {type: type2} = termIndex.get(relatedTerm2)[relatedTermId2];
-  return areaOfType.get(type1).localeCompare(areaOfType.get(type2)) || type1.localeCompare(type2);
+  return areaOfType.get(type1).localeCompare(areaOfType.get(type2)) || type1.localeCompare(type2) || relatedTerm1.localeCompare(relatedTerm2);
 }
 
 function getScopingTermId(type, _for, displayTerm, dfns) {

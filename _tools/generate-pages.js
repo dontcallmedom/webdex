@@ -132,7 +132,7 @@ function getPrefix(type, _for) {
   case 'dict-member':
   case 'attribute':
   case 'method':
-    return `${_for}`;
+    return `${_for}.`;
     break;
   case 'constructor':
     return `new `;
@@ -146,6 +146,38 @@ function wrapWithLink(markup, link) {
   return html`<a href='${link}'>${markup}</a>`;
 }
 
+function wrapWithCode(markup, bool, className) {
+  if (!bool) return markup;
+  return html`<code${className ? html` class=${className}`: ''}>${markup}</code>`;
+}
+
+
+function getLink(term, termId) {
+  const targetTerm = termIndex.get(term)[termId];
+  const page = (cleanTerm(targetTerm.dfns[0].linkingText[0]) || '""')[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
+  return `${page}#${targetTerm.displayTerm}@@${termId.replace(/%/g, '%25')}`;
+}
+
+function isCode(displayTerm, type) {
+  let isCode = true;
+  if (type === 'dfn') {
+    isCode = false;
+  } else if (type === 'abstract-op' && displayTerm.includes(' ') && !displayTerm.includes('(')) {
+    isCode = false;
+  }
+  return isCode;
+}
+
+function composeRelatedTermName(term, termId, scope) {
+  const {prefixes, type, displayTerm} = termIndex.get(term)[termId];
+  const htmlTerm = wrapWithLink(wrapWithCode(displayTerm, isCode(displayTerm, type)), getLink(term, termId));
+  if (prefixes.length === 0) {
+    return html`<em>${humanReadableTypes.get(type) ?? type}</em> ${htmlTerm}`;
+  }
+  const prefix = prefixes.length === 1 ? prefixes[0] : prefixes.find(p => p === scope);
+  return html`<code>${prefix}</code>${htmlTerm}`
+}
+
 function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   let displayPrefix='', suffix='',
       humanReadableScopeItems = _for.map(_f => html`<code>${_f}</code>`),
@@ -157,8 +189,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
     if (targetTermId) {
       const targetTerm = termIndex.get(scope)[targetTermId];
-      const page = cleanTerm(targetTerm.dfns[0].linkingText[0])[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
-      forLinks[_f] = `${page}#${targetTerm.displayTerm}@@${targetTermId.replace(/%/g, '%25')}`;
+      forLinks[_f] = getLink(scope, targetTermId);
       if (targetTerm.type === 'dfn') {
         humanReadableScopeItems = _for.map(_f => wrapWithLink(html`${_f}`, forLinks[_f]));
       } else {
@@ -172,7 +203,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   case 'dict-member':
   case 'attribute':
   case 'method':
-    displayPrefix = html`${wrapWithLink(html`${prefix}`, forLinks[prefix])}.`;
+    displayPrefix = html`${wrapWithLink(html`${prefix.slice(0, -1)}`, forLinks[prefix.slice(0, -1)])}.`;
     if (type === 'method' && !displayTerm.match(/\)$/)) {
       suffix = html`()`;
     }
@@ -205,13 +236,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     typeDescComp = html` for ${html.join(humanReadableScopeItems, ', ')} ${qualification}`;
   }
   const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
-  let isCode = true;
-  if (type === 'dfn') {
-    isCode = false;
-  } else if (type === 'abstract-op' && displayTerm.includes(' ') && !displayTerm.includes('(')) {
-    isCode = false;
-  }
-  return html`<code class=prefix>${displayPrefix}</code><strong>${isCode ? html`<code>`: ''}${wrap}${displayTerm}${wrap}${isCode ? html`</code>`: ''}</strong>${suffix}${typeDesc}`;
+  return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type))}</strong>${suffix}${typeDesc}`;
 }
 
 async function generatePage(path, title, content) {
@@ -249,7 +274,7 @@ ${content}`);
         // by convention, we use the first 'for' by alphabetical order
         termId = `${dfn.for.sort()[0]}@${dfn.type}`;
       }
-      const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for: dfn.for, dfns: [], prefixes: [], refs: [], displayTerm, sortTerm: `${displayTerm}-${prefixes[0] ?? ''}`};
+      const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for: dfn.for, dfns: [], prefixes: [], refs: [], related: [], displayTerm, sortTerm: `${displayTerm}-${prefixes[0] ?? ''}`};
       subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});
       subtermEntry.prefixes = subtermEntry.prefixes.concat(prefixes);
       if (!termEntry[termId]) {
@@ -283,11 +308,23 @@ ${content}`);
   }
 
   for (const term of termIndex.keys()) {
+    // Populate index by first character
     const entry = term[0] && term[0].match(/[a-z]/i) ? term[0] : 'other';
     if (!letters.has(entry)) {
       letters.set(entry, []);
     }
     letters.get(entry).push(term);
+
+    // Populate related terms
+    for (const termId of Object.keys(termIndex.get(term))) {
+      const {displayTerm, type, _for, dfns } = termIndex.get(term)[termId];
+      for (const _f of _for) {
+        const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
+          if (scope && targetTermId && !termIndex.get(scope)[targetTermId].related.find(x => x[0] === scope && x[1] === termId)) {
+          termIndex.get(scope)[targetTermId].related.push([term, termId]);
+        }
+      }
+    }
   }
   for (const entry of [...letters.keys()].sort()) {
     const title =  entry === 'other' ? 'Terms starting with a non-letter' : `Terms starting with letter ${entry}`;
@@ -295,18 +332,23 @@ ${content}`);
 ${letters.get(entry).sort().map(term => {
   return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {
-                  const {displayTerm, type, _for, dfns, prefixes, refs} = termIndex.get(term)[termId];
+                  const {displayTerm, type, _for, dfns, prefixes, refs, related} = termIndex.get(term)[termId];
                   const webidlpedia = ['interface', 'dictionary', 'enum', 'typedef'].includes(type) ? html`<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/${displayTerm}.html' title='${displayTerm} entry on WebIDLpedia'>WebIDLPedia</a></dd>` : '';
                   return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for, prefixes[0] || '', dfns)}</dt>
 ${prefixes.slice(1).map(p => html`<dt>${composeDisplayName(displayTerm, type, _for, p, dfns)}</dt>`)}
-<dd>Defined in ${dfns.map(dfn => {
+<dd>Defined in ${html.join(dfns.map(dfn => {
                     return html`
                     <strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong> `;
-            })}</dd>
-${refs.length ? html`<dd>Referenced in ${refs.map(ref => {
+            }), ', ')}</dd>
+${refs.length ? html`<dd>Referenced in ${html.join(refs.map(ref => {
                     return html`
-                    <a href=${ref.url} title='${displayTerm} is referenced by ${ref.title}'>${ref.title}</a> `;
-            })}</dd>` : ''}${webidlpedia}`;
+                    <a href=${ref.url} title='${displayTerm} is referenced by ${ref.title}'>${ref.title}</a>`;
+}), ', ')}</dd>` : ''}
+${related.length ? html`<dd>Related terms: ${html.join(related.map(([relTerm, relTermId]) => {
+  return composeRelatedTermName(relTerm, relTermId, displayTerm);
+}), ', ')}</dd>` : ''}
+
+${webidlpedia}`;
           })}`;
 })}
 </dl>`;

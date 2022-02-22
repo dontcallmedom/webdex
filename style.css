@@ -301,13 +301,15 @@ address {
   line-height: .25em;
 }
 
-@media all and (min-width: 699px) {
+@media all and (min-width: 860px) {
   html {
     background: #005a9c;
   }
   html.deprecated {
     background: #9C9C9C;
   }
+
+  label[for=collapse] { display: none;}
 }
 
 @media all and (max-width: 860px) {
@@ -343,6 +345,12 @@ address {
     margin-left: 0;
     width: auto;
   }
+
+  nav #collapse:checked ~ ul{
+      display:none;
+      margin-top:0;
+  }
+
 }
 
 @page {
@@ -422,4 +430,34 @@ dt strong code {
 }
 .http {
     background-color: #eee;
+}
+
+/* collapsible nav bar
+   adapted from https://sowebsited.com/basics/collapse.html */
+nav label:before{
+  height:2px;
+  width:20px;
+  background:white;
+  display:inline-block;
+  content:"";
+  box-shadow:0px -5px 0px 0px  white,
+             0px -10px 0px 0px white;
+  margin-right:10px;
+  transition:all .5s;
+  position:relative;
+  opacity:0.5;
+}
+nav label{
+  display:block;
+  padding:10px;
+  color:white;  
+  cursor:pointer; 
+}
+nav input[type="checkbox"]{
+  visibility:hidden;
+  position:absolute;
+}
+nav #collapse:checked + label:before{
+  position:relative;
+  opacity:1;
 }

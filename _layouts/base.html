@@ -16,6 +16,8 @@
         </h1>
       </div>
       <nav class="menu" id="menu">
+        <input type="checkbox" id="collapse" checked>
+        <label for="collapse" aria-label="open/collapse navigation bar"></label>
         <ul>
           {% for item in site.data.pages.pages %}
           {% assign absolute_url = "/" | append: item.url %}

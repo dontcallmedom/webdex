@@ -32,6 +32,7 @@ const humanReadableTypes = new Map([
   ['callback', 'WebIDL callback'],
   ["constructor", "WebIDL constructor"],
   ["element", "markup element"],
+  ["element-state", "state of markup element"],
   ['extended-attribute', 'WebIDL extended attribute']
 ]);
 
@@ -48,6 +49,36 @@ const typeOfForGivenType = new Map([
   ["value", ["descriptor", "property", "type", "function", "at-rule"]],
   ["function", ["descriptor", "property", "type", "function", "at-rule"]],
   ["type", ["descriptor", "property", "function"]]
+]);
+
+const areaOfType = new Map([
+  ["value", "css"],
+  ["at-rule", "css"],
+  ["descriptor", "css"],
+  ["selector", "css"],
+  ["type", "css"],
+  ["property", "css"],
+  ["function", "css"],
+  ["dfn", "concept"],
+  ["const", "webidl"],
+  ["interface", "webidl"],
+  ["method", "webidl"],
+  ["attribute", "webidl"],
+  ["dictionary", "webidl"],
+  ["enum", "webidl"],
+  ["enum-value", "webidl"],
+  ["abstract-op", "concept"],
+  ["http-header", "http"],
+  ['attr-value', 'markup'],
+  ['element-attr', 'markup'],
+  ['typedef', 'webidl'],
+  ['dict-member', 'webidl'],
+  ['callback', 'webidl'],
+  ["constructor", "webidl"],
+  ["element", "markup"],
+  ["element-state", "markup"],
+  ["event", "markup"],
+  ['extended-attribute', 'webidl']
 ]);
 
 
@@ -76,6 +107,12 @@ function cleanTerm(rawTerm) {
     .replace(/^@@?/, '')
     .replace(/^'/, '').replace(/'$/, '')
     .replace(/^%/, '');
+}
+
+function sortByArea([relatedTerm1, relatedTermId1], [relatedTerm2, relatedTermId2]) {
+  const {type: type1} = termIndex.get(relatedTerm1)[relatedTermId1];
+  const {type: type2} = termIndex.get(relatedTerm2)[relatedTermId2];
+  return areaOfType.get(type1).localeCompare(areaOfType.get(type2)) || type1.localeCompare(type2);
 }
 
 function getScopingTermId(type, _for, displayTerm, dfns) {
@@ -236,7 +273,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     typeDescComp = html` for ${html.join(humanReadableScopeItems, ', ')} ${qualification}`;
   }
   const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
-  return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type))}</strong>${suffix}${typeDesc}`;
+  return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), areaOfType.get(type))}</strong>${suffix}${typeDesc}`;
 }
 
 async function generatePage(path, title, content) {
@@ -344,7 +381,9 @@ ${refs.length ? html`<dd>Referenced in ${html.join(refs.map(ref => {
                     return html`
                     <a href=${ref.url} title='${displayTerm} is referenced by ${ref.title}'>${ref.title}</a>`;
 }), ', ')}</dd>` : ''}
-${related.length ? html`<dd>Related terms: ${html.join(related.map(([relTerm, relTermId]) => {
+${related.length ? html`<dd>Related terms: ${html.join(
+  related.sort(sortByArea)
+    .map(([relTerm, relTermId]) => {
   return composeRelatedTermName(relTerm, relTermId, displayTerm);
 }), ', ')}</dd>` : ''}
 

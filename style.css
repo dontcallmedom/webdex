@@ -403,3 +403,23 @@ address {
 
 a[href^="http"]::after { content: url("ext-link.svg"); }
 
+dt strong code {
+    padding: 3px;
+    display: inline-block;
+    border-radius: 10%;
+}
+
+.css {
+    background-color: #2965f1;
+    color: white;
+}
+.markup {
+    background-color: #f16529;
+    color: white;
+}
+.webidl {
+    background-color: #f7df1e;
+}
+.http {
+    background-color: #eee;
+}

@@ -77,7 +77,7 @@ const areaOfType = new Map([
   ["constructor", "webidl"],
   ["element", "markup"],
   ["element-state", "markup"],
-  ["event", "markup"],
+  ["event", "webidl"],
   ['extended-attribute', 'webidl']
 ]);
 

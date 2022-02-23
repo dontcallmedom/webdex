@@ -7,6 +7,9 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ page.base }}style.css">
+    {% if page.script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+    {% endif %}
   </head>
   <body>
     <header class="header">

@@ -303,11 +303,13 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), areaOfType.get(type))}</strong>${suffix}${typeDesc}`;
 }
 
-async function generatePage(path, title, content) {
+async function generatePage(path, title, content, options = {}) {
   await fs.writeFile(path, `---
-title: ${title}
+title: "${title}"
 layout: base
 ${path.includes('/') ? "base: ../" : ""}
+${Object.keys(options).map(k => `${k}: "${options[k]}"
+`)}
 ---
 ${content}`);
 }
@@ -420,4 +422,19 @@ ${webidlpedia}`;
 </dl>`;
     await generatePage(`${entry}.html`, title, content);
   }
+
+  const termStats = new Map([...termIndex.keys()].map(term => [term, Object.keys(termIndex.get(term)).length]).sort(([term1, len1], [term2, len2]) => len2 - len1));
+  const indexContent = html`<p>This site collects the terms defined across <a href="https://github.com/w3c/browser-specs">Web specifications</a>, links to where they are defined and which specifications they are linked from.</p>
+<p>The 30 most popular terms defined across Web specifications are:</p>
+<ol id=terms>
+${[...termStats.keys()].slice(0, 30).map(term => html`  <li><span class=term>${term}</span> (<span class=freq>${termStats.get(term)}</span>)</li>
+`)}
+</ol>
+<canvas id=cloud width=600 height=600>
+This canvas is the visual representation of the above list as a cloud of words.
+</canvas>
+<script src="term-cloud.js"></script>
+`;
+
+  await generatePage("index.html", "WebDex: Web specs index", indexContent, {script: "https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"});
 })();

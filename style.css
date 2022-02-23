@@ -461,3 +461,6 @@ nav #collapse:checked + label:before{
   position:relative;
   opacity:1;
 }
+#terms {
+  float: left
+}

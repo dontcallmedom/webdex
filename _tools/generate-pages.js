@@ -161,23 +161,6 @@ function getScopingTermId(type, _for, displayTerm, dfns) {
   return [];
 }
 
-function getPrefix(type, _for) {
-  if (!_for) return '';
-
-  switch(type) {
-  case 'const':
-  case 'dict-member':
-  case 'attribute':
-  case 'method':
-    return `${_for}.`;
-    break;
-  case 'constructor':
-    return `new `;
-    break;
-  }
-  return '';
-}
-
 function wrapWithLink(markup, link) {
   if (!link) return markup;
   return html`<a href='${link}'>${markup}</a>`;
@@ -336,7 +319,11 @@ ${content}`);
           termId = `${spec.series.shortname}%%${dfn.type}`;
         }
       } else {
-        prefixes = dfn.for.map(_for => getPrefix(dfn.type, _for)).filter(x => x).sort();
+        if (dfn.type === "constructor" && term !== 'constructor()') {
+          prefixes = ['new '];
+        } else if (['method', 'const', 'attribute', 'dict-member'].includes(dfn.type)) {
+          prefixes = dfn.for.map(_for => `${_for}.`);
+        }
         // by convention, we use the first 'for' by alphabetical order
         termId = `${dfn.for.sort()[0]}@${dfn.type}`;
       }

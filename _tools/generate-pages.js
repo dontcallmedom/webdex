@@ -229,6 +229,19 @@ function markupScope(scope, withType) {
   }
 }
 
+function isSameScope(scope) {
+  return function(scope2) {
+    if (Array.isArray(scope)) {
+      if (!Array.isArray(scope2) || scope.length !== scope2.length) return false;
+      return scope.every((x, i) => isSameScope(x)(scope2[i]));
+    } else if (scope.term) {
+      return scope.term === scope2.term && scope.termId === scope2.termId;
+    } else {
+      return scope === scope2;
+    }
+  };
+}
+
 function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   let displayPrefix='', suffix='',
       scopeItems = _for.slice(),
@@ -259,6 +272,8 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
       }
     }
   }
+  // Remove possible duplicates
+  scopeItems = scopeItems.filter((x, i) => scopeItems.findIndex(isSameScope(x)) === i);
   humanReadableScopeItems = scopeItems.map(markupScope);
 
   switch(type) {

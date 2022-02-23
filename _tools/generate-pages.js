@@ -308,7 +308,11 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     let qualification = type === 'enum-value' ? html` WebIDL enumeration${_for.length > 1 ? 's' : ''}` : '';
     typeDescComp = html` for ${html.join(humanReadableScopeItems, ', ')} ${qualification}`;
   }
-  const typeDesc = html` (<em>${humanReadableTypes.get(type) ?? type}${typeDescComp}</em>)`;
+  let amendedType = type;
+  if ((type === "method" || type === "attribute") && displayTerm.match(/^\[\[/)) {
+    amendedType = `internal ${type === "attribute" ? "slot" : "method"}`;
+  }
+  const typeDesc = html` (<em>${humanReadableTypes.get(amendedType) ?? amendedType}${typeDescComp}</em>)`;
   return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), areaOfType.get(type))}</strong>${suffix}${typeDesc}`;
 }
 

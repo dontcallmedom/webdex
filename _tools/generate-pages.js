@@ -34,7 +34,8 @@ const humanReadableTypes = new Map([
   ["constructor", "WebIDL constructor"],
   ["element", "markup element"],
   ["element-state", "state of markup element"],
-  ['extended-attribute', 'WebIDL extended attribute']
+  ['extended-attribute', 'WebIDL extended attribute'],
+  ['permission', 'permission name']
 ]);
 
 const typeOfForGivenType = new Map([
@@ -79,13 +80,15 @@ const areaOfType = new Map([
   ["element", "markup"],
   ["element-state", "markup"],
   ["event", "webidl"],
-  ['extended-attribute', 'webidl']
+  ['extended-attribute', 'webidl'],
+  ['permission', 'webidl']
 ]);
 
 
 // if a term of a given type appears several times,
 // they designate the same thing
 const exclusiveNamespace = [
+  "permission",
   "http-header",
   "selector",
   "at-rule",

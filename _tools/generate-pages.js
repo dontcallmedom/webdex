@@ -4,6 +4,7 @@ const html = require('escape-html-template-tag');
 const { expandCrawlResult } = require('reffy/src/lib/util');
 
 const termIndex = new Map();
+const aliasIndex = new Map();
 const linksIndex = new Map();
 const letters = new Map();
 
@@ -116,6 +117,15 @@ function sortByArea([relatedTerm1, relatedTermId1], [relatedTerm2, relatedTermId
 }
 
 function getScopingTermId(type, _for, displayTerm, dfns) {
+  function returnIfFound(candidates, matches) {
+    if (matches.length === 1) {
+      // if we've hit an alias, the scope may need to be updated
+      const scope = cleanTerm(candidates[matches[0]].dfns[0].linkingText[0]);
+      return [scope, matches[0]];
+    }
+    return false;
+  }
+
   if (_for) {
     let _forFor;
     // TODO: how would this work if the term used for scoping contains a '/' ?
@@ -123,10 +133,12 @@ function getScopingTermId(type, _for, displayTerm, dfns) {
       [_forFor, _for] = _for.split('/');
     }
     const typeOfFor = typeOfForGivenType.get(type);
-    const candidates = termIndex.get(cleanTerm(_for)) ?? {};
-    if (Object.keys(candidates).length === 1) {
-      return [cleanTerm(_for), Object.keys(candidates)[0]];
-    }
+    const scope = cleanTerm(_for);
+    let candidates = termIndex.get(scope) ?? (aliasIndex.get(scope) ?? {});
+
+    let ret = returnIfFound(candidates, Object.keys(candidates));
+    if (ret) return ret;
+
     const matchingCandidates = Object.keys(candidates).filter(termId => {
       const candidate = candidates[termId];
       // Using exact match only (deals e.g. "<position>" vs "position")
@@ -139,16 +151,17 @@ function getScopingTermId(type, _for, displayTerm, dfns) {
       return false;
     });
     // we only know how to deal with the situation where there is a single match
-    if (matchingCandidates.length === 1) {
-      return [cleanTerm(_for), matchingCandidates[0]];
+    ret = returnIfFound(candidates, matchingCandidates);
+    if (ret) {
+      return ret;
     } else if (matchingCandidates.length > 1) {
       // Is one of the specs where the scoping term is defined
       // the same as where the initial term is?
       // If so, assume this is the best candidate
-      const sameSpecCandidates = matchingCandidates.filter(termId => termIndex.get(cleanTerm(_for))[termId].dfns.map(d => d.spec).find(s => dfns.map(d => d.spec).includes(s)));
-      if (sameSpecCandidates.length === 1) {
-        return [cleanTerm(_for), sameSpecCandidates[0]];
-      }
+      const sameSpecCandidates = matchingCandidates.filter(termId => termIndex.get(scope)[termId].dfns.map(d => d.spec).find(s => dfns.map(d => d.spec).includes(s)));
+      ret = returnIfFound(candidates, sameSpecCandidates);
+      if (ret) return ret;
+
       console.error(`multiple candidates for scope named |${_forFor ? _forFor + '/' : '' }${_for}|, typed <${typeOfFor}> for term '${displayTerm}' of type <${type}>: "${matchingCandidates.join('", "')}"`);
     } else if (matchingCandidates.length === 0) {
       if (Object.keys(candidates).length === 0) {
@@ -216,6 +229,19 @@ function markupScope(scope, withType) {
   }
 }
 
+function isSameScope(scope) {
+  return function(scope2) {
+    if (Array.isArray(scope)) {
+      if (!Array.isArray(scope2) || scope.length !== scope2.length) return false;
+      return scope.every((x, i) => isSameScope(x)(scope2[i]));
+    } else if (scope.term) {
+      return scope.term === scope2.term && scope.termId === scope2.termId;
+    } else {
+      return scope === scope2;
+    }
+  };
+}
+
 function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   let displayPrefix='', suffix='',
       scopeItems = _for.slice(),
@@ -246,6 +272,8 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
       }
     }
   }
+  // Remove possible duplicates
+  scopeItems = scopeItems.filter((x, i) => scopeItems.findIndex(isSameScope(x)) === i);
   humanReadableScopeItems = scopeItems.map(markupScope);
 
   switch(type) {
@@ -333,6 +361,16 @@ ${content}`);
       if (!termEntry[termId]) {
         termEntry[termId] =  subtermEntry;
       }
+
+      // keep track of aliases (they get used in some cases in dfn-for)
+      for (const alias of dfn.linkingText.slice(1)) {
+        const aliasEntry = aliasIndex.get(alias) ?? {};
+        aliasEntry[termId] = subtermEntry;
+        if (!aliasIndex.has(alias)) {
+          aliasIndex.set(alias, aliasEntry);
+        }
+      }
+
       linksIndex.set(dfn.href, [term, termId]);
       // Account for HTML & ES multipage/single page alternatives
       if (dfn.href.startsWith('https://html.spec.whatwg.org/multipage/') ||
@@ -373,7 +411,7 @@ ${content}`);
       const {displayTerm, type, _for, dfns } = termIndex.get(term)[termId];
       for (const _f of _for) {
         const [scope, targetTermId] = getScopingTermId(type, _f, displayTerm, dfns);
-          if (scope && targetTermId && !termIndex.get(scope)[targetTermId].related.find(x => x[0] === scope && x[1] === termId)) {
+        if (scope && targetTermId && !termIndex.get(scope)[targetTermId].related.find(x => x[0] === scope && x[1] === termId)) {
           termIndex.get(scope)[targetTermId].related.push([term, termId]);
         }
       }

@@ -1,5 +1,46 @@
 ---
-title: WebSpecs Index
+title: "WebDex: Web specs index"
 layout: base
+
+script: "https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"
+
 ---
 <p>This site collects the terms defined across <a href="https://github.com/w3c/browser-specs">Web specifications</a>, links to where they are defined and which specifications they are linked from.</p>
+<p>The 30 most popular terms defined across Web specifications are:</p>
+<ol id=terms>
+  <li><span class=term>none</span> (<span class=freq>134</span>)</li>
+  <li><span class=term>type</span> (<span class=freq>118</span>)</li>
+  <li><span class=term>auto</span> (<span class=freq>112</span>)</li>
+  <li><span class=term>name</span> (<span class=freq>109</span>)</li>
+  <li><span class=term>length</span> (<span class=freq>87</span>)</li>
+  <li><span class=term>width</span> (<span class=freq>68</span>)</li>
+  <li><span class=term>value</span> (<span class=freq>62</span>)</li>
+  <li><span class=term>height</span> (<span class=freq>61</span>)</li>
+  <li><span class=term>constructor()</span> (<span class=freq>53</span>)</li>
+  <li><span class=term>x</span> (<span class=freq>51</span>)</li>
+  <li><span class=term>id</span> (<span class=freq>50</span>)</li>
+  <li><span class=term>data</span> (<span class=freq>50</span>)</li>
+  <li><span class=term>y</span> (<span class=freq>50</span>)</li>
+  <li><span class=term>normal</span> (<span class=freq>47</span>)</li>
+  <li><span class=term>error</span> (<span class=freq>47</span>)</li>
+  <li><span class=term>url</span> (<span class=freq>45</span>)</li>
+  <li><span class=term>size</span> (<span class=freq>35</span>)</li>
+  <li><span class=term>alpha</span> (<span class=freq>35</span>)</li>
+  <li><span class=term>tojson()</span> (<span class=freq>35</span>)</li>
+  <li><span class=term>align</span> (<span class=freq>34</span>)</li>
+  <li><span class=term>state</span> (<span class=freq>33</span>)</li>
+  <li><span class=term>left</span> (<span class=freq>30</span>)</li>
+  <li><span class=term>close()</span> (<span class=freq>30</span>)</li>
+  <li><span class=term>message</span> (<span class=freq>29</span>)</li>
+  <li><span class=term>text</span> (<span class=freq>28</span>)</li>
+  <li><span class=term>start</span> (<span class=freq>28</span>)</li>
+  <li><span class=term>right</span> (<span class=freq>28</span>)</li>
+  <li><span class=term>target</span> (<span class=freq>27</span>)</li>
+  <li><span class=term>src</span> (<span class=freq>27</span>)</li>
+  <li><span class=term>origin</span> (<span class=freq>26</span>)</li>
+
+</ol>
+<canvas id=cloud width=600 height=600>
+This canvas is the visual representation of the above list as a cloud of words.
+</canvas>
+<script src="term-cloud.js"></script>

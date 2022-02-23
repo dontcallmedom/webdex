@@ -138,7 +138,6 @@ function getScopingTermId(type, _for, displayTerm, dfns) {
 
     let ret = returnIfFound(candidates, Object.keys(candidates));
     if (ret) return ret;
-
     const matchingCandidates = Object.keys(candidates).filter(termId => {
       const candidate = candidates[termId];
       // Using exact match only (deals e.g. "<position>" vs "position")
@@ -285,7 +284,6 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     if (scopeForPrefix) {
       displayPrefix = html`${wrapWithLink(html`${prefix.slice(0, -1)}`, getLink(scopeForPrefix.term, scopeForPrefix.termId))}.`;
     } else {
-      console.error(displayTerm, _for, prefix, scopeForPrefix, JSON.stringify(scopeForPrefix, null, 2));
       prefix = null;
     }
     if (type === 'method' && !displayTerm.match(/\)$/)) {
@@ -363,7 +361,7 @@ ${content}`);
       }
 
       // keep track of aliases (they get used in some cases in dfn-for)
-      for (const alias of dfn.linkingText.slice(1)) {
+      for (const alias of dfn.linkingText.slice(1).map(cleanTerm)) {
         const aliasEntry = aliasIndex.get(alias) ?? {};
         aliasEntry[termId] = subtermEntry;
         if (!aliasIndex.has(alias)) {

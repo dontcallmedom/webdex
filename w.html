@@ -222,7 +222,14 @@ layout: base
 <dt id="wasClean@@CloseEvent@attribute"><code class=prefix><a href='c.html#CloseEvent@@@@interface'>CloseEvent</a>.</code><strong><code class=webidl>wasClean</code></strong> (<em>WebIDL attribute</em>)</dt>
 
 <dd>Defined in 
-                    <strong title='wasClean is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;web-sockets.html#dom-closeevent-wasclean>HTML</a></strong> </dd>
+                    <strong title='wasClean is defined in WebSockets'><a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F;#dom-closeevent-wasclean>WebSockets</a></strong> </dd>
+
+
+
+<dt id="wasClean@@CloseEventInit@dict-member"><code class=prefix><a href='c.html#CloseEventInit@@@@dictionary'>CloseEventInit</a>.</code><strong><code class=webidl>wasClean</code></strong> (<em>WebIDL dictionary member</em>)</dt>
+
+<dd>Defined in 
+                    <strong title='wasClean is defined in WebSockets'><a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F;#dom-closeeventinit-wasclean>WebSockets</a></strong> </dd>
 
 
 
@@ -807,15 +814,24 @@ layout: base
 <dt id="WebSocket@@@@interface"><code class=prefix></code><strong><code class=webidl>WebSocket</code></strong> (<em>WebIDL interface</em>)</dt>
 
 <dd>Defined in 
-                    <strong title='WebSocket is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;web-sockets.html#websocket>HTML</a></strong> </dd>
+                    <strong title='WebSocket is defined in WebSockets'><a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F;#websocket>WebSockets</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F; title='WebSocket is referenced by WebRTC 1.0'>WebRTC 1.0</a></dd>
-<dd>Related terms: <code>WebSocket.</code><a href='b.html#binaryType@@WebSocket@attribute'><code>binaryType</code></a>, <code>WebSocket.</code><a href='b.html#bufferedAmount@@WebSocket@attribute'><code>bufferedAmount</code></a>, <code>WebSocket.</code><a href='e.html#extensions@@WebSocket@attribute'><code>extensions</code></a>, <code>WebSocket.</code><a href='o.html#onclose@@WebSocket@attribute'><code>onclose</code></a>, <code>WebSocket.</code><a href='o.html#onerror@@WebSocket@attribute'><code>onerror</code></a>, <code>WebSocket.</code><a href='o.html#onmessage@@WebSocket@attribute'><code>onmessage</code></a>, <code>WebSocket.</code><a href='o.html#onopen@@WebSocket@attribute'><code>onopen</code></a>, <code>WebSocket.</code><a href='p.html#protocol@@WebSocket@attribute'><code>protocol</code></a>, <code>WebSocket.</code><a href='r.html#readyState@@WebSocket@attribute'><code>readyState</code></a>, <code>WebSocket.</code><a href='u.html#url@@WebSocket@attribute'><code>url</code></a>, <code>WebSocket.</code><a href='c.html#CLOSED@@WebSocket@const'><code>CLOSED</code></a>, <code>WebSocket.</code><a href='c.html#CLOSING@@WebSocket@const'><code>CLOSING</code></a>, <code>WebSocket.</code><a href='c.html#CONNECTING@@WebSocket@const'><code>CONNECTING</code></a>, <code>WebSocket.</code><a href='o.html#OPEN@@WebSocket@const'><code>OPEN</code></a>, <code>new </code><a href='w.html#WebSocket(url, protocols)@@WebSocket@constructor'><code>WebSocket(url, protocols)</code></a>, <em>event</em> <a href='c.html#close@@HTMLElement@event'><code>close</code></a>, <em>event</em> <a href='e.html#error@@AbstractWorker@event'><code>error</code></a>, <em>event</em> <a href='m.html#message@@BroadcastChannel@event'><code>message</code></a>, <em>event</em> <a href='o.html#open@@EventSource@event'><code>open</code></a>, <code>WebSocket.</code><a href='c.html#close(code, reason)@@WebSocket@method'><code>close(code, reason)</code></a>, <code>WebSocket.</code><a href='s.html#send(data)@@WebSocket@method'><code>send(data)</code></a></dd>
+                    <a href=https:&#x2F;&#x2F;fetch.spec.whatwg.org&#x2F; title='WebSocket is referenced by Fetch'>Fetch</a>, 
+                    <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='WebSocket is referenced by HTML'>HTML</a>, 
+                    <a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F; title='WebSocket is referenced by Streams'>Streams</a></dd>
+<dd>Related terms: <code>WebSocket.</code><a href='b.html#binaryType@@WebSocket@attribute'><code>binaryType</code></a>, <code>WebSocket.</code><a href='b.html#bufferedAmount@@WebSocket@attribute'><code>bufferedAmount</code></a>, <code>WebSocket.</code><a href='e.html#extensions@@WebSocket@attribute'><code>extensions</code></a>, <code>WebSocket.</code><a href='o.html#onclose@@WebSocket@attribute'><code>onclose</code></a>, <code>WebSocket.</code><a href='o.html#onerror@@WebSocket@attribute'><code>onerror</code></a>, <code>WebSocket.</code><a href='o.html#onmessage@@WebSocket@attribute'><code>onmessage</code></a>, <code>WebSocket.</code><a href='o.html#onopen@@WebSocket@attribute'><code>onopen</code></a>, <code>WebSocket.</code><a href='p.html#protocol@@WebSocket@attribute'><code>protocol</code></a>, <code>WebSocket.</code><a href='r.html#readyState@@WebSocket@attribute'><code>readyState</code></a>, <code>WebSocket.</code><a href='u.html#url@@WebSocket@attribute'><code>url</code></a>, <code>WebSocket.</code><a href='c.html#CLOSED@@WebSocket@const'><code>CLOSED</code></a>, <code>WebSocket.</code><a href='c.html#CLOSING@@WebSocket@const'><code>CLOSING</code></a>, <code>WebSocket.</code><a href='c.html#CONNECTING@@WebSocket@const'><code>CONNECTING</code></a>, <code>WebSocket.</code><a href='o.html#OPEN@@WebSocket@const'><code>OPEN</code></a>, <code>new </code><a href='w.html#WebSocket(url, protocols)@@WebSocket@constructor'><code>WebSocket(url, protocols)</code></a>, <em>event</em> <a href='c.html#close@@WebSocket@event'><code>close</code></a>, <em>event</em> <a href='e.html#error@@WebSocket@event'><code>error</code></a>, <em>event</em> <a href='m.html#message@@WebSocket@event'><code>message</code></a>, <em>event</em> <a href='o.html#open@@WebSocket@event'><code>open</code></a>, <code>WebSocket.</code><a href='c.html#close(code, reason)@@WebSocket@method'><code>close(code, reason)</code></a>, <code>WebSocket.</code><a href='s.html#send(data)@@WebSocket@method'><code>send(data)</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/WebSocket.html' title='WebSocket entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="WebSocket(url, protocols)@@WebSocket@constructor"><code class=prefix>new </code><strong><code class=webidl>WebSocket(url, protocols)</code></strong> (<em>WebIDL constructor</em>)</dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/WebSocket.html' title='WebSocket entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="WebSocket task source@@websockets%%dfn"><code class=prefix></code><strong>WebSocket task source</strong> (<em>concept</em>)</dt>
 
 <dd>Defined in 
-                    <strong title='WebSocket(url, protocols) is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;web-sockets.html#dom-websocket>HTML</a></strong> </dd>
+                    <strong title='WebSocket task source is defined in WebSockets'><a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F;#websocket-task-source>WebSockets</a></strong> </dd>
+
+
+
+<dt id="WebSocket(url, protocols)@@WebSocket@constructor"><code class=prefix>new </code><strong><code class=webidl>WebSocket(url, protocols)</code></strong> (<em>WebIDL constructor</em>)</dt>
+
+<dd>Defined in 
+                    <strong title='WebSocket(url, protocols) is defined in WebSockets'><a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F;#dom-websocket-websocket>WebSockets</a></strong> </dd>
 
 
 
@@ -1868,7 +1884,6 @@ layout: base
                     <a href=https:&#x2F;&#x2F;gpuweb.github.io&#x2F;gpuweb&#x2F; title='Window is referenced by WebGPU'>WebGPU</a>, 
                     <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F; title='Window is referenced by Web Neural Network API'>Web Neural Network API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-identity&#x2F; title='Window is referenced by Identity for WebRTC 1.0'>Identity for WebRTC 1.0</a>, 
-                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F; title='Window is referenced by WebRTC 1.0'>WebRTC 1.0</a>, 
                     <a href=https:&#x2F;&#x2F;immersive-web.github.io&#x2F;dom-overlays&#x2F; title='Window is referenced by WebXR DOM Overlays'>WebXR DOM Overlays</a>, 
                     <a href=https:&#x2F;&#x2F;immersive-web.github.io&#x2F;webxr&#x2F; title='Window is referenced by WebXR Device API'>WebXR Device API</a>, 
                     <a href=https:&#x2F;&#x2F;xhr.spec.whatwg.org&#x2F; title='Window is referenced by XMLHttpRequest'>XMLHttpRequest</a></dd>
@@ -2480,10 +2495,10 @@ layout: base
 
 
 
-<dt id="wrap@@edgeMode@attr-value"><code class=prefix></code><strong><code class=markup>wrap</code></strong> (<em>value for <code>edgeMode</code> </em>)</dt>
+<dt id="wrap@@feGaussianBlur&#x2F;edgeMode@attr-value"><code class=prefix></code><strong><code class=markup>wrap</code></strong> (<em>value for <a href='e.html#edgeMode@@feGaussianBlur@element-attr'><code>edgeMode</code></a> attribute of <a href='f.html#feGaussianBlur@@filter-effects%25%25element'><code>feGaussianBlur</code></a> element </em>)</dt>
 
 <dd>Defined in 
-                    <strong title='wrap is defined in Filter Effects 1'><a href=https:&#x2F;&#x2F;drafts.fxtf.org&#x2F;filter-effects-1&#x2F;#attr-valuedef-edgemode-wrap>Filter Effects 1</a></strong> </dd>
+                    <strong title='wrap is defined in Filter Effects 1'><a href=https:&#x2F;&#x2F;drafts.fxtf.org&#x2F;filter-effects-1&#x2F;#attr-valuedef-fegaussianblur-edgemode-wrap>Filter Effects 1</a></strong> </dd>
 
 
 

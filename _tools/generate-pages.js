@@ -425,7 +425,9 @@ ${content}`);
   }
   for (const entry of [...letters.keys()].sort()) {
     const title =  entry === 'other' ? 'Terms starting with a non-letter' : `Terms starting with letter ${entry}`;
-    const content = html`<dl>
+    const content = html`
+<p class=legend>Color key: <code class=webidl>WebIDL</code> <code class='css'>CSS</code> <code class='markup'>Markup</code> <code class='http'>HTTP</code></p>
+<dl>
 ${letters.get(entry).sort().map(term => {
   return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {

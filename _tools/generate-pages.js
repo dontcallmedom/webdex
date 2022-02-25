@@ -302,6 +302,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
   case 'http-header':
     suffix = html`:`;
     break;
+  case 'permission':
   case 'enum-value':
     wrap = html`"`;
     break;

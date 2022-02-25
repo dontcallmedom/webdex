@@ -411,7 +411,7 @@ address {
 
 a[href^="http"]::after { content: url("ext-link.svg"); }
 
-dt strong code {
+dt strong code, .legend code {
     padding: 3px;
     display: inline-block;
     border-radius: 10%;

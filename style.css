@@ -464,3 +464,12 @@ nav #collapse:checked + label:before{
 #terms {
   float: left
 }
+
+dt a.self-link {
+    content: "§";
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: .8;
+    vertical-align: middle;
+    display: inline-block;
+}

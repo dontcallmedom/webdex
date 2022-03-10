@@ -244,7 +244,7 @@ function isSameScope(scope) {
   };
 }
 
-function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
+function composeDisplayName(displayTerm, type, _for, prefix, dfns, termId) {
   let displayPrefix='', suffix='',
       scopeItems = _for.slice(),
       humanReadableScopeItems = _for.map(_f => html`<code>${_f}</code>`),
@@ -317,7 +317,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns) {
     amendedType = `internal ${type === "attribute" ? "slot" : "method"}`;
   }
   const typeDesc = html` (<em>${humanReadableTypes.get(amendedType) ?? amendedType}${typeDescComp}</em>)`;
-  return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), areaOfType.get(type))}</strong>${suffix}${typeDesc}`;
+  return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), areaOfType.get(type))}</strong>${suffix}${typeDesc} <a class='self-link' href='#${encodeURIComponent(displayTerm + '@@' + termId)}' aria-label="Permalink for ${displayPrefix}${displayTerm}${suffix}">§</a>`;
 }
 
 async function generatePage(path, title, content, options = {}) {
@@ -433,8 +433,8 @@ ${letters.get(entry).sort().map(term => {
                 .map(termId => {
                   const {displayTerm, type, _for, dfns, prefixes, refs, related} = termIndex.get(term)[termId];
                   const webidlpedia = ['interface', 'dictionary', 'enum', 'typedef'].includes(type) ? html`<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/${displayTerm}.html' title='${displayTerm} entry on WebIDLpedia'>WebIDLPedia</a></dd>` : '';
-                  return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for, prefixes[0] || '', dfns)}</dt>
-${prefixes.slice(1).map(p => html`<dt>${composeDisplayName(displayTerm, type, _for, p, dfns)}</dt>`)}
+                  return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for, prefixes[0] || '', dfns, termId)}</dt>
+${prefixes.slice(1).map(p => html`<dt>${composeDisplayName(displayTerm, type, _for, p, dfns, termId)}</dt>`)}
 <dd>Defined in ${html.join(dfns.map(dfn => {
                     return html`
                     <strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong> `;

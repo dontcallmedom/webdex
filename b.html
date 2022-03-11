@@ -146,19 +146,18 @@ layout: base
 
 
 
-<dt id="back(options)@@AppHistory@method"><code class=prefix><a href='a.html#AppHistory@@@@interface'>AppHistory</a>.</code><strong><code class=webidl>back(options)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#back(options)%40%40AppHistory%40method' aria-label="Permalink for <a href='a.html#AppHistory@@@@interface'>AppHistory</a>.back(options)">§</a></dt>
+<dt id="back(options)@@Navigation@method"><code class=prefix><a href='n.html#Navigation@@@@interface'>Navigation</a>.</code><strong><code class=webidl>back(options)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#back(options)%40%40Navigation%40method' aria-label="Permalink for <a href='n.html#Navigation@@@@interface'>Navigation</a>.back(options)">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='back(options) is defined in App History API'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;app-history&#x2F;#dom-apphistory-back>App History API</a></strong> </dd>
+                    <strong title='back(options) is defined in App History API'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;navigation-api&#x2F;#dom-navigation-back>App History API</a></strong> </dd>
 
 
 
-<dt id="back_forward@@NavigationType@enum-value"><code class=prefix></code><strong><code class=webidl>"back_forward"</code></strong> (<em>value for <a href='n.html#NavigationType@@@@enum'><code>NavigationType</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#back_forward%40%40NavigationType%40enum-value' aria-label="Permalink for back_forward">§</a></dt>
+<dt id="back_forward@@NavigationTimingType@enum-value"><code class=prefix></code><strong><code class=webidl>"back_forward"</code></strong> (<em>value for <a href='n.html#NavigationTimingType@@@@enum'><code>NavigationTimingType</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#back_forward%40%40NavigationTimingType%40enum-value' aria-label="Permalink for back_forward">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='back_forward is defined in Navigation Timing 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;navigation-timing&#x2F;#dom-navigationtype-back_forward>Navigation Timing 2</a></strong> </dd>
-<dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='back_forward is referenced by HTML'>HTML</a></dd>
+                    <strong title='back_forward is defined in Navigation Timing 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;navigation-timing&#x2F;#dom-navigationtimingtype-back_forward>Navigation Timing 2</a></strong> </dd>
+
 
 
 <dt id="::backdrop@@@@selector"><code class=prefix></code><strong><code class=css>::backdrop</code></strong> (<em>CSS selector</em>) <a class='self-link' href='#%3A%3Abackdrop%40%40%40%40selector' aria-label="Permalink for ::backdrop">§</a></dt>
@@ -1205,12 +1204,19 @@ layout: base
 <dd>Defined in 
                     <strong title='&lt;basic-shape&gt; is defined in CSS Shapes 1'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-shapes&#x2F;#typedef-basic-shape>CSS Shapes 1</a></strong> </dd>
 
-<dd>Related terms: <em>CSS function</em> <a href='c.html#circle()@@&lt;basic-shape&gt;@function'><code>circle()</code></a>, <em>CSS function</em> <a href='e.html#ellipse()@@&lt;basic-shape&gt;@function'><code>ellipse()</code></a>, <em>CSS function</em> <a href='i.html#inset()@@&lt;basic-shape&gt;@function'><code>inset()</code></a>, <em>CSS function</em> <a href='p.html#path()@@&lt;basic-shape&gt;@function'><code>path()</code></a>, <em>CSS function</em> <a href='p.html#polygon()@@&lt;basic-shape&gt;@function'><code>polygon()</code></a>, <em>CSS function</em> <a href='r.html#rect()@@&lt;basic-shape&gt;@function'><code>rect()</code></a>, <em>CSS function</em> <a href='x.html#xywh()@@&lt;basic-shape&gt;@function'><code>xywh()</code></a></dd>
+<dd>Related terms: <em>concept</em> <a href='r.html#reference box@@&lt;basic-shape&gt;@dfn'>reference box</a>, <em>CSS function</em> <a href='c.html#circle()@@&lt;basic-shape&gt;@function'><code>circle()</code></a>, <em>CSS function</em> <a href='e.html#ellipse()@@&lt;basic-shape&gt;@function'><code>ellipse()</code></a>, <em>CSS function</em> <a href='i.html#inset()@@&lt;basic-shape&gt;@function'><code>inset()</code></a>, <em>CSS function</em> <a href='p.html#path()@@&lt;basic-shape&gt;@function'><code>path()</code></a>, <em>CSS function</em> <a href='p.html#polygon()@@&lt;basic-shape&gt;@function'><code>polygon()</code></a>, <em>CSS function</em> <a href='r.html#rect()@@&lt;basic-shape&gt;@function'><code>rect()</code></a>, <em>CSS function</em> <a href='x.html#xywh()@@&lt;basic-shape&gt;@function'><code>xywh()</code></a></dd>
 
 <dt id="&lt;basic-shape&gt;@@shape-outside@value"><code class=prefix></code><strong><code class=css>&lt;basic-shape&gt;</code></strong> (<em>CSS value for <a href='s.html#shape-outside@@@@property'><code>shape-outside</code></a> </em>) <a class='self-link' href='#%3Cbasic-shape%3E%40%40shape-outside%40value' aria-label="Permalink for &lt;basic-shape&gt;">§</a></dt>
 
 <dd>Defined in 
                     <strong title='&lt;basic-shape&gt; is defined in CSS Shapes 1'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-shapes&#x2F;#valdef-shape-outside-basic-shape>CSS Shapes 1</a></strong> </dd>
+
+
+
+<dt id="&lt;basic-shape-rect&gt;@@object-view-box@value"><code class=prefix></code><strong><code class=css>&lt;basic-shape-rect&gt;</code></strong> (<em>CSS value for <a href='o.html#object-view-box@@@@property'><code>object-view-box</code></a> </em>) <a class='self-link' href='#%3Cbasic-shape-rect%3E%40%40object-view-box%40value' aria-label="Permalink for &lt;basic-shape-rect&gt;">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='&lt;basic-shape-rect&gt; is defined in CSS Images 4'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-images-4&#x2F;#valdef-object-view-box-basic-shape-rect>CSS Images 4</a></strong> </dd>
 
 
 
@@ -3141,6 +3147,13 @@ layout: base
 
 
 
+<dt id="bluetooth@@@@permission"><code class=prefix></code><strong><code class=webidl>"bluetooth"</code></strong> (<em>permission name</em>) <a class='self-link' href='#bluetooth%40%40%40%40permission' aria-label="Permalink for bluetooth">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='bluetooth is defined in Web Bluetooth'><a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F;#permissiondef-bluetooth>Web Bluetooth</a></strong> </dd>
+
+
+
 <dt id="bluetooth@@ConnectionType@enum-value"><code class=prefix></code><strong><code class=webidl>"bluetooth"</code></strong> (<em>value for <a href='c.html#ConnectionType@@@@enum'><code>ConnectionType</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#bluetooth%40%40ConnectionType%40enum-value' aria-label="Permalink for bluetooth">§</a></dt>
 
 <dd>Defined in 
@@ -3650,6 +3663,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-nfc&#x2F; title='Boolean is referenced by Web NFC API'>Web NFC API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-trusted-types&#x2F;dist&#x2F;spec&#x2F; title='Boolean is referenced by Trusted Types'>Trusted Types</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-ice&#x2F; title='Boolean is referenced by IceTransport Extensions for WebRTC'>IceTransport Extensions for WebRTC</a>, 
+                    <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='Boolean is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
                     <a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F; title='Boolean is referenced by Web Bluetooth'>Web Bluetooth</a>, 
                     <a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F; title='Boolean is referenced by WebSockets'>WebSockets</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;app-history&#x2F; title='Boolean is referenced by App History API'>App History API</a>, 
@@ -5750,8 +5764,9 @@ layout: base
 
 
 <dt id="buffer@@Memory@attribute"><code class=prefix><a href='m.html#Memory@@@@interface'>Memory</a>.</code><strong><code class=webidl>buffer</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#buffer%40%40Memory%40attribute' aria-label="Permalink for <a href='m.html#Memory@@@@interface'>Memory</a>.buffer">§</a></dt>
-
+<dt><code class=prefix><a href='m.html#Memory@@@@interface'>Memory</a>.</code><strong><code class=webidl>buffer</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#buffer%40%40Memory%40attribute' aria-label="Permalink for <a href='m.html#Memory@@@@interface'>Memory</a>.buffer">§</a></dt>
 <dd>Defined in 
+                    <strong title='buffer is defined in WebAssembly JavaScript Interface: Exception Handling'><a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F;#dom-memory-buffer>WebAssembly JavaScript Interface: Exception Handling</a></strong> , 
                     <strong title='buffer is defined in WebAssembly JavaScript Interface'><a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;spec&#x2F;js-api&#x2F;#dom-memory-buffer>WebAssembly JavaScript Interface</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F; title='buffer is referenced by Streams'>Streams</a>, 
@@ -5875,6 +5890,7 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;fetch.spec.whatwg.org&#x2F; title='BufferSource is referenced by Fetch'>Fetch</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-nfc&#x2F; title='BufferSource is referenced by Web NFC API'>Web NFC API</a>, 
+                    <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='BufferSource is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
                     <a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F; title='BufferSource is referenced by Web Bluetooth'>Web Bluetooth</a>, 
                     <a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F; title='BufferSource is referenced by WebSockets'>WebSockets</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;compression&#x2F; title='BufferSource is referenced by Compression Streams'>Compression Streams</a>, 

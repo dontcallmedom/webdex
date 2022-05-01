@@ -6364,7 +6364,14 @@ layout: base
 
 
 
-<dt id="MLAutoPad@@@@enum"><code class=prefix></code><strong><code class=webidl>MLAutoPad</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLAutoPad%40%40%40%40enum' aria-label="Permalink for MLAutoPad">§</a></dt>
+<dt id="MLArrayInput@@@@dictionary"><code class=prefix></code><strong><code class=webidl>MLArrayInput</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#MLArrayInput%40%40%40%40dictionary' aria-label="Permalink for MLArrayInput">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLArrayInput is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#dictdef-mlarrayinput>Web Neural Network API</a></strong> </dd>
+
+<dd>Related terms: <code>MLArrayInput.</code><a href='d.html#dimensions@@MLArrayInput@dict-member'><code>dimensions</code></a>, <code>MLArrayInput.</code><a href='r.html#resource@@MLArrayInput@dict-member'><code>resource</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLArrayInput.html' title='MLArrayInput entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLAutoPad@@@@enum"><code class=prefix></code><strong><code class=webidl>MLAutoPad</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLAutoPad%40%40%40%40enum' aria-label="Permalink for MLAutoPad">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLAutoPad is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#enumdef-mlautopad>Web Neural Network API</a></strong> </dd>
@@ -6399,19 +6406,26 @@ layout: base
 
 <dd>Related terms: <code>MLClampOptions.</code><a href='m.html#maxValue@@MLClampOptions@dict-member'><code>maxValue</code></a>, <code>MLClampOptions.</code><a href='m.html#minValue@@MLClampOptions@dict-member'><code>minValue</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLClampOptions.html' title='MLClampOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLContext@@@@interface"><code class=prefix></code><strong><code class=webidl>MLContext</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLContext%40%40%40%40interface' aria-label="Permalink for MLContext">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLClampOptions.html' title='MLClampOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLCommandEncoder@@@@interface"><code class=prefix></code><strong><code class=webidl>MLCommandEncoder</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLCommandEncoder%40%40%40%40interface' aria-label="Permalink for MLCommandEncoder">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLCommandEncoder is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#mlcommandencoder>Web Neural Network API</a></strong> </dd>
+
+<dd>Related terms: <code>MLCommandEncoder.</code><a href='c.html#[[context]]@@MLCommandEncoder@attribute'><code>[[context]]</code></a>, <code>MLCommandEncoder.</code><a href='i.html#[[implementation]]@@MLCommandEncoder@attribute'><code>[[implementation]]</code></a>, <code>MLCommandEncoder.</code><a href='d.html#dispatch(graph, inputs, outputs)@@MLCommandEncoder@method'><code>dispatch(graph, inputs, outputs)</code></a>, <code>MLCommandEncoder.</code><a href='f.html#finish(descriptor)@@MLCommandEncoder@method'><code>finish(descriptor)</code></a>, <code>MLCommandEncoder.</code><a href='i.html#initializeGraph(graph)@@MLCommandEncoder@method'><code>initializeGraph(graph)</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLCommandEncoder.html' title='MLCommandEncoder entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLContext@@@@interface"><code class=prefix></code><strong><code class=webidl>MLContext</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLContext%40%40%40%40interface' aria-label="Permalink for MLContext">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLContext is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#mlcontext>Web Neural Network API</a></strong> </dd>
 
-<dd>Related terms: <code>MLContext.</code><a href='c.html#[[contextType]]@@MLContext@attribute'><code>[[contextType]]</code></a>, <code>MLContext.</code><a href='d.html#[[devicePreference]]@@MLContext@attribute'><code>[[devicePreference]]</code></a>, <code>MLContext.</code><a href='p.html#[[powerPreference]]@@MLContext@attribute'><code>[[powerPreference]]</code></a></dd>
+<dd>Related terms: <code>MLContext.</code><a href='c.html#[[contextType]]@@MLContext@attribute'><code>[[contextType]]</code></a>, <code>MLContext.</code><a href='d.html#[[deviceType]]@@MLContext@attribute'><code>[[deviceType]]</code></a>, <code>MLContext.</code><a href='p.html#[[powerPreference]]@@MLContext@attribute'><code>[[powerPreference]]</code></a>, <code>MLContext.</code><a href='c.html#compute(graph, inputs, outputs)@@MLContext@method'><code>compute(graph, inputs, outputs)</code></a>, <code>MLContext.</code><a href='c.html#computeAsync(graph, inputs, outputs)@@MLContext@method'><code>computeAsync(graph, inputs, outputs)</code></a>, <code>MLContext.</code><a href='c.html#createCommandEncoder()@@MLContext@method'><code>createCommandEncoder()</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLContext.html' title='MLContext entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLContextOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>MLContextOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#MLContextOptions%40%40%40%40dictionary' aria-label="Permalink for MLContextOptions">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLContextOptions is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#dictdef-mlcontextoptions>Web Neural Network API</a></strong> </dd>
 
-<dd>Related terms: <code>MLContextOptions.</code><a href='d.html#devicePreference@@MLContextOptions@dict-member'><code>devicePreference</code></a>, <code>MLContextOptions.</code><a href='p.html#powerPreference@@MLContextOptions@dict-member'><code>powerPreference</code></a></dd>
+<dd>Related terms: <code>MLContextOptions.</code><a href='d.html#deviceType@@MLContextOptions@dict-member'><code>deviceType</code></a>, <code>MLContextOptions.</code><a href='p.html#powerPreference@@MLContextOptions@dict-member'><code>powerPreference</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLContextOptions.html' title='MLContextOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLConv2dFilterOperandLayout@@@@enum"><code class=prefix></code><strong><code class=webidl>MLConv2dFilterOperandLayout</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLConv2dFilterOperandLayout%40%40%40%40enum' aria-label="Permalink for MLConv2dFilterOperandLayout">§</a></dt>
 
@@ -6441,14 +6455,14 @@ layout: base
 
 <dd>Related terms: <code>MLConvTranspose2dOptions.</code><a href='a.html#activation@@MLConvTranspose2dOptions@dict-member'><code>activation</code></a>, <code>MLConvTranspose2dOptions.</code><a href='a.html#autoPad@@MLConvTranspose2dOptions@dict-member'><code>autoPad</code></a>, <code>MLConvTranspose2dOptions.</code><a href='b.html#bias@@MLConvTranspose2dOptions@dict-member'><code>bias</code></a>, <code>MLConvTranspose2dOptions.</code><a href='d.html#dilations@@MLConvTranspose2dOptions@dict-member'><code>dilations</code></a>, <code>MLConvTranspose2dOptions.</code><a href='f.html#filterLayout@@MLConvTranspose2dOptions@dict-member'><code>filterLayout</code></a>, <code>MLConvTranspose2dOptions.</code><a href='g.html#groups@@MLConvTranspose2dOptions@dict-member'><code>groups</code></a>, <code>MLConvTranspose2dOptions.</code><a href='i.html#inputLayout@@MLConvTranspose2dOptions@dict-member'><code>inputLayout</code></a>, <code>MLConvTranspose2dOptions.</code><a href='o.html#outputPadding@@MLConvTranspose2dOptions@dict-member'><code>outputPadding</code></a>, <code>MLConvTranspose2dOptions.</code><a href='o.html#outputSizes@@MLConvTranspose2dOptions@dict-member'><code>outputSizes</code></a>, <code>MLConvTranspose2dOptions.</code><a href='p.html#padding@@MLConvTranspose2dOptions@dict-member'><code>padding</code></a>, <code>MLConvTranspose2dOptions.</code><a href='s.html#strides@@MLConvTranspose2dOptions@dict-member'><code>strides</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLConvTranspose2dOptions.html' title='MLConvTranspose2dOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLDevicePreference@@@@enum"><code class=prefix></code><strong><code class=webidl>MLDevicePreference</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLDevicePreference%40%40%40%40enum' aria-label="Permalink for MLDevicePreference">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLConvTranspose2dOptions.html' title='MLConvTranspose2dOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLDeviceType@@@@enum"><code class=prefix></code><strong><code class=webidl>MLDeviceType</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLDeviceType%40%40%40%40enum' aria-label="Permalink for MLDeviceType">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='MLDevicePreference is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#enumdef-mldevicepreference>Web Neural Network API</a></strong> </dd>
+                    <strong title='MLDeviceType is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#enumdef-mldevicetype>Web Neural Network API</a></strong> </dd>
 
-<dd>Related terms: <em>value</em> <a href='c.html#cpu@@MLDevicePreference@enum-value'><code>cpu</code></a>, <em>value</em> <a href='d.html#default@@MLDevicePreference@enum-value'><code>default</code></a>, <em>value</em> <a href='g.html#gpu@@MLDevicePreference@enum-value'><code>gpu</code></a></dd>
+<dd>Related terms: <em>value</em> <a href='c.html#cpu@@MLDeviceType@enum-value'><code>cpu</code></a>, <em>value</em> <a href='g.html#gpu@@MLDeviceType@enum-value'><code>gpu</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLDevicePreference.html' title='MLDevicePreference entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLEluOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>MLEluOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#MLEluOptions%40%40%40%40dictionary' aria-label="Permalink for MLEluOptions">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLDeviceType.html' title='MLDeviceType entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLEluOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>MLEluOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#MLEluOptions%40%40%40%40dictionary' aria-label="Permalink for MLEluOptions">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLEluOptions is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#dictdef-mleluoptions>Web Neural Network API</a></strong> </dd>
@@ -6462,12 +6476,26 @@ layout: base
 
 <dd>Related terms: <code>MLGemmOptions.</code><a href='a.html#alpha@@MLGemmOptions@dict-member'><code>alpha</code></a>, <code>MLGemmOptions.</code><a href='a.html#aTranspose@@MLGemmOptions@dict-member'><code>aTranspose</code></a>, <code>MLGemmOptions.</code><a href='b.html#beta@@MLGemmOptions@dict-member'><code>beta</code></a>, <code>MLGemmOptions.</code><a href='b.html#bTranspose@@MLGemmOptions@dict-member'><code>bTranspose</code></a>, <code>MLGemmOptions.</code><a href='c.html#c@@MLGemmOptions@dict-member'><code>c</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLGemmOptions.html' title='MLGemmOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLGraph@@@@interface"><code class=prefix></code><strong><code class=webidl>MLGraph</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLGraph%40%40%40%40interface' aria-label="Permalink for MLGraph">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLGemmOptions.html' title='MLGemmOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLGPUInput@@@@dictionary"><code class=prefix></code><strong><code class=webidl>MLGPUInput</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#MLGPUInput%40%40%40%40dictionary' aria-label="Permalink for MLGPUInput">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLGPUInput is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#dictdef-mlgpuinput>Web Neural Network API</a></strong> </dd>
+
+<dd>Related terms: <code>MLGPUInput.</code><a href='d.html#dimensions@@MLGPUInput@dict-member'><code>dimensions</code></a>, <code>MLGPUInput.</code><a href='r.html#resource@@MLGPUInput@dict-member'><code>resource</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLGPUInput.html' title='MLGPUInput entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLGPUResource@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLGPUResource</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLGPUResource%40%40%40%40typedef' aria-label="Permalink for MLGPUResource">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLGPUResource is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlgpuresource>Web Neural Network API</a></strong> </dd>
+
+
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLGPUResource.html' title='MLGPUResource entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLGraph@@@@interface"><code class=prefix></code><strong><code class=webidl>MLGraph</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLGraph%40%40%40%40interface' aria-label="Permalink for MLGraph">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLGraph is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#mlgraph>Web Neural Network API</a></strong> </dd>
 
-<dd>Related terms: <code>MLGraph.</code><a href='c.html#[[context]]@@MLGraph@attribute'><code>[[context]]</code></a>, <code>MLGraph.</code><a href='i.html#[[implementation]]@@MLGraph@attribute'><code>[[implementation]]</code></a>, <code>MLGraph.</code><a href='i.html#[[inputDescriptors]]@@MLGraph@attribute'><code>[[inputDescriptors]]</code></a>, <code>MLGraph.</code><a href='o.html#[[outputNames]]@@MLGraph@attribute'><code>[[outputNames]]</code></a>, <code>MLGraph.</code><a href='c.html#compute(inputs, outputs)@@MLGraph@method'><code>compute(inputs, outputs)</code></a></dd>
+<dd>Related terms: <code>MLGraph.</code><a href='c.html#[[context]]@@MLGraph@attribute'><code>[[context]]</code></a>, <code>MLGraph.</code><a href='i.html#[[implementation]]@@MLGraph@attribute'><code>[[implementation]]</code></a>, <code>MLGraph.</code><a href='i.html#[[inputDescriptors]]@@MLGraph@attribute'><code>[[inputDescriptors]]</code></a>, <code>MLGraph.</code><a href='o.html#[[outputNames]]@@MLGraph@attribute'><code>[[outputNames]]</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLGraph.html' title='MLGraph entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLGraphBuilder@@@@interface"><code class=prefix></code><strong><code class=webidl>MLGraphBuilder</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLGraphBuilder%40%40%40%40interface' aria-label="Permalink for MLGraphBuilder">§</a></dt>
 
@@ -6504,14 +6532,7 @@ layout: base
 
 <dd>Related terms: <code>MLHardSigmoidOptions.</code><a href='a.html#alpha@@MLHardSigmoidOptions@dict-member'><code>alpha</code></a>, <code>MLHardSigmoidOptions.</code><a href='b.html#beta@@MLHardSigmoidOptions@dict-member'><code>beta</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLHardSigmoidOptions.html' title='MLHardSigmoidOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLInput@@@@dictionary"><code class=prefix></code><strong><code class=webidl>MLInput</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#MLInput%40%40%40%40dictionary' aria-label="Permalink for MLInput">§</a></dt>
-
-<dd>Defined in 
-                    <strong title='MLInput is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#dictdef-mlinput>Web Neural Network API</a></strong> </dd>
-
-<dd>Related terms: <code>MLInput.</code><a href='d.html#dimensions@@MLInput@dict-member'><code>dimensions</code></a>, <code>MLInput.</code><a href='r.html#resource@@MLInput@dict-member'><code>resource</code></a></dd>
-
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLInput.html' title='MLInput entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLInputOperandLayout@@@@enum"><code class=prefix></code><strong><code class=webidl>MLInputOperandLayout</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLInputOperandLayout%40%40%40%40enum' aria-label="Permalink for MLInputOperandLayout">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLHardSigmoidOptions.html' title='MLHardSigmoidOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLInputOperandLayout@@@@enum"><code class=prefix></code><strong><code class=webidl>MLInputOperandLayout</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLInputOperandLayout%40%40%40%40enum' aria-label="Permalink for MLInputOperandLayout">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLInputOperandLayout is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#enumdef-mlinputoperandlayout>Web Neural Network API</a></strong> </dd>
@@ -6546,28 +6567,42 @@ layout: base
 
 <dd>Related terms: <code>MLLinearOptions.</code><a href='a.html#alpha@@MLLinearOptions@dict-member'><code>alpha</code></a>, <code>MLLinearOptions.</code><a href='b.html#beta@@MLLinearOptions@dict-member'><code>beta</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLLinearOptions.html' title='MLLinearOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedInputs@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedInputs</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedInputs%40%40%40%40typedef' aria-label="Permalink for MLNamedInputs">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLLinearOptions.html' title='MLLinearOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedArrayInputs@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedArrayInputs</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedArrayInputs%40%40%40%40typedef' aria-label="Permalink for MLNamedArrayInputs">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='MLNamedInputs is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedinputs>Web Neural Network API</a></strong> </dd>
+                    <strong title='MLNamedArrayInputs is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedarrayinputs>Web Neural Network API</a></strong> </dd>
 
 
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedInputs.html' title='MLNamedInputs entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedOperands@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedOperands</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedOperands%40%40%40%40typedef' aria-label="Permalink for MLNamedOperands">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedArrayInputs.html' title='MLNamedArrayInputs entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedArrayOutputs@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedArrayOutputs</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedArrayOutputs%40%40%40%40typedef' aria-label="Permalink for MLNamedArrayOutputs">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLNamedArrayOutputs is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedarrayoutputs>Web Neural Network API</a></strong> </dd>
+
+
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedArrayOutputs.html' title='MLNamedArrayOutputs entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedGPUInputs@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedGPUInputs</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedGPUInputs%40%40%40%40typedef' aria-label="Permalink for MLNamedGPUInputs">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLNamedGPUInputs is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedgpuinputs>Web Neural Network API</a></strong> </dd>
+
+
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedGPUInputs.html' title='MLNamedGPUInputs entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedGPUOutputs@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedGPUOutputs</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedGPUOutputs%40%40%40%40typedef' aria-label="Permalink for MLNamedGPUOutputs">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='MLNamedGPUOutputs is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedgpuoutputs>Web Neural Network API</a></strong> </dd>
+
+
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedGPUOutputs.html' title='MLNamedGPUOutputs entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedOperands@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedOperands</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedOperands%40%40%40%40typedef' aria-label="Permalink for MLNamedOperands">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLNamedOperands is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedoperands>Web Neural Network API</a></strong> </dd>
 
 
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedOperands.html' title='MLNamedOperands entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLNamedOutputs@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLNamedOutputs</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLNamedOutputs%40%40%40%40typedef' aria-label="Permalink for MLNamedOutputs">§</a></dt>
-
-<dd>Defined in 
-                    <strong title='MLNamedOutputs is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlnamedoutputs>Web Neural Network API</a></strong> </dd>
-
-
-
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedOutputs.html' title='MLNamedOutputs entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLOperand@@@@interface"><code class=prefix></code><strong><code class=webidl>MLOperand</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLOperand%40%40%40%40interface' aria-label="Permalink for MLOperand">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLNamedOperands.html' title='MLNamedOperands entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLOperand@@@@interface"><code class=prefix></code><strong><code class=webidl>MLOperand</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#MLOperand%40%40%40%40interface' aria-label="Permalink for MLOperand">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLOperand is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#mloperand>Web Neural Network API</a></strong> </dd>
@@ -6651,14 +6686,7 @@ layout: base
 
 <dd>Related terms: <code>MLResample2dOptions.</code><a href='a.html#axes@@MLResample2dOptions@dict-member'><code>axes</code></a>, <code>MLResample2dOptions.</code><a href='m.html#mode@@MLResample2dOptions@dict-member'><code>mode</code></a>, <code>MLResample2dOptions.</code><a href='s.html#scales@@MLResample2dOptions@dict-member'><code>scales</code></a>, <code>MLResample2dOptions.</code><a href='s.html#sizes@@MLResample2dOptions@dict-member'><code>sizes</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLResample2dOptions.html' title='MLResample2dOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLResource@@@@typedef"><code class=prefix></code><strong><code class=webidl>MLResource</code></strong> (<em>WebIDL type alias</em>) <a class='self-link' href='#MLResource%40%40%40%40typedef' aria-label="Permalink for MLResource">§</a></dt>
-
-<dd>Defined in 
-                    <strong title='MLResource is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#typedefdef-mlresource>Web Neural Network API</a></strong> </dd>
-
-
-
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLResource.html' title='MLResource entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLRoundingType@@@@enum"><code class=prefix></code><strong><code class=webidl>MLRoundingType</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLRoundingType%40%40%40%40enum' aria-label="Permalink for MLRoundingType">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/MLResample2dOptions.html' title='MLResample2dOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="MLRoundingType@@@@enum"><code class=prefix></code><strong><code class=webidl>MLRoundingType</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#MLRoundingType%40%40%40%40enum' aria-label="Permalink for MLRoundingType">§</a></dt>
 
 <dd>Defined in 
                     <strong title='MLRoundingType is defined in Web Neural Network API'><a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F;#enumdef-mlroundingtype>Web Neural Network API</a></strong> </dd>

@@ -582,7 +582,8 @@ layout: base
 
 <dd>Defined in 
                     <strong title='federated is defined in Credential Management 1'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-credential-management&#x2F;#dom-credentialrequestoptions-federated>Credential Management 1</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F; title='federated is referenced by Federated Credential Management API'>Federated Credential Management API</a></dd>
 
 
 <dt id="federated@@FederatedCredential@const"><code class=prefix><a href='f.html#FederatedCredential@@@@interface'>FederatedCredential</a>.</code><strong><code class=webidl>federated</code></strong> (<em>WebIDL constant</em>) <a class='self-link' href='#federated%40%40FederatedCredential%40const' aria-label="Permalink for <a href='f.html#FederatedCredential@@@@interface'>FederatedCredential</a>.federated">§</a></dt>
@@ -592,12 +593,20 @@ layout: base
 
 
 
-<dt id="FederatedCredential@@@@interface"><code class=prefix></code><strong><code class=webidl>FederatedCredential</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#FederatedCredential%40%40%40%40interface' aria-label="Permalink for FederatedCredential">§</a></dt>
+<dt id="FederatedAccountLoginRequest@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FederatedAccountLoginRequest</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FederatedAccountLoginRequest%40%40%40%40dictionary' aria-label="Permalink for FederatedAccountLoginRequest">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='FederatedAccountLoginRequest is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#dictdef-federatedaccountloginrequest>Federated Credential Management API</a></strong> </dd>
+
+<dd>Related terms: <code>FederatedAccountLoginRequest.</code><a href='n.html#nonce@@FederatedAccountLoginRequest@dict-member'><code>nonce</code></a>, <code>FederatedAccountLoginRequest.</code><a href='s.html#signal@@FederatedAccountLoginRequest@dict-member'><code>signal</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedAccountLoginRequest.html' title='FederatedAccountLoginRequest entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedCredential@@@@interface"><code class=prefix></code><strong><code class=webidl>FederatedCredential</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#FederatedCredential%40%40%40%40interface' aria-label="Permalink for FederatedCredential">§</a></dt>
 
 <dd>Defined in 
                     <strong title='FederatedCredential is defined in Credential Management 1'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-credential-management&#x2F;#federatedcredential>Credential Management 1</a></strong> </dd>
-
-<dd>Related terms: <code>FederatedCredential.</code><a href='p.html#protocol@@FederatedCredential@attribute'><code>protocol</code></a>, <code>FederatedCredential.</code><a href='p.html#provider@@FederatedCredential@attribute'><code>provider</code></a>, <code>FederatedCredential.</code><a href='f.html#federated@@FederatedCredential@const'><code>federated</code></a>, <code>new </code><a href='f.html#FederatedCredential(data)@@FederatedCredential@constructor'><code>FederatedCredential(data)</code></a>, <code>FederatedCredential.</code><a href='c.html#[[CollectFromCredentialStore]](origin, options, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[CollectFromCredentialStore]](origin, options, sameOriginWithAncestors)</code></a>, <code>FederatedCredential.</code><a href='c.html#[[Create]](origin, options, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[Create]](origin, options, sameOriginWithAncestors)</code></a>, <code>FederatedCredential.</code><a href='s.html#[[Store]](credential, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[Store]](credential, sameOriginWithAncestors)</code></a></dd>
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F; title='FederatedCredential is referenced by Federated Credential Management API'>Federated Credential Management API</a></dd>
+<dd>Related terms: <code>FederatedCredential.</code><a href='p.html#protocol@@FederatedCredential@attribute'><code>protocol</code></a>, <code>FederatedCredential.</code><a href='p.html#provider@@FederatedCredential@attribute'><code>provider</code></a>, <code>FederatedCredential.</code><a href='f.html#federated@@FederatedCredential@const'><code>federated</code></a>, <code>new </code><a href='f.html#FederatedCredential(data)@@FederatedCredential@constructor'><code>FederatedCredential(data)</code></a>, <code>FederatedCredential.</code><a href='c.html#[[CollectFromCredentialStore]](origin, options, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[CollectFromCredentialStore]](origin, options, sameOriginWithAncestors)</code></a>, <code>FederatedCredential.</code><a href='c.html#[[Create]](origin, options, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[Create]](origin, options, sameOriginWithAncestors)</code></a>, <code>FederatedCredential.</code><a href='d.html#[[DiscoverFromExternalSource]](origin, options, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[DiscoverFromExternalSource]](origin, options, sameOriginWithAncestors)</code></a>, <code>FederatedCredential.</code><a href='l.html#login(request)@@FederatedCredential@method'><code>login(request)</code></a>, <code>FederatedCredential.</code><a href='l.html#logout()@@FederatedCredential@method'><code>logout()</code></a>, <code>FederatedCredential.</code><a href='l.html#logoutRPs(logoutRequests)@@FederatedCredential@method'><code>logoutRPs(logoutRequests)</code></a>, <code>FederatedCredential.</code><a href='r.html#revoke(hint)@@FederatedCredential@method'><code>revoke(hint)</code></a>, <code>FederatedCredential.</code><a href='s.html#[[Store]](credential, sameOriginWithAncestors)@@FederatedCredential@method'><code>[[Store]](credential, sameOriginWithAncestors)</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedCredential.html' title='FederatedCredential entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedCredential(data)@@FederatedCredential@constructor"><code class=prefix>new </code><strong><code class=webidl>FederatedCredential(data)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#FederatedCredential(data)%40%40FederatedCredential%40constructor' aria-label="Permalink for new FederatedCredential(data)">§</a></dt>
 
@@ -613,14 +622,36 @@ layout: base
 
 <dd>Related terms: <code>FederatedCredentialInit.</code><a href='i.html#iconURL@@FederatedCredentialInit@dict-member'><code>iconURL</code></a>, <code>FederatedCredentialInit.</code><a href='n.html#name@@FederatedCredentialInit@dict-member'><code>name</code></a>, <code>FederatedCredentialInit.</code><a href='o.html#origin@@FederatedCredentialInit@dict-member'><code>origin</code></a>, <code>FederatedCredentialInit.</code><a href='p.html#protocol@@FederatedCredentialInit@dict-member'><code>protocol</code></a>, <code>FederatedCredentialInit.</code><a href='p.html#provider@@FederatedCredentialInit@dict-member'><code>provider</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedCredentialInit.html' title='FederatedCredentialInit entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedCredentialRequestOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FederatedCredentialRequestOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FederatedCredentialRequestOptions%40%40%40%40dictionary' aria-label="Permalink for FederatedCredentialRequestOptions">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedCredentialInit.html' title='FederatedCredentialInit entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedCredentialLogoutRpsRequest@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FederatedCredentialLogoutRpsRequest</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FederatedCredentialLogoutRpsRequest%40%40%40%40dictionary' aria-label="Permalink for FederatedCredentialLogoutRpsRequest">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='FederatedCredentialLogoutRpsRequest is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#dictdef-federatedcredentiallogoutrpsrequest>Federated Credential Management API</a></strong> </dd>
+
+<dd>Related terms: <code>FederatedCredentialLogoutRpsRequest.</code><a href='a.html#accountId@@FederatedCredentialLogoutRpsRequest@dict-member'><code>accountId</code></a>, <code>FederatedCredentialLogoutRpsRequest.</code><a href='u.html#url@@FederatedCredentialLogoutRpsRequest@dict-member'><code>url</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedCredentialLogoutRpsRequest.html' title='FederatedCredentialLogoutRpsRequest entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedCredentialRequestOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FederatedCredentialRequestOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FederatedCredentialRequestOptions%40%40%40%40dictionary' aria-label="Permalink for FederatedCredentialRequestOptions">§</a></dt>
 
 <dd>Defined in 
                     <strong title='FederatedCredentialRequestOptions is defined in Credential Management 1'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-credential-management&#x2F;#dictdef-federatedcredentialrequestoptions>Credential Management 1</a></strong> </dd>
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F; title='FederatedCredentialRequestOptions is referenced by Federated Credential Management API'>Federated Credential Management API</a></dd>
+<dd>Related terms: <code>FederatedCredentialRequestOptions.</code><a href='p.html#protocols@@FederatedCredentialRequestOptions@dict-member'><code>protocols</code></a>, <code>undefined</code><a href='p.html#providers@@FederatedCredentialRequestOptions@dict-member'><code>providers</code></a></dd>
 
-<dd>Related terms: <code>FederatedCredentialRequestOptions.</code><a href='p.html#protocols@@FederatedCredentialRequestOptions@dict-member'><code>protocols</code></a>, <code>FederatedCredentialRequestOptions.</code><a href='p.html#providers@@FederatedCredentialRequestOptions@dict-member'><code>providers</code></a></dd>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedCredentialRequestOptions.html' title='FederatedCredentialRequestOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedIdentityProvider@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FederatedIdentityProvider</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FederatedIdentityProvider%40%40%40%40dictionary' aria-label="Permalink for FederatedIdentityProvider">§</a></dt>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedCredentialRequestOptions.html' title='FederatedCredentialRequestOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="feDiffuseLighting@@filter-effects%%element"><code class=prefix></code><strong><code class=markup>feDiffuseLighting</code></strong> (<em>markup element</em>) <a class='self-link' href='#feDiffuseLighting%40%40filter-effects%25%25element' aria-label="Permalink for feDiffuseLighting">§</a></dt>
+<dd>Defined in 
+                    <strong title='FederatedIdentityProvider is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#dictdef-federatedidentityprovider>Federated Credential Management API</a></strong> </dd>
+
+<dd>Related terms: <code>FederatedIdentityProvider.</code><a href='c.html#clientId@@FederatedIdentityProvider@dict-member'><code>clientId</code></a>, <code>FederatedIdentityProvider.</code><a href='h.html#hint@@FederatedIdentityProvider@dict-member'><code>hint</code></a>, <code>FederatedIdentityProvider.</code><a href='u.html#url@@FederatedIdentityProvider@dict-member'><code>url</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedIdentityProvider.html' title='FederatedIdentityProvider entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FederatedTokens@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FederatedTokens</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FederatedTokens%40%40%40%40dictionary' aria-label="Permalink for FederatedTokens">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='FederatedTokens is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#dictdef-federatedtokens>Federated Credential Management API</a></strong> </dd>
+
+<dd>Related terms: <code>FederatedTokens.</code><a href='i.html#idToken@@FederatedTokens@dict-member'><code>idToken</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FederatedTokens.html' title='FederatedTokens entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="feDiffuseLighting@@filter-effects%%element"><code class=prefix></code><strong><code class=markup>feDiffuseLighting</code></strong> (<em>markup element</em>) <a class='self-link' href='#feDiffuseLighting%40%40filter-effects%25%25element' aria-label="Permalink for feDiffuseLighting">§</a></dt>
 
 <dd>Defined in 
                     <strong title='feDiffuseLighting is defined in Filter Effects 1'><a href=https:&#x2F;&#x2F;drafts.fxtf.org&#x2F;filter-effects-1&#x2F;#elementdef-fediffuselighting>Filter Effects 1</a></strong> </dd>
@@ -4930,6 +4961,7 @@ layout: base
 <dd>Defined in 
                     <strong title='forbidden header name is defined in Fetch'><a href=https:&#x2F;&#x2F;fetch.spec.whatwg.org&#x2F;#forbidden-header-name>Fetch</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F; title='forbidden header name is referenced by Federated Credential Management API'>Federated Credential Management API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-fetch-metadata&#x2F; title='forbidden header name is referenced by Fetch Metadata'>Fetch Metadata</a>, 
                     <a href=https:&#x2F;&#x2F;xhr.spec.whatwg.org&#x2F; title='forbidden header name is referenced by XMLHttpRequest'>XMLHttpRequest</a></dd>
 
@@ -6956,6 +6988,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;fullscreen.spec.whatwg.org&#x2F; title='fully active is referenced by Fullscreen API'>Fullscreen API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;event-timing&#x2F; title='fully active is referenced by Event Timing API'>Event Timing API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;mediacapture-handle&#x2F;actions&#x2F; title='fully active is referenced by The Capture-Handle Actions Mechanism'>The Capture-Handle Actions Mechanism</a>, 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;mediacapture-viewport&#x2F; title='fully active is referenced by Viewport Capture'>Viewport Capture</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-locks&#x2F; title='fully active is referenced by Web Locks API'>Web Locks API</a>, 
                     <a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F; title='fully active is referenced by Web Bluetooth'>Web Bluetooth</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;close-watcher&#x2F; title='fully active is referenced by Close Watcher API'>Close Watcher API</a>, 

@@ -391,7 +391,7 @@ ${content}`);
   }
   // await fs.writeFile('terms.json', JSON.stringify([...termIndex.entries()], null, 2));
   for (const spec of results) {
-    const fullLinks = Object.keys(spec.links).reduce((acc, link) => {
+    const fullLinks = Object.keys(spec.links || {}).reduce((acc, link) => {
       acc.push(spec.links[link].map(frag => link + "#" + frag));
       return acc;
     }, []).flat();

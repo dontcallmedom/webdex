@@ -1827,7 +1827,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-text-4&#x2F; title='text-combine-upright is referenced by CSS Text 4'>CSS Text 4</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='text-combine-upright is referenced by CSS Typed OM 1'>CSS Typed OM 1</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webvtt&#x2F; title='text-combine-upright is referenced by WebVTT: The Web Video Text Tracks Format'>WebVTT: The Web Video Text Tracks Format</a></dd>
-<dd>Related terms: <em>CSS value</em> <a href='a.html#all@@text-combine-upright@value'><code>all</code></a>, <em>CSS value</em> <a href='d.html#digits &lt;integer&gt;?@@text-combine-upright@value'><code>digits &lt;integer&gt;?</code></a>, <em>CSS value</em> <a href='n.html#none@@text-combine-upright@value'><code>none</code></a></dd>
+<dd>Related terms: <em>CSS value</em> <a href='a.html#all@@text-combine-upright@value'><code>all</code></a>, <em>CSS value</em> <a href='d.html#digits &lt;integer [2,4]&gt;?@@text-combine-upright@value'><code>digits &lt;integer [2,4]&gt;?</code></a>, <em>CSS value</em> <a href='n.html#none@@text-combine-upright@value'><code>none</code></a></dd>
 
 <dt id="text-decoration@@@@property"><code class=prefix></code><strong><code class=css>text-decoration</code></strong> (<em>CSS property</em>) <a class='self-link' href='#text-decoration%40%40%40%40property' aria-label="Permalink for text-decoration">§</a></dt>
 
@@ -2075,7 +2075,7 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='text-size-adjust is referenced by Compatibility'>Compatibility</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='text-size-adjust is referenced by CSS Typed OM 1'>CSS Typed OM 1</a></dd>
-<dd>Related terms: <em>CSS value</em> <a href='a.html#auto@@text-size-adjust@value'><code>auto</code></a>, <em>CSS value</em> <a href='n.html#none@@text-size-adjust@value'><code>none</code></a>, <em>CSS value</em> <a href='p.html#&lt;percentage&gt;@@text-size-adjust@value'><code>&lt;percentage&gt;</code></a></dd>
+<dd>Related terms: <em>CSS value</em> <a href='a.html#auto@@text-size-adjust@value'><code>auto</code></a>, <em>CSS value</em> <a href='n.html#none@@text-size-adjust@value'><code>none</code></a>, <em>CSS value</em> <a href='p.html#&lt;percentage [0,∞]&gt;@@text-size-adjust@value'><code>&lt;percentage [0,∞]&gt;</code></a></dd>
 
 <dt id="text-space-collapse@@@@property"><code class=prefix></code><strong><code class=css>text-space-collapse</code></strong> (<em>CSS property</em>) <a class='self-link' href='#text-space-collapse%40%40%40%40property' aria-label="Permalink for text-space-collapse">§</a></dt>
 
@@ -2224,6 +2224,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;selectors&#x2F; title='textarea is referenced by Selectors 4'>Selectors 4</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;uievents&#x2F; title='textarea is referenced by UI Events'>UI Events</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;virtual-keyboard&#x2F; title='textarea is referenced by VirtualKeyboard API'>VirtualKeyboard API</a>, 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F; title='textarea is referenced by Web Authentication'>Web Authentication</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver&#x2F; title='textarea is referenced by WebDriver'>WebDriver</a></dd>
 <dd>Related terms: <em>markup attribute</em> <a href='a.html#autocomplete@@button@element-attr'><code>autocomplete</code></a>, <em>markup attribute</em> <a href='c.html#cols@@textarea@element-attr'><code>cols</code></a>, <em>markup attribute</em> <a href='d.html#dirname@@button@element-attr'><code>dirname</code></a>, <em>markup attribute</em> <a href='d.html#disabled@@button@element-attr'><code>disabled</code></a>, <em>markup attribute</em> <a href='f.html#form@@button@element-attr'><code>form</code></a>, <em>markup attribute</em> <a href='m.html#maxlength@@textarea@element-attr'><code>maxlength</code></a>, <em>markup attribute</em> <a href='m.html#minlength@@textarea@element-attr'><code>minlength</code></a>, <em>markup attribute</em> <a href='n.html#name@@button@element-attr'><code>name</code></a>, <em>markup attribute</em> <a href='p.html#placeholder@@textarea@element-attr'><code>placeholder</code></a>, <em>markup attribute</em> <a href='r.html#readonly@@textarea@element-attr'><code>readonly</code></a>, <em>markup attribute</em> <a href='r.html#required@@textarea@element-attr'><code>required</code></a>, <em>markup attribute</em> <a href='r.html#rows@@textarea@element-attr'><code>rows</code></a>, <em>markup attribute</em> <a href='w.html#wrap@@textarea@element-attr'><code>wrap</code></a></dd>
 
@@ -2338,7 +2339,14 @@ layout: base
 
 
 
-<dt id="TextEncoder@@@@interface"><code class=prefix></code><strong><code class=webidl>TextEncoder</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#TextEncoder%40%40%40%40interface' aria-label="Permalink for TextEncoder">§</a></dt>
+<dt id="TextDirection@@@@enum"><code class=prefix></code><strong><code class=webidl>TextDirection</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#TextDirection%40%40%40%40enum' aria-label="Permalink for TextDirection">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='TextDirection is defined in MiniApp Lifecycle'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;miniapp-lifecycle&#x2F;#dom-textdirection>MiniApp Lifecycle</a></strong> </dd>
+
+<dd>Related terms: <em>value</em> <a href='a.html#auto@@TextDirection@enum-value'><code>auto</code></a>, <em>value</em> <a href='l.html#ltr@@TextDirection@enum-value'><code>ltr</code></a>, <em>value</em> <a href='r.html#rtl@@TextDirection@enum-value'><code>rtl</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/TextDirection.html' title='TextDirection entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="TextEncoder@@@@interface"><code class=prefix></code><strong><code class=webidl>TextEncoder</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#TextEncoder%40%40%40%40interface' aria-label="Permalink for TextEncoder">§</a></dt>
 
 <dd>Defined in 
                     <strong title='TextEncoder is defined in Encoding'><a href=https:&#x2F;&#x2F;encoding.spec.whatwg.org&#x2F;#textencoder>Encoding</a></strong> </dd>
@@ -2516,7 +2524,7 @@ layout: base
                     <strong title='TextTrack is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;media.html#texttrack>HTML</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;media-source&#x2F; title='TextTrack is referenced by Media Source Extensions™'>Media Source Extensions™</a></dd>
-<dd>Related terms: <code>TextTrack.</code><a href='a.html#activeCues@@TextTrack@attribute'><code>activeCues</code></a>, <code>TextTrack.</code><a href='c.html#cues@@TextTrack@attribute'><code>cues</code></a>, <code>TextTrack.</code><a href='i.html#id@@TextTrack@attribute'><code>id</code></a>, <code>TextTrack.</code><a href='i.html#inBandMetadataTrackDispatchType@@TextTrack@attribute'><code>inBandMetadataTrackDispatchType</code></a>, <code>TextTrack.</code><a href='k.html#kind@@TextTrack@attribute'><code>kind</code></a>, <code>TextTrack.</code><a href='l.html#label@@TextTrack@attribute'><code>label</code></a>, <code>TextTrack.</code><a href='l.html#language@@TextTrack@attribute'><code>language</code></a>, <code>TextTrack.</code><a href='m.html#mode@@TextTrack@attribute'><code>mode</code></a>, <code>TextTrack.</code><a href='o.html#oncuechange@@TextTrack@attribute'><code>oncuechange</code></a>, <code>TextTrack.</code><a href='s.html#sourceBuffer@@TextTrack@attribute'><code>sourceBuffer</code></a>, <code>TextTrack.</code><a href='a.html#addCue(cue)@@TextTrack@method'><code>addCue(cue)</code></a>, <code>TextTrack.</code><a href='r.html#removeCue(cue)@@TextTrack@method'><code>removeCue(cue)</code></a></dd>
+<dd>Related terms: <code>TextTrack.</code><a href='a.html#activeCues@@TextTrack@attribute'><code>activeCues</code></a>, <code>TextTrack.</code><a href='c.html#cues@@TextTrack@attribute'><code>cues</code></a>, <code>TextTrack.</code><a href='i.html#id@@TextTrack@attribute'><code>id</code></a>, <code>TextTrack.</code><a href='i.html#inBandMetadataTrackDispatchType@@TextTrack@attribute'><code>inBandMetadataTrackDispatchType</code></a>, <code>TextTrack.</code><a href='k.html#kind@@TextTrack@attribute'><code>kind</code></a>, <code>TextTrack.</code><a href='l.html#label@@TextTrack@attribute'><code>label</code></a>, <code>TextTrack.</code><a href='l.html#language@@TextTrack@attribute'><code>language</code></a>, <code>TextTrack.</code><a href='m.html#mode@@TextTrack@attribute'><code>mode</code></a>, <code>TextTrack.</code><a href='o.html#oncuechange@@TextTrack@attribute'><code>oncuechange</code></a>, <code>TextTrack.</code><a href='s.html#sourceBuffer@@TextTrack@attribute'><code>sourceBuffer</code></a>, <em>event</em> <a href='c.html#cuechange@@HTMLTrackElement@event'><code>cuechange</code></a>, <code>TextTrack.</code><a href='a.html#addCue(cue)@@TextTrack@method'><code>addCue(cue)</code></a>, <code>TextTrack.</code><a href='r.html#removeCue(cue)@@TextTrack@method'><code>removeCue(cue)</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/TextTrack.html' title='TextTrack entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="TextTrackCue@@@@interface"><code class=prefix></code><strong><code class=webidl>TextTrackCue</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#TextTrackCue%40%40%40%40interface' aria-label="Permalink for TextTrackCue">§</a></dt>
 
@@ -2525,7 +2533,7 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;datacue&#x2F; title='TextTrackCue is referenced by DataCue API'>DataCue API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webvtt&#x2F; title='TextTrackCue is referenced by WebVTT: The Web Video Text Tracks Format'>WebVTT: The Web Video Text Tracks Format</a></dd>
-<dd>Related terms: <code>TextTrackCue.</code><a href='e.html#endTime@@TextTrackCue@attribute'><code>endTime</code></a>, <code>TextTrackCue.</code><a href='i.html#id@@TextTrackCue@attribute'><code>id</code></a>, <code>TextTrackCue.</code><a href='o.html#onenter@@TextTrackCue@attribute'><code>onenter</code></a>, <code>TextTrackCue.</code><a href='o.html#onexit@@TextTrackCue@attribute'><code>onexit</code></a>, <code>TextTrackCue.</code><a href='p.html#pauseOnExit@@TextTrackCue@attribute'><code>pauseOnExit</code></a>, <code>TextTrackCue.</code><a href='s.html#startTime@@TextTrackCue@attribute'><code>startTime</code></a>, <code>TextTrackCue.</code><a href='t.html#track@@TextTrackCue@attribute'><code>track</code></a></dd>
+<dd>Related terms: <code>TextTrackCue.</code><a href='e.html#endTime@@TextTrackCue@attribute'><code>endTime</code></a>, <code>TextTrackCue.</code><a href='i.html#id@@TextTrackCue@attribute'><code>id</code></a>, <code>TextTrackCue.</code><a href='o.html#onenter@@TextTrackCue@attribute'><code>onenter</code></a>, <code>TextTrackCue.</code><a href='o.html#onexit@@TextTrackCue@attribute'><code>onexit</code></a>, <code>TextTrackCue.</code><a href='p.html#pauseOnExit@@TextTrackCue@attribute'><code>pauseOnExit</code></a>, <code>TextTrackCue.</code><a href='s.html#startTime@@TextTrackCue@attribute'><code>startTime</code></a>, <code>TextTrackCue.</code><a href='t.html#track@@TextTrackCue@attribute'><code>track</code></a>, <em>event</em> <a href='e.html#enter@@TextTrackCue@event'><code>enter</code></a>, <em>event</em> <a href='e.html#exit@@TextTrackCue@event'><code>exit</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/TextTrackCue.html' title='TextTrackCue entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="TextTrackCueList@@@@interface"><code class=prefix></code><strong><code class=webidl>TextTrackCueList</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#TextTrackCueList%40%40%40%40interface' aria-label="Permalink for TextTrackCueList">§</a></dt>
 
@@ -2772,6 +2780,7 @@ layout: base
 <dd>Defined in 
                     <strong title='The body element is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;dom.html#the-body-element-2>HTML</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;dom.spec.whatwg.org&#x2F; title='The body element is referenced by DOM'>DOM</a>, 
                     <a href=https:&#x2F;&#x2F;quirks.spec.whatwg.org&#x2F; title='The body element is referenced by Quirks Mode'>Quirks Mode</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;navigation-api&#x2F; title='The body element is referenced by Navigation API'>Navigation API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;clipboard-apis&#x2F; title='The body element is referenced by Clipboard API and events'>Clipboard API and events</a>, 
@@ -3045,7 +3054,8 @@ layout: base
 
 <dd>Defined in 
                     <strong title='thisBigIntValue is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;numbers-and-dates.html#thisbigintvalue>ECMAScript</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='thisBigIntValue is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a></dd>
 
 
 <dt id="thisBooleanValue@@ecmascript%%abstract-op"><code class=prefix></code><strong><code class=concept>thisBooleanValue</code></strong> (<em>algorithm</em>) <a class='self-link' href='#thisBooleanValue%40%40ecmascript%25%25abstract-op' aria-label="Permalink for thisBooleanValue">§</a></dt>
@@ -3059,7 +3069,8 @@ layout: base
 
 <dd>Defined in 
                     <strong title='thisNumberValue is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;numbers-and-dates.html#thisnumbervalue>ECMAScript</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='thisNumberValue is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a></dd>
 
 
 <dt id="thisStringValue@@ecmascript%%abstract-op"><code class=prefix></code><strong><code class=concept>thisStringValue</code></strong> (<em>algorithm</em>) <a class='self-link' href='#thisStringValue%40%40ecmascript%25%25abstract-op' aria-label="Permalink for thisStringValue">§</a></dt>
@@ -3081,6 +3092,7 @@ layout: base
 <dd>Defined in 
                     <strong title='thisTimeValue is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;numbers-and-dates.html#thistimevalue>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='thisTimeValue is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='thisTimeValue is referenced by Temporal proposal'>Temporal proposal</a></dd>
 
 
@@ -3175,6 +3187,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;permissions&#x2F; title='throw is referenced by Permissions'>Permissions</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;pointerevents&#x2F; title='throw is referenced by Pointer Events'>Pointer Events</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;presentation-api&#x2F; title='throw is referenced by Presentation API'>Presentation API</a>, 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;push-api&#x2F; title='throw is referenced by Push API'>Push API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F; title='throw is referenced by Service Workers 1'>Service Workers 1</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;user-timing&#x2F; title='throw is referenced by User Timing'>User Timing</a>, 
                     <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;spec&#x2F;js-api&#x2F; title='throw is referenced by WebAssembly JavaScript Interface'>WebAssembly JavaScript Interface</a>, 
@@ -3324,13 +3337,6 @@ layout: base
 
 
 
-<dt id="&lt;time&gt;@@animation-duration@value"><code class=prefix></code><strong><code class=css>&lt;time&gt;</code></strong> (<em>CSS value for <a href='a.html#animation-duration@@@@property'><code>animation-duration</code></a> </em>) <a class='self-link' href='#%3Ctime%3E%40%40animation-duration%40value' aria-label="Permalink for &lt;time&gt;">§</a></dt>
-
-<dd>Defined in 
-                    <strong title='&lt;time&gt; is defined in CSS Animations 1'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-animations&#x2F;#valdef-animation-duration-time>CSS Animations 1</a></strong> </dd>
-
-
-
 <dt id="&lt;time&gt;@@animation-delay@value"><code class=prefix></code><strong><code class=css>&lt;time&gt;</code></strong> (<em>CSS value for <a href='a.html#animation-delay@@@@property'><code>animation-delay</code></a> </em>) <a class='self-link' href='#%3Ctime%3E%40%40animation-delay%40value' aria-label="Permalink for &lt;time&gt;">§</a></dt>
 
 <dd>Defined in 
@@ -3442,6 +3448,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='time is defined in Compute Pressure 1'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;compute-pressure&#x2F;#dom-pressurerecord-time>Compute Pressure 1</a></strong> </dd>
+
+
+
+<dt id="&lt;time [0s,∞]&gt;@@animation-duration@value"><code class=prefix></code><strong><code class=css>&lt;time [0s,∞]&gt;</code></strong> (<em>CSS value for <a href='a.html#animation-duration@@@@property'><code>animation-duration</code></a> </em>) <a class='self-link' href='#%3Ctime%20%5B0s%2C%E2%88%9E%5D%3E%40%40animation-duration%40value' aria-label="Permalink for &lt;time [0s,∞]&gt;">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='&lt;time [0s,∞]&gt; is defined in CSS Animations 1'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-animations&#x2F;#valdef-animation-duration-time-0s>CSS Animations 1</a></strong> </dd>
 
 
 
@@ -3703,12 +3716,26 @@ layout: base
 
 
 
+<dt id="timeout@@PublicKeyCredentialCreationOptionsJSON@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialCreationOptionsJSON@@@@dictionary'>PublicKeyCredentialCreationOptionsJSON</a>.</code><strong><code class=webidl>timeout</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timeout%40%40PublicKeyCredentialCreationOptionsJSON%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialCreationOptionsJSON@@@@dictionary'>PublicKeyCredentialCreationOptionsJSON</a>.timeout">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='timeout is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredentialcreationoptionsjson-timeout>Web Authentication</a></strong> </dd>
+
+
+
 <dt id="timeout@@PublicKeyCredentialRequestOptions@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialRequestOptions@@@@dictionary'>PublicKeyCredentialRequestOptions</a>.</code><strong><code class=webidl>timeout</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timeout%40%40PublicKeyCredentialRequestOptions%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialRequestOptions@@@@dictionary'>PublicKeyCredentialRequestOptions</a>.timeout">§</a></dt>
 
 <dd>Defined in 
                     <strong title='timeout is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredentialrequestoptions-timeout>Web Authentication</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;secure-payment-confirmation&#x2F; title='timeout is referenced by Secure Payment Confirmation'>Secure Payment Confirmation</a></dd>
+
+
+<dt id="timeout@@PublicKeyCredentialRequestOptionsJSON@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialRequestOptionsJSON@@@@dictionary'>PublicKeyCredentialRequestOptionsJSON</a>.</code><strong><code class=webidl>timeout</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timeout%40%40PublicKeyCredentialRequestOptionsJSON%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialRequestOptionsJSON@@@@dictionary'>PublicKeyCredentialRequestOptionsJSON</a>.timeout">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='timeout is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredentialrequestoptionsjson-timeout>Web Authentication</a></strong> </dd>
+
 
 
 <dt id="timeout@@SecurePaymentConfirmationRequest@dict-member"><code class=prefix><a href='s.html#SecurePaymentConfirmationRequest@@@@dictionary'>SecurePaymentConfirmationRequest</a>.</code><strong><code class=webidl>timeout</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timeout%40%40SecurePaymentConfirmationRequest%40dict-member' aria-label="Permalink for <a href='s.html#SecurePaymentConfirmationRequest@@@@dictionary'>SecurePaymentConfirmationRequest</a>.timeout">§</a></dt>
@@ -4470,6 +4497,13 @@ layout: base
 
 
 
+<dt id="toJSON()@@CSPViolationReportBody@method"><code class=prefix><a href='c.html#CSPViolationReportBody@@@@interface'>CSPViolationReportBody</a>.</code><strong><code class=webidl>toJSON()</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#toJSON()%40%40CSPViolationReportBody%40method' aria-label="Permalink for <a href='c.html#CSPViolationReportBody@@@@interface'>CSPViolationReportBody</a>.toJSON()">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='toJSON() is defined in Content Security Policy 3'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-csp&#x2F;#dom-cspviolationreportbody-tojson>Content Security Policy 3</a></strong> </dd>
+
+
+
 <dt id="toJSON()@@DeprecationReportBody@method"><code class=prefix><a href='d.html#DeprecationReportBody@@@@interface'>DeprecationReportBody</a>.</code><strong><code class=webidl>toJSON()</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#toJSON()%40%40DeprecationReportBody%40method' aria-label="Permalink for <a href='d.html#DeprecationReportBody@@@@interface'>DeprecationReportBody</a>.toJSON()">§</a></dt>
 
 <dd>Defined in 
@@ -4617,6 +4651,13 @@ layout: base
 
 
 
+<dt id="toJSON()@@PublicKeyCredential@method"><code class=prefix><a href='p.html#PublicKeyCredential@@@@interface'>PublicKeyCredential</a>.</code><strong><code class=webidl>toJSON()</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#toJSON()%40%40PublicKeyCredential%40method' aria-label="Permalink for <a href='p.html#PublicKeyCredential@@@@interface'>PublicKeyCredential</a>.toJSON()">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='toJSON() is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredential-tojson>Web Authentication</a></strong> </dd>
+
+
+
 <dt id="toJSON()@@PushSubscription@method"><code class=prefix><a href='p.html#PushSubscription@@@@interface'>PushSubscription</a>.</code><strong><code class=webidl>toJSON()</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#toJSON()%40%40PushSubscription%40method' aria-label="Permalink for <a href='p.html#PushSubscription@@@@interface'>PushSubscription</a>.toJSON()">§</a></dt>
 
 <dd>Defined in 
@@ -4705,6 +4746,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='toJSON(key) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;numbers-and-dates.html#sec-date.prototype.tojson>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="token@@IdentityCredential@attribute"><code class=prefix><a href='i.html#IdentityCredential@@@@interface'>IdentityCredential</a>.</code><strong><code class=webidl>token</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#token%40%40IdentityCredential%40attribute' aria-label="Permalink for <a href='i.html#IdentityCredential@@@@interface'>IdentityCredential</a>.token">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='token is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#dom-identitycredential-token>Federated Credential Management API</a></strong> </dd>
 
 
 
@@ -4908,6 +4956,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='ToNumber(argument) is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-atomics-wait-async&#x2F; title='ToNumber(argument) is referenced by Atomics.waitAsync'>Atomics.waitAsync</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='ToNumber(argument) is referenced by Change Array by copy'>Change Array by copy</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-duration-format&#x2F; title='ToNumber(argument) is referenced by Intl.DurationFormat'>Intl.DurationFormat</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-numberformat-v3&#x2F;out&#x2F;negotiation&#x2F;proposed.html title='ToNumber(argument) is referenced by Intl Parameter Resolution'>Intl Parameter Resolution</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-numberformat-v3&#x2F;out&#x2F;numberformat&#x2F;proposed.html title='ToNumber(argument) is referenced by Intl.NumberFormat'>Intl.NumberFormat</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-numberformat-v3&#x2F;out&#x2F;pluralrules&#x2F;proposed.html title='ToNumber(argument) is referenced by Intl.PluralRules'>Intl.PluralRules</a>, 
@@ -7262,12 +7311,26 @@ layout: base
 
 
 
+<dt id="transports@@AuthenticatorAttestationResponseJSON@dict-member"><code class=prefix><a href='a.html#AuthenticatorAttestationResponseJSON@@@@dictionary'>AuthenticatorAttestationResponseJSON</a>.</code><strong><code class=webidl>transports</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#transports%40%40AuthenticatorAttestationResponseJSON%40dict-member' aria-label="Permalink for <a href='a.html#AuthenticatorAttestationResponseJSON@@@@dictionary'>AuthenticatorAttestationResponseJSON</a>.transports">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='transports is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-authenticatorattestationresponsejson-transports>Web Authentication</a></strong> </dd>
+
+
+
 <dt id="transports@@PublicKeyCredentialDescriptor@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialDescriptor@@@@dictionary'>PublicKeyCredentialDescriptor</a>.</code><strong><code class=webidl>transports</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#transports%40%40PublicKeyCredentialDescriptor%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialDescriptor@@@@dictionary'>PublicKeyCredentialDescriptor</a>.transports">§</a></dt>
 
 <dd>Defined in 
                     <strong title='transports is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredentialdescriptor-transports>Web Authentication</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;secure-payment-confirmation&#x2F; title='transports is referenced by Secure Payment Confirmation'>Secure Payment Confirmation</a></dd>
+
+
+<dt id="transports@@PublicKeyCredentialDescriptorJSON@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialDescriptorJSON@@@@dictionary'>PublicKeyCredentialDescriptorJSON</a>.</code><strong><code class=webidl>transports</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#transports%40%40PublicKeyCredentialDescriptorJSON%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialDescriptorJSON@@@@dictionary'>PublicKeyCredentialDescriptorJSON</a>.transports">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='transports is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredentialdescriptorjson-transports>Web Authentication</a></strong> </dd>
+
 
 
 <dt id="transpose(input, options)@@MLGraphBuilder@method"><code class=prefix><a href='m.html#MLGraphBuilder@@@@interface'>MLGraphBuilder</a>.</code><strong><code class=webidl>transpose(input, options)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#transpose(input%2C%20options)%40%40MLGraphBuilder%40method' aria-label="Permalink for <a href='m.html#MLGraphBuilder@@@@interface'>MLGraphBuilder</a>.transpose(input, options)">§</a></dt>
@@ -7996,6 +8059,13 @@ layout: base
 
 
 
+<dt id="type@@AuthenticationResponseJSON@dict-member"><code class=prefix><a href='a.html#AuthenticationResponseJSON@@@@dictionary'>AuthenticationResponseJSON</a>.</code><strong><code class=webidl>type</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#type%40%40AuthenticationResponseJSON%40dict-member' aria-label="Permalink for <a href='a.html#AuthenticationResponseJSON@@@@dictionary'>AuthenticationResponseJSON</a>.type">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='type is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-authenticationresponsejson-type>Web Authentication</a></strong> </dd>
+
+
+
 <dt id="type@@BiquadFilterNode@attribute"><code class=prefix><a href='b.html#BiquadFilterNode@@@@interface'>BiquadFilterNode</a>.</code><strong><code class=webidl>type</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#type%40%40BiquadFilterNode%40attribute' aria-label="Permalink for <a href='b.html#BiquadFilterNode@@@@interface'>BiquadFilterNode</a>.type">§</a></dt>
 
 <dd>Defined in 
@@ -8453,6 +8523,13 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;secure-payment-confirmation&#x2F; title='type is referenced by Secure Payment Confirmation'>Secure Payment Confirmation</a></dd>
 
 
+<dt id="type@@PublicKeyCredentialDescriptorJSON@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialDescriptorJSON@@@@dictionary'>PublicKeyCredentialDescriptorJSON</a>.</code><strong><code class=webidl>type</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#type%40%40PublicKeyCredentialDescriptorJSON%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialDescriptorJSON@@@@dictionary'>PublicKeyCredentialDescriptorJSON</a>.type">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='type is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-publickeycredentialdescriptorjson-type>Web Authentication</a></strong> </dd>
+
+
+
 <dt id="type@@PublicKeyCredentialParameters@dict-member"><code class=prefix><a href='p.html#PublicKeyCredentialParameters@@@@dictionary'>PublicKeyCredentialParameters</a>.</code><strong><code class=webidl>type</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#type%40%40PublicKeyCredentialParameters%40dict-member' aria-label="Permalink for <a href='p.html#PublicKeyCredentialParameters@@@@dictionary'>PublicKeyCredentialParameters</a>.type">§</a></dt>
 
 <dd>Defined in 
@@ -8464,6 +8541,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='type is defined in Service Workers 1'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F;#dom-registrationoptions-type>Service Workers 1</a></strong> </dd>
+
+
+
+<dt id="type@@RegistrationResponseJSON@dict-member"><code class=prefix><a href='r.html#RegistrationResponseJSON@@@@dictionary'>RegistrationResponseJSON</a>.</code><strong><code class=webidl>type</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#type%40%40RegistrationResponseJSON%40dict-member' aria-label="Permalink for <a href='r.html#RegistrationResponseJSON@@@@dictionary'>RegistrationResponseJSON</a>.type">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='type is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-registrationresponsejson-type>Web Authentication</a></strong> </dd>
 
 
 

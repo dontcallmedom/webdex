@@ -3234,7 +3234,8 @@ layout: base
 
 <dd>Defined in 
                     <strong title='getter steps is defined in Web IDL'><a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F;#getter-steps>Web IDL</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;gpuweb.github.io&#x2F;gpuweb&#x2F; title='getter steps is referenced by WebGPU'>WebGPU</a></dd>
 
 
 <dt id="getter()@@SourceBufferList@method"><code class=prefix><a href='s.html#SourceBufferList@@@@interface'>SourceBufferList</a>.</code><strong><code class=webidl>getter()</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#getter()%40%40SourceBufferList%40method' aria-label="Permalink for <a href='s.html#SourceBufferList@@@@interface'>SourceBufferList</a>.getter()">§</a></dt>
@@ -4165,7 +4166,7 @@ layout: base
 <dd>Defined in 
                     <strong title='GPUBuffer is defined in WebGPU'><a href=https:&#x2F;&#x2F;gpuweb.github.io&#x2F;gpuweb&#x2F;#gpubuffer>WebGPU</a></strong> </dd>
 
-<dd>Related terms: <code>GPUBuffer.</code><a href='d.html#[[deviceTimelineState]]@@GPUBuffer@attribute'><code>[[deviceTimelineState]]</code></a>, <code>GPUBuffer.</code><a href='m.html#[[map_requests]]@@GPUBuffer@attribute'><code>[[map_requests]]</code></a>, <code>GPUBuffer.</code><a href='m.html#[[mapping]]@@GPUBuffer@attribute'><code>[[mapping]]</code></a>, <code>GPUBuffer.</code><a href='s.html#size@@GPUBuffer@attribute'><code>size</code></a>, <code>GPUBuffer.</code><a href='u.html#usage@@GPUBuffer@attribute'><code>usage</code></a>, <code>GPUBuffer.</code><a href='d.html#destroy()@@GPUBuffer@method'><code>destroy()</code></a>, <code>GPUBuffer.</code><a href='g.html#getMappedRange(offset, size)@@GPUBuffer@method'><code>getMappedRange(offset, size)</code></a>, <code>GPUBuffer.</code><a href='m.html#mapAsync(mode, offset, size)@@GPUBuffer@method'><code>mapAsync(mode, offset, size)</code></a>, <code>GPUBuffer.</code><a href='u.html#unmap()@@GPUBuffer@method'><code>unmap()</code></a></dd>
+<dd>Related terms: <code>GPUBuffer.</code><a href='d.html#[[deviceTimelineState]]@@GPUBuffer@attribute'><code>[[deviceTimelineState]]</code></a>, <code>GPUBuffer.</code><a href='m.html#[[map_requests]]@@GPUBuffer@attribute'><code>[[map_requests]]</code></a>, <code>GPUBuffer.</code><a href='m.html#[[mapping]]@@GPUBuffer@attribute'><code>[[mapping]]</code></a>, <code>GPUBuffer.</code><a href='m.html#mapState@@GPUBuffer@attribute'><code>mapState</code></a>, <code>GPUBuffer.</code><a href='s.html#size@@GPUBuffer@attribute'><code>size</code></a>, <code>GPUBuffer.</code><a href='u.html#usage@@GPUBuffer@attribute'><code>usage</code></a>, <code>GPUBuffer.</code><a href='d.html#destroy()@@GPUBuffer@method'><code>destroy()</code></a>, <code>GPUBuffer.</code><a href='g.html#getMappedRange(offset, size)@@GPUBuffer@method'><code>getMappedRange(offset, size)</code></a>, <code>GPUBuffer.</code><a href='m.html#mapAsync(mode, offset, size)@@GPUBuffer@method'><code>mapAsync(mode, offset, size)</code></a>, <code>GPUBuffer.</code><a href='u.html#unmap()@@GPUBuffer@method'><code>unmap()</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/GPUBuffer.html' title='GPUBuffer entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="GPUBufferBinding@@@@dictionary"><code class=prefix></code><strong><code class=webidl>GPUBufferBinding</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#GPUBufferBinding%40%40%40%40dictionary' aria-label="Permalink for GPUBufferBinding">§</a></dt>
 
@@ -4203,7 +4204,14 @@ layout: base
 
 
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/GPUBufferDynamicOffset.html' title='GPUBufferDynamicOffset entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="GPUBufferUsage@@webgpu%%namespace"><code class=prefix></code><strong><code>GPUBufferUsage</code></strong> (<em>namespace</em>) <a class='self-link' href='#GPUBufferUsage%40%40webgpu%25%25namespace' aria-label="Permalink for GPUBufferUsage">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/GPUBufferDynamicOffset.html' title='GPUBufferDynamicOffset entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="GPUBufferMapState@@@@enum"><code class=prefix></code><strong><code class=webidl>GPUBufferMapState</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#GPUBufferMapState%40%40%40%40enum' aria-label="Permalink for GPUBufferMapState">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='GPUBufferMapState is defined in WebGPU'><a href=https:&#x2F;&#x2F;gpuweb.github.io&#x2F;gpuweb&#x2F;#enumdef-gpubuffermapstate>WebGPU</a></strong> </dd>
+
+<dd>Related terms: <em>value</em> <a href='m.html#mapped@@GPUBufferMapState@enum-value'><code>mapped</code></a>, <em>value</em> <a href='p.html#pending@@GPUBufferMapState@enum-value'><code>pending</code></a>, <em>value</em> <a href='u.html#unmapped@@GPUBufferMapState@enum-value'><code>unmapped</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/GPUBufferMapState.html' title='GPUBufferMapState entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="GPUBufferUsage@@webgpu%%namespace"><code class=prefix></code><strong><code>GPUBufferUsage</code></strong> (<em>namespace</em>) <a class='self-link' href='#GPUBufferUsage%40%40webgpu%25%25namespace' aria-label="Permalink for GPUBufferUsage">§</a></dt>
 
 <dd>Defined in 
                     <strong title='GPUBufferUsage is defined in WebGPU'><a href=https:&#x2F;&#x2F;gpuweb.github.io&#x2F;gpuweb&#x2F;#namespacedef-gpubufferusage>WebGPU</a></strong> </dd>

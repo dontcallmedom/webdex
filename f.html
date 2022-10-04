@@ -1545,7 +1545,7 @@ layout: base
                     <strong title='FileSystemFileHandle is defined in File System'><a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F;#filesystemfilehandle>File System</a></strong> , 
                     <strong title='FileSystemFileHandle is defined in File System Access'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;file-system-access&#x2F;#filesystemfilehandle>File System Access</a></strong> </dd>
 
-<dd>Related terms: <code>undefined</code><a href='c.html#createWritable(options)@@FileSystemFileHandle@method'><code>createWritable(options)</code></a>, <code>undefined</code><a href='g.html#getFile()@@FileSystemFileHandle@method'><code>getFile()</code></a></dd>
+<dd>Related terms: <code>FileSystemFileHandle.</code><a href='c.html#createSyncAccessHandle()@@FileSystemFileHandle@method'><code>createSyncAccessHandle()</code></a>, <code>undefined</code><a href='c.html#createWritable(options)@@FileSystemFileHandle@method'><code>createWritable(options)</code></a>, <code>undefined</code><a href='g.html#getFile()@@FileSystemFileHandle@method'><code>getFile()</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemFileHandle.html' title='FileSystemFileHandle entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemFlags@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FileSystemFlags</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FileSystemFlags%40%40%40%40dictionary' aria-label="Permalink for FileSystemFlags">§</a></dt>
 
@@ -1608,7 +1608,14 @@ layout: base
 
 <dd>Related terms: <em>value</em> <a href='r.html#read@@FileSystemPermissionMode@enum-value'><code>read</code></a>, <em>value</em> <a href='r.html#readwrite@@FileSystemPermissionMode@enum-value'><code>readwrite</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemPermissionMode.html' title='FileSystemPermissionMode entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemRemoveOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FileSystemRemoveOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FileSystemRemoveOptions%40%40%40%40dictionary' aria-label="Permalink for FileSystemRemoveOptions">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemPermissionMode.html' title='FileSystemPermissionMode entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemReadWriteOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FileSystemReadWriteOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FileSystemReadWriteOptions%40%40%40%40dictionary' aria-label="Permalink for FileSystemReadWriteOptions">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='FileSystemReadWriteOptions is defined in File System'><a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F;#dictdef-filesystemreadwriteoptions>File System</a></strong> </dd>
+
+<dd>Related terms: <code>FileSystemReadWriteOptions.</code><a href='a.html#at@@FileSystemReadWriteOptions@dict-member'><code>at</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemReadWriteOptions.html' title='FileSystemReadWriteOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemRemoveOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>FileSystemRemoveOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#FileSystemRemoveOptions%40%40%40%40dictionary' aria-label="Permalink for FileSystemRemoveOptions">§</a></dt>
 
 <dd>Defined in 
                     <strong title='FileSystemRemoveOptions is defined in File System'><a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F;#dictdef-filesystemremoveoptions>File System</a></strong> , 
@@ -1616,7 +1623,14 @@ layout: base
 
 <dd>Related terms: <code>undefined</code><a href='r.html#recursive@@FileSystemRemoveOptions@dict-member'><code>recursive</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemRemoveOptions.html' title='FileSystemRemoveOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemWritableFileStream@@@@interface"><code class=prefix></code><strong><code class=webidl>FileSystemWritableFileStream</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#FileSystemWritableFileStream%40%40%40%40interface' aria-label="Permalink for FileSystemWritableFileStream">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemRemoveOptions.html' title='FileSystemRemoveOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemSyncAccessHandle@@@@interface"><code class=prefix></code><strong><code class=webidl>FileSystemSyncAccessHandle</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#FileSystemSyncAccessHandle%40%40%40%40interface' aria-label="Permalink for FileSystemSyncAccessHandle">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='FileSystemSyncAccessHandle is defined in File System'><a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F;#filesystemsyncaccesshandle>File System</a></strong> </dd>
+
+<dd>Related terms: <code>FileSystemSyncAccessHandle.</code><a href='c.html#close()@@FileSystemSyncAccessHandle@method'><code>close()</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='f.html#flush()@@FileSystemSyncAccessHandle@method'><code>flush()</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='g.html#getSize()@@FileSystemSyncAccessHandle@method'><code>getSize()</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='r.html#read(buffer, FileSystemReadWriteOptions: options)@@FileSystemSyncAccessHandle@method'><code>read(buffer, FileSystemReadWriteOptions: options)</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='r.html#read(buffer, options)@@FileSystemSyncAccessHandle@method'><code>read(buffer, options)</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='t.html#truncate(newSize)@@FileSystemSyncAccessHandle@method'><code>truncate(newSize)</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='w.html#write(buffer, FileSystemReadWriteOptions: options)@@FileSystemSyncAccessHandle@method'><code>write(buffer, FileSystemReadWriteOptions: options)</code></a>, <code>FileSystemSyncAccessHandle.</code><a href='w.html#write(buffer, options)@@FileSystemSyncAccessHandle@method'><code>write(buffer, options)</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/FileSystemSyncAccessHandle.html' title='FileSystemSyncAccessHandle entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="FileSystemWritableFileStream@@@@interface"><code class=prefix></code><strong><code class=webidl>FileSystemWritableFileStream</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#FileSystemWritableFileStream%40%40%40%40interface' aria-label="Permalink for FileSystemWritableFileStream">§</a></dt>
 
 <dd>Defined in 
                     <strong title='FileSystemWritableFileStream is defined in File System'><a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F;#filesystemwritablefilestream>File System</a></strong> , 
@@ -3896,6 +3910,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='flush() is defined in WebCodecs'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webcodecs&#x2F;#dom-audioencoder-flush>WebCodecs</a></strong> </dd>
+
+
+
+<dt id="flush()@@FileSystemSyncAccessHandle@method"><code class=prefix><a href='f.html#FileSystemSyncAccessHandle@@@@interface'>FileSystemSyncAccessHandle</a>.</code><strong><code class=webidl>flush()</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#flush()%40%40FileSystemSyncAccessHandle%40method' aria-label="Permalink for <a href='f.html#FileSystemSyncAccessHandle@@@@interface'>FileSystemSyncAccessHandle</a>.flush()">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='flush() is defined in File System'><a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F;#dom-filesystemsyncaccesshandle-flush>File System</a></strong> </dd>
 
 
 

@@ -1228,6 +1228,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;url.spec.whatwg.org&#x2F; title='empty is referenced by URL'>URL</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;contact-api&#x2F;spec&#x2F; title='empty is referenced by Contact Picker API'>Contact Picker API</a>, 
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='empty is referenced by Web IDL'>Web IDL</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;attribution-reporting-api&#x2F; title='empty is referenced by Attribution Reporting'>Attribution Reporting</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;background-fetch&#x2F; title='empty is referenced by Background Fetch'>Background Fetch</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;compute-pressure&#x2F; title='empty is referenced by Compute Pressure 1'>Compute Pressure 1</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;file-system-access&#x2F; title='empty is referenced by File System Access'>File System Access</a>, 
@@ -2425,6 +2426,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F; title='EnforceRange is referenced by File System'>File System</a>, 
                     <a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F; title='EnforceRange is referenced by Streams'>Streams</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;badging&#x2F; title='EnforceRange is referenced by Badging API'>Badging API</a>, 
+                    <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='EnforceRange is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
                     <a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F; title='EnforceRange is referenced by Web Bluetooth'>Web Bluetooth</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;digital-goods&#x2F; title='EnforceRange is referenced by Digital Goods API'>Digital Goods API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;idle-detection&#x2F; title='EnforceRange is referenced by Idle Detection API'>Idle Detection API</a>, 
@@ -4957,21 +4959,27 @@ layout: base
 <dd>Defined in 
                     <strong title='Exception is defined in WebAssembly JavaScript Interface: Exception Handling'><a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F;#exception>WebAssembly JavaScript Interface: Exception Handling</a></strong> </dd>
 
-<dd>Related terms: <code>new </code><a href='e.html#Exception(exceptionTag, payload)@@Exception@constructor'><code>Exception(exceptionTag, payload)</code></a>, <code>Exception.</code><a href='g.html#getArg(exceptionTag, index)@@Exception@method'><code>getArg(exceptionTag, index)</code></a>, <code>Exception.</code><a href='i.html#is(exceptionTag)@@Exception@method'><code>is(exceptionTag)</code></a></dd>
+<dd>Related terms: <code>Exception.</code><a href='s.html#stack@@Exception@attribute'><code>stack</code></a>, <code>new </code><a href='e.html#Exception(exceptionTag, payload, options)@@Exception@constructor'><code>Exception(exceptionTag, payload, options)</code></a>, <code>Exception.</code><a href='g.html#getArg(exceptionTag, index)@@Exception@method'><code>getArg(exceptionTag, index)</code></a>, <code>Exception.</code><a href='i.html#is(exceptionTag)@@Exception@method'><code>is(exceptionTag)</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/Exception.html' title='Exception entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="Exception(exceptionTag, payload)@@Exception@constructor"><code class=prefix>new </code><strong><code class=webidl>Exception(exceptionTag, payload)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#Exception(exceptionTag%2C%20payload)%40%40Exception%40constructor' aria-label="Permalink for new Exception(exceptionTag, payload)">§</a></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/Exception.html' title='Exception entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="Exception(exceptionTag, payload, options)@@Exception@constructor"><code class=prefix>new </code><strong><code class=webidl>Exception(exceptionTag, payload, options)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#Exception(exceptionTag%2C%20payload%2C%20options)%40%40Exception%40constructor' aria-label="Permalink for new Exception(exceptionTag, payload, options)">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='Exception(exceptionTag, payload) is defined in WebAssembly JavaScript Interface: Exception Handling'><a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F;#dom-exception-exception>WebAssembly JavaScript Interface: Exception Handling</a></strong> </dd>
+                    <strong title='Exception(exceptionTag, payload, options) is defined in WebAssembly JavaScript Interface: Exception Handling'><a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F;#dom-exception-exception>WebAssembly JavaScript Interface: Exception Handling</a></strong> </dd>
 
 
 
-<dt id="exceptionsEnabled@@html%%dfn"><code class=prefix></code><strong>exceptionsEnabled</strong> (<em>concept</em>) <a class='self-link' href='#exceptionsEnabled%40%40html%25%25dfn' aria-label="Permalink for exceptionsEnabled">§</a></dt>
+<dt id="ExceptionOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>ExceptionOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#ExceptionOptions%40%40%40%40dictionary' aria-label="Permalink for ExceptionOptions">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='ExceptionOptions is defined in WebAssembly JavaScript Interface: Exception Handling'><a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F;#dictdef-exceptionoptions>WebAssembly JavaScript Interface: Exception Handling</a></strong> </dd>
+
+<dd>Related terms: <code>ExceptionOptions.</code><a href='t.html#traceStack@@ExceptionOptions@dict-member'><code>traceStack</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/ExceptionOptions.html' title='ExceptionOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="exceptionsEnabled@@html%%dfn"><code class=prefix></code><strong>exceptionsEnabled</strong> (<em>concept</em>) <a class='self-link' href='#exceptionsEnabled%40%40html%25%25dfn' aria-label="Permalink for exceptionsEnabled">§</a></dt>
 
 <dd>Defined in 
                     <strong title='exceptionsEnabled is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;browsing-the-web.html#exceptions-enabled>HTML</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;attribution-reporting-api&#x2F; title='exceptionsEnabled is referenced by Attribution Reporting'>Attribution Reporting</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;navigation-api&#x2F; title='exceptionsEnabled is referenced by Navigation API'>Navigation API</a></dd>
 
 
@@ -5184,6 +5192,7 @@ layout: base
                     <strong title='execution context is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-execution-contexts>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='execution context is referenced by HTML'>HTML</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-from-async&#x2F; title='execution context is referenced by 2022'>2022</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-json-modules&#x2F; title='execution context is referenced by JSON modules'>JSON modules</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-shadowrealm&#x2F; title='execution context is referenced by ShadowRealm API'>ShadowRealm API</a></dd>
 
@@ -5194,6 +5203,7 @@ layout: base
                     <strong title='execution context stack is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#execution-context-stack>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='execution context stack is referenced by HTML'>HTML</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-from-async&#x2F; title='execution context stack is referenced by 2022'>2022</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-import-assertions&#x2F; title='execution context stack is referenced by import assertions'>import assertions</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-json-modules&#x2F; title='execution context stack is referenced by JSON modules'>JSON modules</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-shadowrealm&#x2F; title='execution context stack is referenced by ShadowRealm API'>ShadowRealm API</a></dd>
@@ -5685,6 +5695,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-locks&#x2F; title='Exposed is referenced by Web Locks API'>Web Locks API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-nfc&#x2F; title='Exposed is referenced by Web NFC API'>Web NFC API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-ice&#x2F; title='Exposed is referenced by IceTransport Extensions for WebRTC'>IceTransport Extensions for WebRTC</a>, 
+                    <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='Exposed is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
                     <a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F; title='Exposed is referenced by Web Bluetooth'>Web Bluetooth</a>, 
                     <a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F; title='Exposed is referenced by WebSockets'>WebSockets</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;background-sync&#x2F;spec&#x2F; title='Exposed is referenced by Background Sync'>Background Sync</a>, 

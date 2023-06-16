@@ -1442,6 +1442,13 @@ layout: base
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prerendering.html title='scan() is referenced by Prerendering Revamped'>Prerendering Revamped</a></dd>
 
 
+<dt id="scf@@ecmascript%%abstract-op"><code class=prefix></code><strong><code class=concept>scf</code></strong> (<em>algorithm</em>) <a class='self-link' href='#scf%40%40ecmascript%25%25abstract-op' aria-label="Permalink for scf">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='scf is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;text-processing.html#eqn-scf>ECMAScript</a></strong> </dd>
+
+
+
 <dt id="Scheduler@@@@interface"><code class=prefix></code><strong><code class=webidl>Scheduler</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#Scheduler%40%40%40%40interface' aria-label="Permalink for Scheduler">§</a></dt>
 
 <dd>Defined in 
@@ -9023,12 +9030,13 @@ layout: base
 <dt id="SharedArrayBuffer@@@@interface"><code class=prefix></code><strong><code class=webidl>SharedArrayBuffer</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SharedArrayBuffer%40%40%40%40interface' aria-label="Permalink for SharedArrayBuffer">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='SharedArrayBuffer is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;structured-data.html#sec-sharedarraybuffer-objects>ECMAScript</a></strong> </dd>
+                    <strong title='SharedArrayBuffer is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;structured-data.html#sec-sharedarraybuffer-objects>ECMAScript</a></strong> , 
+                    <strong title='SharedArrayBuffer is defined in Web IDL'><a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F;#idl-SharedArrayBuffer>Web IDL</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='SharedArrayBuffer is referenced by HTML'>HTML</a>, 
                     <a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F; title='SharedArrayBuffer is referenced by Streams'>Streams</a>, 
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='SharedArrayBuffer is referenced by Web IDL'>Web IDL</a></dd>
-<dd>Related terms: <code>SharedArrayBuffer.</code><a href='b.html#byteLength@@SharedArrayBuffer@attribute'><code>byteLength</code></a>, <code>new </code><a href='s.html#SharedArrayBuffer(length)@@SharedArrayBuffer@constructor'><code>SharedArrayBuffer(length)</code></a>, <code>SharedArrayBuffer.</code><a href='s.html#slice(start, end)@@SharedArrayBuffer@method'><code>slice(start, end)</code></a></dd>
+<dd>Related terms: <em>concept</em> <a href='c.html#create@@SharedArrayBuffer@dfn'>create</a>, <em>concept</em> <a href='w.html#write@@ArrayBuffer@dfn'>write</a>, <code>SharedArrayBuffer.</code><a href='b.html#byteLength@@SharedArrayBuffer@attribute'><code>byteLength</code></a>, <code>new </code><a href='s.html#SharedArrayBuffer(length)@@SharedArrayBuffer@constructor'><code>SharedArrayBuffer(length)</code></a>, <code>SharedArrayBuffer.</code><a href='s.html#slice(start, end)@@SharedArrayBuffer@method'><code>slice(start, end)</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SharedArrayBuffer.html' title='SharedArrayBuffer entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="%SharedArrayBuffer%@@@@interface"><code class=prefix></code><strong><code class=webidl>%SharedArrayBuffer%</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#%25SharedArrayBuffer%25%40%40%40%40interface' aria-label="Permalink for %SharedArrayBuffer%">§</a></dt>
 
@@ -9036,7 +9044,8 @@ layout: base
                     <strong title='%SharedArrayBuffer% is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;structured-data.html#sec-sharedarraybuffer-constructor>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-async-explicit-resource-management&#x2F; title='%SharedArrayBuffer% is referenced by ECMAScript Async Explicit Resource Management'>ECMAScript Async Explicit Resource Management</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-explicit-resource-management&#x2F; title='%SharedArrayBuffer% is referenced by ECMAScript Explicit Resource Management'>ECMAScript Explicit Resource Management</a></dd>
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-explicit-resource-management&#x2F; title='%SharedArrayBuffer% is referenced by ECMAScript Explicit Resource Management'>ECMAScript Explicit Resource Management</a>, 
+                    <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='%SharedArrayBuffer% is referenced by Web IDL'>Web IDL</a></dd>
 
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/%SharedArrayBuffer%.html' title='%SharedArrayBuffer% entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SharedArrayBuffer(length)@@SharedArrayBuffer@constructor"><code class=prefix>new </code><strong><code class=webidl>SharedArrayBuffer(length)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#SharedArrayBuffer(length)%40%40SharedArrayBuffer%40constructor' aria-label="Permalink for new SharedArrayBuffer(length)">§</a></dt>
@@ -14973,7 +14982,7 @@ layout: base
 
 
 
-<dt id="startingOffset@@ArrayBuffer&#x2F;write@dfn"><code class=prefix></code><strong>startingOffset</strong> (<em>concept for <a href='w.html#write@@ArrayBuffer@dfn'>write</a>  of <a href='a.html#ArrayBuffer@@@@interface'><code>ArrayBuffer</code></a> interface </em>) <a class='self-link' href='#startingOffset%40%40ArrayBuffer%2Fwrite%40dfn' aria-label="Permalink for startingOffset">§</a></dt>
+<dt id="startingOffset@@ArrayBuffer&#x2F;write@dfn"><code class=prefix></code><strong>startingOffset</strong> (<em>concept for <a href='w.html#write@@ArrayBuffer@dfn'>write</a>  of <a href='a.html#ArrayBuffer@@@@interface'><code>ArrayBuffer</code></a> interface, <a href='w.html#write@@ArrayBuffer@dfn'>write</a>  of <a href='s.html#SharedArrayBuffer@@@@interface'><code>SharedArrayBuffer</code></a> interface </em>) <a class='self-link' href='#startingOffset%40%40ArrayBuffer%2Fwrite%40dfn' aria-label="Permalink for startingOffset">§</a></dt>
 
 <dd>Defined in 
                     <strong title='startingOffset is defined in Web IDL'><a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F;#arraybuffer-write-startingoffset>Web IDL</a></strong> </dd>
@@ -17457,6 +17466,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='StringPad is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;text-processing.html#sec-stringpad>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="StringPaddingBuiltinsImpl@@ecmascript%%abstract-op"><code class=prefix></code><strong><code class=concept>StringPaddingBuiltinsImpl</code></strong> (<em>algorithm</em>) <a class='self-link' href='#StringPaddingBuiltinsImpl%40%40ecmascript%25%25abstract-op' aria-label="Permalink for StringPaddingBuiltinsImpl">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='StringPaddingBuiltinsImpl is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;text-processing.html#sec-stringpaddingbuiltinsimpl>ECMAScript</a></strong> </dd>
 
 
 

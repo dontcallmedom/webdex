@@ -8,100 +8,176 @@ const aliasIndex = new Map();
 const linksIndex = new Map();
 const letters = new Map();
 
-const humanReadableTypes = new Map([
-  ["value", "CSS value"],
-  ["at-rule", "CSS @rule"],
-  ["descriptor", "CSS descriptor"],
-  ["selector", "CSS selector"],
-  ["type", "CSS type"],
-  ["property", "CSS property"],
-  ["function", "CSS function"],
-  ["dfn", "concept"],
-  ["const", "WebIDL constant"],
-  ["interface", "WebIDL interface"],
-  ["method", "WebIDL operation"],
-  ["attribute", "WebIDL attribute"],
-  ["dictionary", "WebIDL dictionary"],
-  ["enum", "WebIDL enumeration"],
-  ["enum-value", "value"],
-  ["abstract-op", "algorithm"],
-  ["http-header", "HTTP header"],
-  ['attr-value', 'value'],
-  ['element-attr', 'markup attribute'],
-  ['typedef', 'WebIDL type alias'],
-  ['dict-member', 'WebIDL dictionary member'],
-  ['callback', 'WebIDL callback'],
-  ["constructor", "WebIDL constructor"],
-  ["element", "markup element"],
-  ["element-state", "state of markup element"],
-  ['extended-attribute', 'WebIDL extended attribute'],
-  ['permission', 'permission name']
-]);
+const typeInfo = {
+  "grammar": {
+    human: "grammar",
+    area: "grammar"
+  },
+  "exception": {
+    human: "exception",
+    area: "webidl"
+  },
+  "value": {
+    human: "CSS value",
+    typeOfFor: ["descriptor", "property", "type", "function", "at-rule"],
+    area: "css",
+    caseInsensitive: true
+  },
+  "at-rule": {
+    human: "CSS @rule",
+    area: "css",
+    // if a term of a given type appears several times,
+    // they designate the same thing
+    exclusiveNamespace: true,
+    caseInsensitive: true
+  },
+  "descriptor": {
+    human: "CSS descriptor",
+    typeOfFor: ["at-rule"],
+    area: "css",
+    exclusiveNamespace: true,
+    caseInsensitive: true
+  },
+  "selector": {
+    human: "CSS selector",
+    area: "css",
+    exclusiveNamespace: true,
+    caseInsensitive: true
+  },
+  "type": {
+    human: "CSS type",
+    typeOfFor: ["descriptor", "property", "function"],
+    area: "css",
+    exclusiveNamespace: true,
+    caseInsensitive: true
+  },
+  "property": {
+    human: "CSS property",
+    area: "css",
+    exclusiveNamespace: true,
+    caseInsensitive: true
+  },
+  "function": {
+    human: "CSS function",
+    typeOfFor: ["descriptor", "property", "type", "function", "at-rule"],
+    area: "css",
+    caseInsensitive: true
+  },
+  "dfn": {
+    human: "concept",
+    area: "concept"
+  },
+  "event": {
+    human: "event",
+    typeOfFor: ["interface"],
+    area: "webidl"
+  },
+  "const": {
+    human: "WebIDL constant",
+    typeOfFor: ["interface", "namespace", "callback"],
+    area: "webidl"
+  },
+  "interface": {
+    human: "WebIDL interface",
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "namespace": {
+    human: "WebIDL namespace",
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "method": {
+    human: "WebIDL operation",
+    typeOfFor: ["interface", "namespace", "callback"],
+    area: "webidl"
+  },
+  "attribute": {
+    human: "WebIDL attribute",
+    typeOfFor: ["interface", "namespace"],
+    area: "webidl"
+  },
+  "dictionary": {
+    human: "WebIDL dictionary",
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "enum": {
+    human: "WebIDL enumeration",
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "enum-value": {
+    human: "value",
+    typeOfFor: ["enum"],
+    area: "webidl"
+  },
+  "abstract-op": {
+    human: "algorithm",
+    area: "concept"
+  },
+  "http-header": {
+    human: "HTTP header",
+    area: "http",
+    exclusiveNamespace: true,
+    caseInsensitive: true
+  },
+  'attr-value': {
+    human: 'value',
+    typeOfFor: ["element-attr"],
+    area: "markup"
+  },
+  'element-attr': {
+    human: 'markup attribute',
+    typeOfFor: ["element"],
+    area: "markup",
+    caseInsensitive: true
+  },
+  'typedef': {
+    human: 'WebIDL type alias',
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  'dict-member': {
+    human: 'WebIDL dictionary member',
+    typeOfFor: ["dictionary"],
+    area: "webidl"
+  },
+  'callback': {
+    human: 'WebIDL callback',
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "constructor": {
+    human: "WebIDL constructor",
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "element": {
+    human: "markup element",
+    area: "markup",
+    caseInsensitive: true
+  },
+  "element-state": {
+    human: "state of markup element",
+    area: "markup",
+    caseInsensitive: true
+  },
+  "extended-attribute":{
+    "human": "WebIDL extended attribute",
+    area: "webidl",
+    exclusiveNamespace: true
+  },
+  "permission": {
+    human: 'permission name',
+    area: "webidl",
+    exclusiveNamespace: true
+  }
+};
 
-const typeOfForGivenType = new Map([
-  ["attr-value", ["element-attr"]],
-  ["enum-value", ["enum"]],
-  ["element-attr", ["element"]],
-  ["dict-member", ["dictionary"]],
-  ["method", ["interface", "namespace", "callback"]],
-  ["attribute", ["interface", "namespace"]],
-  ["const", ["interface", "namespace", "callback"]],
-  ["event", ["interface"]],
-  ["descriptor", ["at-rule"]],
-  ["value", ["descriptor", "property", "type", "function", "at-rule"]],
-  ["function", ["descriptor", "property", "type", "function", "at-rule"]],
-  ["type", ["descriptor", "property", "function"]]
-]);
 
-const areaOfType = new Map([
-  ["value", "css"],
-  ["at-rule", "css"],
-  ["descriptor", "css"],
-  ["selector", "css"],
-  ["type", "css"],
-  ["property", "css"],
-  ["function", "css"],
-  ["dfn", "concept"],
-  ["const", "webidl"],
-  ["interface", "webidl"],
-  ["method", "webidl"],
-  ["attribute", "webidl"],
-  ["dictionary", "webidl"],
-  ["enum", "webidl"],
-  ["enum-value", "webidl"],
-  ["abstract-op", "concept"],
-  ["http-header", "http"],
-  ['attr-value', 'markup'],
-  ['element-attr', 'markup'],
-  ['typedef', 'webidl'],
-  ['dict-member', 'webidl'],
-  ['callback', 'webidl'],
-  ["constructor", "webidl"],
-  ["element", "markup"],
-  ["element-state", "markup"],
-  ["event", "webidl"],
-  ['extended-attribute', 'webidl'],
-  ['permission', 'webidl']
-]);
-
-
-// if a term of a given type appears several times,
-// they designate the same thing
-const exclusiveNamespace = [
-  "permission",
-  "http-header",
-  "selector",
-  "at-rule",
-  "css-descriptor",
-  "property",
-  "type",
-  "interface", "dictionary", "typedef", "enum", "callback",
-  "constructor",
-  "extended-attribute"
-];
-
-function cleanTerm(rawTerm) {
-  return rawTerm.toLowerCase()
+function cleanTerm(rawTerm, type) {
+  return (typeInfo[type]?.caseInsensitive ? rawTerm.toLowerCase() : rawTerm)
   // some terms come surrounded by quotes, but we deal with that
   // when displaying them based on their types
     .replace(/^"/, '').replace(/"$/, '')
@@ -116,14 +192,14 @@ function cleanTerm(rawTerm) {
 function sortByArea([relatedTerm1, relatedTermId1], [relatedTerm2, relatedTermId2]) {
   const {type: type1} = termIndex.get(relatedTerm1)[relatedTermId1];
   const {type: type2} = termIndex.get(relatedTerm2)[relatedTermId2];
-  return areaOfType.get(type1).localeCompare(areaOfType.get(type2)) || type1.localeCompare(type2) || relatedTerm1.localeCompare(relatedTerm2);
+  return typeInfo[type1].area.localeCompare(typeInfo[type2].area) || type1.localeCompare(type2) || relatedTerm1.localeCompare(relatedTerm2);
 }
 
 function getScopingTermId(type, _for, displayTerm, dfns) {
   function returnIfFound(candidates, matches) {
     if (matches.length === 1) {
       // if we've hit an alias, the scope may need to be updated
-      const scope = cleanTerm(candidates[matches[0]].dfns[0].linkingText[0]);
+      const scope = cleanTerm(candidates[matches[0]].dfns[0].linkingText[0], candidates[matches[0]].dfns[0].type);
       return [scope, matches[0]];
     }
     return false;
@@ -135,8 +211,8 @@ function getScopingTermId(type, _for, displayTerm, dfns) {
     if (_for.includes('/')) {
       [_forFor, _for] = _for.split('/');
     }
-    const typeOfFor = typeOfForGivenType.get(type);
-    const scope = cleanTerm(_for);
+    const typeOfFor = typeInfo[type]?.typeOfFor ? typeInfo[type][0] : undefined;
+    const scope = cleanTerm(_for, typeOfFor);
     let candidates = termIndex.get(scope) ?? (aliasIndex.get(scope) ?? {});
 
     let ret = returnIfFound(candidates, Object.keys(candidates));
@@ -190,7 +266,7 @@ function wrapWithCode(markup, bool, className) {
 function getLink(term, termId) {
   const targetTerm = termIndex.get(term) ? termIndex.get(term)[termId] : undefined;
   if (!targetTerm) return;
-  const page = (cleanTerm(targetTerm.dfns[0].linkingText[0]) || '""')[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0])[0] + '.html' : 'other.html';
+  const page = (cleanTerm(targetTerm.dfns[0].linkingText[0], targetTerm.dfns[0].type) || '""').toLowerCase()[0].match(/[a-z]/) ? cleanTerm(targetTerm.dfns[0].linkingText[0], targetTerm.dfns[0].type).toLowerCase()[0] + '.html' : 'other.html';
   return `${page}#${targetTerm.displayTerm}@@${termId.replace(/%/g, '%25')}`;
 }
 
@@ -208,7 +284,7 @@ function composeRelatedTermName(term, termId, scope) {
   const {prefixes, type, displayTerm} = termIndex.get(term)[termId];
   const htmlTerm = wrapWithLink(wrapWithCode(displayTerm, isCode(displayTerm, type)), getLink(term, termId));
   if (prefixes.length === 0) {
-    return html`<em>${humanReadableTypes.get(type) ?? type}</em> ${htmlTerm}`;
+    return html`<em>${typeInfo[type].human ?? type}</em> ${htmlTerm}`;
   }
   const prefix = prefixes.length === 1 ? prefixes[0] : prefixes.find(p => p === scope);
   return html`<code>${prefix}</code>${htmlTerm}`
@@ -221,7 +297,7 @@ function markupScope(scope, withType) {
   } else if (scope.term && scope.termId) {
     const {term, termId} = scope;
     const targetTerm = termIndex.get(term)[termId];
-    const type = humanReadableTypes.get(targetTerm.type)?.split(' ')?.slice(1)?.join(' ')
+    const type = typeInfo[targetTerm.type]?.human?.split(' ')?.slice(1)?.join(' ')
           ?? targetTerm.type;
     return html`${wrapWithLink(wrapWithCode(targetTerm.displayTerm,
                                      isCode(targetTerm.displayTerm, targetTerm.type)),
@@ -283,7 +359,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns, termId) {
   case 'dict-member':
   case 'attribute':
   case 'method':
-    const scopeForPrefix = Object.values(scopeItems).find(s => s.term === cleanTerm(prefix.slice(0, -1)));
+    const scopeForPrefix = Object.values(scopeItems).find(s => s.term === cleanTerm(prefix.slice(0, -1), type));
     if (scopeForPrefix) {
       displayPrefix = html`${wrapWithLink(html`${prefix.slice(0, -1)}`, getLink(scopeForPrefix.term, scopeForPrefix.termId))}.`;
     } else {
@@ -316,8 +392,13 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns, termId) {
   if ((type === "method" || type === "attribute") && displayTerm.match(/^\[\[/)) {
     amendedType = `internal ${type === "attribute" ? "slot" : "method"}`;
   }
-  const typeDesc = html` (<em>${humanReadableTypes.get(amendedType) ?? amendedType}${typeDescComp}</em>)`;
-  return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), areaOfType.get(type))}</strong>${suffix}${typeDesc} <a class='self-link' href='#${encodeURIComponent(displayTerm + '@@' + termId)}' aria-label="Permalink for ${displayPrefix}${displayTerm}${suffix}">§</a>`;
+  const typeDesc = html` (<em>${typeInfo[amendedType]?.human ?? amendedType}${typeDescComp}</em>)`;
+  try {
+    return html`<code class=prefix>${displayPrefix}</code><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), typeInfo[type].area)}</strong>${suffix}${typeDesc} <a class='self-link' href='#${encodeURIComponent(displayTerm + '@@' + termId)}' aria-label="Permalink for ${displayPrefix}${displayTerm}${suffix}">§</a>`;
+  } catch (e) {
+    console.error(type);
+    throw e;
+  }
 }
 
 async function generatePage(path, title, content, options = {}) {
@@ -341,13 +422,13 @@ ${content}`);
       if (dfn.access === "private") continue;
       if (dfn.type === "argument") continue;
       // only use the first linkingText
-      const term = cleanTerm(dfn.linkingText[0]);
+      const term = cleanTerm(dfn.linkingText[0], dfn.type);
       const displayTerm = dfn.linkingText[0].replace(/^"/, '').replace(/"$/, '');
       const termEntry = termIndex.get(term) ?? {};
       let termId;
       let prefixes = [];
       if (dfn.for.length === 0) {
-        if (exclusiveNamespace.includes(dfn.type)) {
+        if (typeInfo[dfn.type]?.exclusiveNamespace) {
           termId = `@@${dfn.type}`;
         } else {
           termId = `${spec.series.shortname}%%${dfn.type}`;
@@ -369,7 +450,7 @@ ${content}`);
       }
 
       // keep track of aliases (they get used in some cases in dfn-for)
-      for (const alias of dfn.linkingText.slice(1).map(cleanTerm)) {
+      for (const alias of dfn.linkingText.slice(1).map(cleanTerm, dfn.type)) {
         const aliasEntry = aliasIndex.get(alias) ?? {};
         aliasEntry[termId] = subtermEntry;
         if (!aliasIndex.has(alias)) {
@@ -406,7 +487,7 @@ ${content}`);
 
   for (const term of termIndex.keys()) {
     // Populate index by first character
-    const entry = term[0] && term[0].match(/[a-z]/i) ? term[0] : 'other';
+    const entry = term.toLowerCase()[0] && term.toLowerCase()[0].match(/[a-z]/i) ? term.toLowerCase()[0] : 'other';
     if (!letters.has(entry)) {
       letters.set(entry, []);
     }
@@ -428,7 +509,7 @@ ${content}`);
     const content = html`
 <p class=legend>Color key: <code class=webidl>WebIDL</code> <code class='css'>CSS</code> <code class='markup'>Markup</code> <code class='http'>HTTP</code></p>
 <dl>
-${letters.get(entry).sort().map(term => {
+${letters.get(entry).sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase())).map(term => {
   return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {
                   const {displayTerm, type, _for, dfns, prefixes, refs, related} = termIndex.get(term)[termId];

@@ -835,8 +835,8 @@ layout: base
 <dd>Defined in 
                     <strong title='target is defined in DOM'><a href=https:&#x2F;&#x2F;dom.spec.whatwg.org&#x2F;#event-target>DOM</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='target is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-animations-2&#x2F; title='target is referenced by CSS Animations 2'>CSS Animations 2</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='target is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;payment-request&#x2F; title='target is referenced by Payment Request API 1.1'>Payment Request API 1.1</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;uievents&#x2F; title='target is referenced by UI Events'>UI Events</a></dd>
 
@@ -1122,10 +1122,17 @@ layout: base
 
 
 
-<dt id="targetRanges@@InputEventInit@dict-member"><code class=prefix><a href='i.html#InputEventInit@@@@dictionary'>InputEventInit</a>.</code><strong><code class=webidl>targetRanges</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#targetRanges%40%40InputEventInit%40dict-member' aria-label="Permalink for <a href='i.html#InputEventInit@@@@dictionary'>InputEventInit</a>.targetRanges">§</a></dt>
+<dt id="targetRange@@InputEvent@method"><code class=prefix><a href='i.html#InputEvent@@@@interface'>InputEvent</a>.</code><strong><code class=webidl>targetRange</code></strong>() (<em>WebIDL operation</em>) <a class='self-link' href='#targetRange%40%40InputEvent%40method' aria-label="Permalink for <a href='i.html#InputEvent@@@@interface'>InputEvent</a>.targetRange()">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='targetRanges is defined in Input Events 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;input-events&#x2F;#dom-inputeventinit-targetranges>Input Events 2</a></strong> </dd>
+                    <strong title='targetRange is defined in Input Events 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;input-events&#x2F;#dom-inputevent-gettargetranges>Input Events 2</a></strong> </dd>
+
+
+
+<dt id="targetRange@@InputEventInit@dict-member"><code class=prefix><a href='i.html#InputEventInit@@@@dictionary'>InputEventInit</a>.</code><strong><code class=webidl>targetRange</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#targetRange%40%40InputEventInit%40dict-member' aria-label="Permalink for <a href='i.html#InputEventInit@@@@dictionary'>InputEventInit</a>.targetRange">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='targetRange is defined in Input Events 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;input-events&#x2F;#dom-inputeventinit-targetranges>Input Events 2</a></strong> </dd>
 
 
 
@@ -1234,6 +1241,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;is-input-pending&#x2F; title='task is referenced by Early detection of input events'>Early detection of input events</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;page-lifecycle&#x2F; title='task is referenced by Page Lifecycle'>Page Lifecycle</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;scheduling-apis&#x2F; title='task is referenced by Prioritized Task Scheduling'>Prioritized Task Scheduling</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;soft-navigations&#x2F; title='task is referenced by Soft Navigations'>Soft Navigations</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;turtledove&#x2F; title='task is referenced by Protected Audience'>Protected Audience</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;battery&#x2F; title='task is referenced by Battery Status API'>Battery Status API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-credential-management&#x2F; title='task is referenced by Credential Management 1'>Credential Management 1</a>, 
@@ -1531,7 +1539,8 @@ layout: base
 
 <dd>Defined in 
                     <strong title='Technical Report is defined in W3C Process Document'><a href=https:&#x2F;&#x2F;www.w3.org&#x2F;Consortium&#x2F;Process&#x2F;#technical-report>W3C Process Document</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;permissions-registry&#x2F; title='Technical Report is referenced by Permissions Registry'>Permissions Registry</a></dd>
 
 
 <dt id="tee@@ReadableStream@dfn"><code class=prefix></code><strong>tee</strong> (<em>concept for <a href='r.html#ReadableStream@@@@interface'><code>ReadableStream</code></a> </em>) <a class='self-link' href='#tee%40%40ReadableStream%40dfn' aria-label="Permalink for tee">§</a></dt>
@@ -3228,9 +3237,11 @@ layout: base
                     <a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F; title='the current Realm Record is referenced by Streams'>Streams</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-async-explicit-resource-management&#x2F; title='the current Realm Record is referenced by ECMAScript Async Explicit Resource Management'>ECMAScript Async Explicit Resource Management</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-explicit-resource-management&#x2F; title='the current Realm Record is referenced by ECMAScript Explicit Resource Management'>ECMAScript Explicit Resource Management</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-import-attributes&#x2F; title='the current Realm Record is referenced by Import Attributes'>Import Attributes</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-iterator-helpers&#x2F; title='the current Realm Record is referenced by Iterator Helpers'>Iterator Helpers</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-json-modules&#x2F; title='the current Realm Record is referenced by JSON modules'>JSON modules</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-shadowrealm&#x2F; title='the current Realm Record is referenced by ShadowRealm API'>ShadowRealm API</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-source-phase-imports&#x2F; title='the current Realm Record is referenced by Source Phase Imports'>Source Phase Imports</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver-bidi&#x2F; title='the current Realm Record is referenced by WebDriver BiDi'>WebDriver BiDi</a>, 
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='the current Realm Record is referenced by Web IDL'>Web IDL</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prerendering.html title='the current Realm Record is referenced by Prerendering Revamped'>Prerendering Revamped</a>, 
@@ -3371,6 +3382,13 @@ layout: base
 
 
 
+<dt id="thick@@UnderlineThickness@enum-value"><code class=prefix></code><strong><code class=webidl>"thick"</code></strong> (<em>value for <a href='u.html#UnderlineThickness@@@@enum'><code>UnderlineThickness</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#thick%40%40UnderlineThickness%40enum-value' aria-label="Permalink for thick">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='thick is defined in EditContext API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;edit-context&#x2F;#dom-underlinethickness-thick>EditContext API</a></strong> </dd>
+
+
+
 <dt id="thin@@&lt;line-width&gt;@value"><code class=prefix></code><strong><code class=css>thin</code></strong> (<em>CSS value for <a href='l.html#&lt;line-width&gt;@@@@type'><code>&lt;line-width&gt;</code></a>, <a href='b.html#border@@@@property'><code>border</code></a> property, <a href='b.html#border-bottom-width@@@@property'><code>border-bottom-width</code></a> property, <a href='b.html#border-left-width@@@@property'><code>border-left-width</code></a> property, <a href='b.html#border-right-width@@@@property'><code>border-right-width</code></a> property, <a href='b.html#border-top-width@@@@property'><code>border-top-width</code></a> property, <a href='b.html#border-width@@@@property'><code>border-width</code></a> property </em>) <a class='self-link' href='#thin%40%40%3Cline-width%3E%40value' aria-label="Permalink for thin">§</a></dt>
 
 <dd>Defined in 
@@ -3394,6 +3412,13 @@ layout: base
 
 
 
+<dt id="thin@@UnderlineThickness@enum-value"><code class=prefix></code><strong><code class=webidl>"thin"</code></strong> (<em>value for <a href='u.html#UnderlineThickness@@@@enum'><code>UnderlineThickness</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#thin%40%40UnderlineThickness%40enum-value' aria-label="Permalink for thin">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='thin is defined in EditContext API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;edit-context&#x2F;#dom-underlinethickness-thin>EditContext API</a></strong> </dd>
+
+
+
 <dt id="this@@webidl%%dfn"><code class=prefix></code><strong>this</strong> (<em>concept</em>) <a class='self-link' href='#this%40%40webidl%25%25dfn' aria-label="Permalink for this">§</a></dt>
 
 <dd>Defined in 
@@ -3401,6 +3426,7 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='this is referenced by Compatibility'>Compatibility</a>, 
                     <a href=https:&#x2F;&#x2F;dom.spec.whatwg.org&#x2F; title='this is referenced by DOM'>DOM</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-view-transitions-2&#x2F; title='this is referenced by CSS View Transitions 2'>CSS View Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;encoding.spec.whatwg.org&#x2F; title='this is referenced by Encoding'>Encoding</a>, 
                     <a href=https:&#x2F;&#x2F;fetch.spec.whatwg.org&#x2F; title='this is referenced by Fetch'>Fetch</a>, 
                     <a href=https:&#x2F;&#x2F;fs.spec.whatwg.org&#x2F; title='this is referenced by File System'>File System</a>, 
@@ -3675,6 +3701,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-nfc&#x2F; title='throw is referenced by Web NFC API'>Web NFC API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-ice&#x2F; title='throw is referenced by IceTransport Extensions for WebRTC'>IceTransport Extensions for WebRTC</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;attribution-reporting-api&#x2F; title='throw is referenced by Attribution Reporting'>Attribution Reporting</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F; title='throw is referenced by Fenced Frame'>Fenced Frame</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;file-system-access&#x2F; title='throw is referenced by File System Access'>File System Access</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;scheduling-apis&#x2F; title='throw is referenced by Prioritized Task Scheduling'>Prioritized Task Scheduling</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;storage-buckets&#x2F; title='throw is referenced by Storage Buckets API'>Storage Buckets API</a>, 
@@ -3754,7 +3781,9 @@ layout: base
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-from-async&#x2F; title='ThrowCompletion is referenced by 2022'>2022</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-async-explicit-resource-management&#x2F; title='ThrowCompletion is referenced by ECMAScript Async Explicit Resource Management'>ECMAScript Async Explicit Resource Management</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-explicit-resource-management&#x2F; title='ThrowCompletion is referenced by ECMAScript Explicit Resource Management'>ECMAScript Explicit Resource Management</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-import-attributes&#x2F; title='ThrowCompletion is referenced by Import Attributes'>Import Attributes</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-shadowrealm&#x2F; title='ThrowCompletion is referenced by ShadowRealm API'>ShadowRealm API</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-source-phase-imports&#x2F; title='ThrowCompletion is referenced by Source Phase Imports'>Source Phase Imports</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='ThrowCompletion is referenced by Temporal proposal'>Temporal proposal</a>, 
                     <a href=https:&#x2F;&#x2F;webaudio.github.io&#x2F;web-audio-api&#x2F; title='ThrowCompletion is referenced by Web Audio API'>Web Audio API</a></dd>
 
@@ -3879,12 +3908,12 @@ layout: base
                     <strong title='&lt;time&gt; is defined in CSS Values 3'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-values-3&#x2F;#time-value>CSS Values 3</a></strong> , 
                     <strong title='&lt;time&gt; is defined in CSS Values 4'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-values-4&#x2F;#time-value>CSS Values 4</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='&lt;time&gt; is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-values-5&#x2F; title='&lt;time&gt; is referenced by CSS Values 5'>CSS Values 5</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-animations-2&#x2F; title='&lt;time&gt; is referenced by CSS Animations 2'>CSS Animations 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-properties-values-api-1&#x2F; title='&lt;time&gt; is referenced by CSS Properties and Values API 1'>CSS Properties and Values API 1</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-speech-1&#x2F; title='&lt;time&gt; is referenced by CSS Speech 1'>CSS Speech 1</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-1&#x2F; title='&lt;time&gt; is referenced by CSS Transitions'>CSS Transitions</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='&lt;time&gt; is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='&lt;time&gt; is referenced by CSS Typed OM 1'>CSS Typed OM 1</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;cssom-1&#x2F; title='&lt;time&gt; is referenced by CSSOM'>CSSOM</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;web-animations-2&#x2F; title='&lt;time&gt; is referenced by Web Animations 2'>Web Animations 2</a></dd>
@@ -3984,7 +4013,6 @@ layout: base
                     <strong title='time value is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;numbers-and-dates.html#sec-time-values-and-time-range>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='time value is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-extend-timezonename&#x2F; title='time value is referenced by Extend TimeZoneName Option'>Extend TimeZoneName Option</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='time value is referenced by Temporal proposal'>Temporal proposal</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver-bidi&#x2F; title='time value is referenced by WebDriver BiDi'>WebDriver BiDi</a></dd>
 
@@ -4048,7 +4076,6 @@ layout: base
                     <strong title='TimeClip is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;numbers-and-dates.html#sec-timeclip>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='TimeClip is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-extend-timezonename&#x2F; title='TimeClip is referenced by Extend TimeZoneName Option'>Extend TimeZoneName Option</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='TimeClip is referenced by Temporal proposal'>Temporal proposal</a></dd>
 
 
@@ -4503,6 +4530,13 @@ layout: base
 
 
 
+<dt id="timestamp@@WebTransportConnectionStats@dict-member"><code class=prefix><a href='w.html#WebTransportConnectionStats@@@@dictionary'>WebTransportConnectionStats</a>.</code><strong><code class=webidl>timestamp</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timestamp%40%40WebTransportConnectionStats%40dict-member' aria-label="Permalink for <a href='w.html#WebTransportConnectionStats@@@@dictionary'>WebTransportConnectionStats</a>.timestamp">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='timestamp is defined in WebTransport'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webtransport&#x2F;#dom-webtransportconnectionstats-timestamp>WebTransport</a></strong> </dd>
+
+
+
 <dt id="timestamp@@WebTransportDatagramStats@dict-member"><code class=prefix><a href='w.html#WebTransportDatagramStats@@@@dictionary'>WebTransportDatagramStats</a>.</code><strong><code class=webidl>timestamp</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timestamp%40%40WebTransportDatagramStats%40dict-member' aria-label="Permalink for <a href='w.html#WebTransportDatagramStats@@@@dictionary'>WebTransportDatagramStats</a>.timestamp">§</a></dt>
 
 <dd>Defined in 
@@ -4521,13 +4555,6 @@ layout: base
 
 <dd>Defined in 
                     <strong title='timestamp is defined in WebTransport'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webtransport&#x2F;#dom-webtransportsendstreamstats-timestamp>WebTransport</a></strong> </dd>
-
-
-
-<dt id="timestamp@@WebTransportStats@dict-member"><code class=prefix><a href='w.html#WebTransportStats@@@@dictionary'>WebTransportStats</a>.</code><strong><code class=webidl>timestamp</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#timestamp%40%40WebTransportStats%40dict-member' aria-label="Permalink for <a href='w.html#WebTransportStats@@@@dictionary'>WebTransportStats</a>.timestamp">§</a></dt>
-
-<dd>Defined in 
-                    <strong title='timestamp is defined in WebTransport'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webtransport&#x2F;#dom-webtransportstats-timestamp>WebTransport</a></strong> </dd>
 
 
 
@@ -4849,7 +4876,6 @@ layout: base
 <dd>Defined in 
                     <strong title='ToBigInt is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;abstract-operations.html#sec-tobigint>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='ToBigInt is referenced by Change Array by copy'>Change Array by copy</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='ToBigInt is referenced by Temporal proposal'>Temporal proposal</a>, 
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='ToBigInt is referenced by Web IDL'>Web IDL</a></dd>
 
@@ -4859,7 +4885,6 @@ layout: base
 <dd>Defined in 
                     <strong title='ToBigInt64 is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;abstract-operations.html#sec-tobigint64>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-atomics-wait-async&#x2F; title='ToBigInt64 is referenced by Atomics.waitAsync'>Atomics.waitAsync</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-float16array&#x2F; title='ToBigInt64 is referenced by Float16Array'>Float16Array</a>, 
                     <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='ToBigInt64 is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
                     <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;spec&#x2F;js-api&#x2F; title='ToBigInt64 is referenced by WebAssembly JavaScript Interface'>WebAssembly JavaScript Interface</a></dd>
@@ -4888,7 +4913,6 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='ToBoolean is referenced by HTML'>HTML</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='ToBoolean is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-find-from-last&#x2F; title='ToBoolean is referenced by Proposal-array-find-from-last'>Proposal-array-find-from-last</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-iterator-helpers&#x2F; title='ToBoolean is referenced by Iterator Helpers'>Iterator Helpers</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-set-methods&#x2F; title='ToBoolean is referenced by Set methods'>Set methods</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='ToBoolean is referenced by Temporal proposal'>Temporal proposal</a>, 
@@ -5060,7 +5084,6 @@ layout: base
 <dd>Defined in 
                     <strong title='ToInt32 is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;abstract-operations.html#sec-toint32>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-atomics-wait-async&#x2F; title='ToInt32 is referenced by Atomics.waitAsync'>Atomics.waitAsync</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-float16array&#x2F; title='ToInt32 is referenced by Float16Array'>Float16Array</a>, 
                     <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='ToInt32 is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='ToInt32 is referenced by Web IDL'>Web IDL</a>, 
@@ -5611,8 +5634,6 @@ layout: base
                     <strong title='ToNumber is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;abstract-operations.html#sec-tonumber>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='ToNumber is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-atomics-wait-async&#x2F; title='ToNumber is referenced by Atomics.waitAsync'>Atomics.waitAsync</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='ToNumber is referenced by Change Array by copy'>Change Array by copy</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-float16array&#x2F; title='ToNumber is referenced by Float16Array'>Float16Array</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-duration-format&#x2F; title='ToNumber is referenced by Intl.DurationFormat'>Intl.DurationFormat</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-iterator-helpers&#x2F; title='ToNumber is referenced by Iterator Helpers'>Iterator Helpers</a>, 
@@ -5639,9 +5660,7 @@ layout: base
                     <strong title='ToObject is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;abstract-operations.html#sec-toobject>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='ToObject is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-find-from-last&#x2F; title='ToObject is referenced by Proposal-array-find-from-last'>Proposal-array-find-from-last</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-from-async&#x2F; title='ToObject is referenced by 2022'>2022</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='ToObject is referenced by Change Array by copy'>Change Array by copy</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-locale-info&#x2F; title='ToObject is referenced by Intl Locale Info'>Intl Locale Info</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='ToObject is referenced by Temporal proposal'>Temporal proposal</a>, 
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='ToObject is referenced by Web IDL'>Web IDL</a></dd>
@@ -5915,6 +5934,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;mediacapture-region&#x2F; title='top-level browsing context is referenced by Region Capture'>Region Capture</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;mediacapture-viewport&#x2F; title='top-level browsing context is referenced by Viewport Capture'>Viewport Capture</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;mediaqueries-5&#x2F; title='top-level browsing context is referenced by Media Queries 5'>Media Queries 5</a>, 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;mediasession&#x2F; title='top-level browsing context is referenced by Media Session'>Media Session</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-mixed-content&#x2F; title='top-level browsing context is referenced by Mixed Content'>Mixed Content</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;deviceorientation&#x2F; title='top-level browsing context is referenced by DeviceOrientation Event'>DeviceOrientation Event</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;payment-handler&#x2F; title='top-level browsing context is referenced by Payment Handler API'>Payment Handler API</a>, 
@@ -5973,7 +5993,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;privacycg.github.io&#x2F;storage-access&#x2F; title='top-level origin is referenced by The Storage Access API'>The Storage Access API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;digital-goods&#x2F; title='top-level origin is referenced by Digital Goods API'>Digital Goods API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;file-system-access&#x2F; title='top-level origin is referenced by File System Access'>File System Access</a>, 
-                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;first-party-sets&#x2F; title='top-level origin is referenced by User Agent Interaction with First-Party Sets'>User Agent Interaction with First-Party Sets</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;first-party-sets&#x2F; title='top-level origin is referenced by User Agent Interaction with Related Website Sets'>User Agent Interaction with Related Website Sets</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prefetch.html title='top-level origin is referenced by Prefetch'>Prefetch</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;performance-measure-memory&#x2F; title='top-level origin is referenced by Measure Memory API'>Measure Memory API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;trust-token-api&#x2F; title='top-level origin is referenced by Private State Token API'>Private State Token API</a>, 
@@ -6010,7 +6030,8 @@ layout: base
                     <a href=https:&#x2F;&#x2F;fullscreen.spec.whatwg.org&#x2F; title='top-level traversable is referenced by Fullscreen API'>Fullscreen API</a>, 
                     <a href=https:&#x2F;&#x2F;patcg-individual-drafts.github.io&#x2F;topics&#x2F; title='top-level traversable is referenced by Topics API'>Topics API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;document-picture-in-picture&#x2F; title='top-level traversable is referenced by Document Picture-in-Picture'>Document Picture-in-Picture</a>, 
-                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prerendering.html title='top-level traversable is referenced by Prerendering Revamped'>Prerendering Revamped</a></dd>
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prerendering.html title='top-level traversable is referenced by Prerendering Revamped'>Prerendering Revamped</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;shared-storage&#x2F; title='top-level traversable is referenced by Shared Storage API'>Shared Storage API</a></dd>
 
 
 <dt id="top-level traversable@@browsing context@dfn"><code class=prefix></code><strong>top-level traversable</strong> (<em>concept for <a href='b.html#browsing context@@html%25%25dfn'>browsing context</a> </em>) <a class='self-link' href='#top-level%20traversable%40%40browsing%20context%40dfn' aria-label="Permalink for top-level traversable">§</a></dt>
@@ -6276,17 +6297,15 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='ToString is referenced by HTML'>HTML</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='ToString is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-find-from-last&#x2F; title='ToString is referenced by Proposal-array-find-from-last'>Proposal-array-find-from-last</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-array-from-async&#x2F; title='ToString is referenced by 2022'>2022</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-async-explicit-resource-management&#x2F; title='ToString is referenced by ECMAScript Async Explicit Resource Management'>ECMAScript Async Explicit Resource Management</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='ToString is referenced by Change Array by copy'>Change Array by copy</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-explicit-resource-management&#x2F; title='ToString is referenced by ECMAScript Explicit Resource Management'>ECMAScript Explicit Resource Management</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-import-attributes&#x2F; title='ToString is referenced by Import Attributes'>Import Attributes</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-duration-format&#x2F; title='ToString is referenced by Intl.DurationFormat'>Intl.DurationFormat</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-enumeration&#x2F; title='ToString is referenced by Intl Enumeration API'>Intl Enumeration API</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-intl-locale-info&#x2F; title='ToString is referenced by Intl Locale Info'>Intl Locale Info</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-is-usv-string&#x2F; title='ToString is referenced by Well-Formed Unicode Strings'>Well-Formed Unicode Strings</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-json-parse-with-source&#x2F; title='ToString is referenced by JSON.parse source text access'>JSON.parse source text access</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-shadowrealm&#x2F; title='ToString is referenced by ShadowRealm API'>ShadowRealm API</a>, 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-source-phase-imports&#x2F; title='ToString is referenced by Source Phase Imports'>Source Phase Imports</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='ToString is referenced by Temporal proposal'>Temporal proposal</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver-bidi&#x2F; title='ToString is referenced by WebDriver BiDi'>WebDriver BiDi</a>, 
                     <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;exception-handling&#x2F;js-api&#x2F; title='ToString is referenced by WebAssembly JavaScript Interface: Exception Handling'>WebAssembly JavaScript Interface: Exception Handling</a>, 
@@ -6845,6 +6864,7 @@ layout: base
 <dd>Defined in 
                     <strong title='ToZeroPaddedDecimalString is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;text-processing.html#sec-tozeropaddeddecimalstring>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma402&#x2F; title='ToZeroPaddedDecimalString is referenced by ECMAScript Internationalization API'>ECMAScript Internationalization API</a>, 
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-temporal&#x2F; title='ToZeroPaddedDecimalString is referenced by Temporal proposal'>Temporal proposal</a></dd>
 
 
@@ -7210,8 +7230,7 @@ layout: base
 
 <dd>Defined in 
                     <strong title='trailing surrogate is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;ecmascript-data-types-and-values.html#trailing-surrogate>ECMAScript</a></strong> </dd>
-<dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-is-usv-string&#x2F; title='trailing surrogate is referenced by Well-Formed Unicode Strings'>Well-Formed Unicode Strings</a></dd>
+
 
 
 <dt id="transaction@@IDBObjectStore@attribute"><code class=prefix><a href='i.html#IDBObjectStore@@@@interface'>IDBObjectStore</a>.</code><strong><code class=webidl>transaction</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#transaction%40%40IDBObjectStore%40attribute' aria-label="Permalink for <a href='i.html#IDBObjectStore@@@@interface'>IDBObjectStore</a>.transaction">§</a></dt>
@@ -7926,6 +7945,13 @@ layout: base
 
 
 
+<dt id="transient@@AudioSessionType@enum-value"><code class=prefix></code><strong><code class=webidl>"transient"</code></strong> (<em>value for <a href='a.html#AudioSessionType@@@@enum'><code>AudioSessionType</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#transient%40%40AudioSessionType%40enum-value' aria-label="Permalink for transient">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='transient is defined in Audio Session'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;audio-session&#x2F;#dom-audiosessiontype-transient>Audio Session</a></strong> </dd>
+
+
+
 <dt id="Transient activation@@html%%dfn"><code class=prefix></code><strong>Transient activation</strong> (<em>concept</em>) <a class='self-link' href='#Transient%20activation%40%40html%25%25dfn' aria-label="Permalink for Transient activation">§</a></dt>
 
 <dd>Defined in 
@@ -7981,6 +8007,13 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;pointerlock&#x2F; title='transient activation-gated API is referenced by Pointer Lock 2.0'>Pointer Lock 2.0</a></dd>
 
 
+<dt id="transient-solo@@AudioSessionType@enum-value"><code class=prefix></code><strong><code class=webidl>"transient-solo"</code></strong> (<em>value for <a href='a.html#AudioSessionType@@@@enum'><code>AudioSessionType</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#transient-solo%40%40AudioSessionType%40enum-value' aria-label="Permalink for transient-solo">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='transient-solo is defined in Audio Session'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;audio-session&#x2F;#dom-audiosessiontype-transient-solo>Audio Session</a></strong> </dd>
+
+
+
 <dt id="transition@@@@property"><code class=prefix></code><strong><code class=css>transition</code></strong> (<em>CSS property</em>) <a class='self-link' href='#transition%40%40%40%40property' aria-label="Permalink for transition">§</a></dt>
 
 <dd>Defined in 
@@ -7988,10 +8021,10 @@ layout: base
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='transition is referenced by Compatibility'>Compatibility</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-position-4&#x2F; title='transition is referenced by CSS Positioned Layout 4'>CSS Positioned Layout 4</a>, 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2022&#x2F; title='transition is referenced by CSS Snapshot 2022'>CSS Snapshot 2022</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2023&#x2F; title='transition is referenced by CSS Snapshot 2023'>CSS Snapshot 2023</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-color-4&#x2F; title='transition is referenced by CSS Color 4'>CSS Color 4</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='transition is referenced by CSS Typed OM 1'>CSS Typed OM 1</a></dd>
 <dd>Related terms: <em>concept</em> <a href='c.html#cancel@@transition@dfn'>cancel</a>, <em>concept</em> <a href='c.html#combined duration@@transition@dfn'>combined duration</a>, <em>concept</em> <a href='c.html#complete@@transition@dfn'>complete</a>, <em>concept</em> <a href='e.html#end time@@transition@dfn'>end time</a>, <em>concept</em> <a href='e.html#end value@@transition@dfn'>end value</a>, <em>concept</em> <a href='r.html#reversing shortening factor@@transition@dfn'>reversing shortening factor</a>, <em>concept</em> <a href='r.html#reversing-adjusted start value@@transition@dfn'>reversing-adjusted start value</a>, <em>concept</em> <a href='s.html#start time@@transition@dfn'>start time</a>, <em>concept</em> <a href='s.html#start value@@transition@dfn'>start value</a></dd>
 
@@ -8041,9 +8074,9 @@ layout: base
                     <strong title='transition-delay is defined in CSS Transitions'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-1&#x2F;#propdef-transition-delay>CSS Transitions</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='transition-delay is referenced by Compatibility'>Compatibility</a>, 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-delay is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2022&#x2F; title='transition-delay is referenced by CSS Snapshot 2022'>CSS Snapshot 2022</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2023&#x2F; title='transition-delay is referenced by CSS Snapshot 2023'>CSS Snapshot 2023</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-delay is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='transition-delay is referenced by CSS Typed OM 1'>CSS Typed OM 1</a></dd>
 
 
@@ -8053,9 +8086,9 @@ layout: base
                     <strong title='transition-duration is defined in CSS Transitions'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-1&#x2F;#propdef-transition-duration>CSS Transitions</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='transition-duration is referenced by Compatibility'>Compatibility</a>, 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-duration is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2022&#x2F; title='transition-duration is referenced by CSS Snapshot 2022'>CSS Snapshot 2022</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2023&#x2F; title='transition-duration is referenced by CSS Snapshot 2023'>CSS Snapshot 2023</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-duration is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='transition-duration is referenced by CSS Typed OM 1'>CSS Typed OM 1</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webvtt&#x2F; title='transition-duration is referenced by WebVTT: The Web Video Text Tracks Format'>WebVTT: The Web Video Text Tracks Format</a></dd>
 
@@ -8066,9 +8099,9 @@ layout: base
                     <strong title='transition-property is defined in CSS Transitions'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-1&#x2F;#propdef-transition-property>CSS Transitions</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='transition-property is referenced by Compatibility'>Compatibility</a>, 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-property is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2022&#x2F; title='transition-property is referenced by CSS Snapshot 2022'>CSS Snapshot 2022</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2023&#x2F; title='transition-property is referenced by CSS Snapshot 2023'>CSS Snapshot 2023</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-property is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='transition-property is referenced by CSS Typed OM 1'>CSS Typed OM 1</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webvtt&#x2F; title='transition-property is referenced by WebVTT: The Web Video Text Tracks Format'>WebVTT: The Web Video Text Tracks Format</a></dd>
 <dd>Related terms: <em>CSS value</em> <a href='a.html#all@@transition-property@value'><code>all</code></a>, <em>CSS value</em> <a href='n.html#none@@transition-property@value'><code>none</code></a></dd>
@@ -8079,9 +8112,9 @@ layout: base
                     <strong title='transition-timing-function is defined in CSS Transitions'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-1&#x2F;#propdef-transition-timing-function>CSS Transitions</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;compat.spec.whatwg.org&#x2F; title='transition-timing-function is referenced by Compatibility'>Compatibility</a>, 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-timing-function is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2022&#x2F; title='transition-timing-function is referenced by CSS Snapshot 2022'>CSS Snapshot 2022</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2023&#x2F; title='transition-timing-function is referenced by CSS Snapshot 2023'>CSS Snapshot 2023</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='transition-timing-function is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.css-houdini.org&#x2F;css-typed-om-1&#x2F; title='transition-timing-function is referenced by CSS Typed OM 1'>CSS Typed OM 1</a></dd>
 
 
@@ -8500,13 +8533,13 @@ layout: base
                     <strong title='tree order is defined in DOM'><a href=https:&#x2F;&#x2F;dom.spec.whatwg.org&#x2F;#concept-tree-order>DOM</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-position-4&#x2F; title='tree order is referenced by CSS Positioned Layout 4'>CSS Positioned Layout 4</a>, 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='tree order is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;fullscreen.spec.whatwg.org&#x2F; title='tree order is referenced by Fullscreen API'>Fullscreen API</a>, 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='tree order is referenced by HTML'>HTML</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;sanitizer-api&#x2F; title='tree order is referenced by HTML Sanitizer API'>HTML Sanitizer API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-credential-management&#x2F; title='tree order is referenced by Credential Management 1'>Credential Management 1</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-animations-2&#x2F; title='tree order is referenced by CSS Animations 2'>CSS Animations 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-lists-3&#x2F; title='tree order is referenced by CSS Lists 3'>CSS Lists 3</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-transitions-2&#x2F; title='tree order is referenced by CSS Transitions 2'>CSS Transitions 2</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-values-4&#x2F; title='tree order is referenced by CSS Values 4'>CSS Values 4</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;pub-manifest&#x2F; title='tree order is referenced by Publication Manifest'>Publication Manifest</a>, 
                     <a href=https:&#x2F;&#x2F;svgwg.org&#x2F;svg2-draft&#x2F; title='tree order is referenced by SVG 2'>SVG 2</a></dd>
@@ -9188,6 +9221,13 @@ layout: base
                     <a href=https:&#x2F;&#x2F;svgwg.org&#x2F;svg2-draft&#x2F; title='type is referenced by SVG 2'>SVG 2</a></dd>
 
 
+<dt id="type@@destination enum event@dfn"><code class=prefix></code><strong>type</strong> (<em>concept for <a href='d.html#destination enum event@@fencedframetype@dfn'>destination enum event</a> </em>) <a class='self-link' href='#type%40%40destination%20enum%20event%40dfn' aria-label="Permalink for type">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='type is defined in Fenced Frame'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F;#destination-enum-event-type>Fenced Frame</a></strong> </dd>
+
+
+
 <dt id="type@@part@dfn"><code class=prefix></code><strong>type</strong> (<em>concept for <code>part</code> </em>) <a class='self-link' href='#type%40%40part%40dfn' aria-label="Permalink for type">§</a></dt>
 
 <dd>Defined in 
@@ -9249,6 +9289,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='type is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#abstract-opdef-credential-record-type>Web Authentication</a></strong> </dd>
+
+
+
+<dt id="type@@AudioSession@attribute"><code class=prefix><a href='a.html#AudioSession@@@@interface'>AudioSession</a>.</code><strong><code class=webidl>type</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#type%40%40AudioSession%40attribute' aria-label="Permalink for <a href='a.html#AudioSession@@@@interface'>AudioSession</a>.type">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='type is defined in Audio Session'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;audio-session&#x2F;#dom-audiosession-type>Audio Session</a></strong> </dd>
 
 
 
@@ -10071,8 +10118,7 @@ layout: base
 <dd>Defined in 
                     <strong title='TypedArrayCreate is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;indexed-collections.html#typedarray-create>ECMAScript</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='TypedArrayCreate is referenced by HTML'>HTML</a>, 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='TypedArrayCreate is referenced by Change Array by copy'>Change Array by copy</a></dd>
+                    <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='TypedArrayCreate is referenced by HTML'>HTML</a></dd>
 
 
 <dt id="TypedArrayCreateSameType@@ecmascript%%abstract-op"><code class=prefix></code><strong><code class=concept>TypedArrayCreateSameType</code></strong> (<em>algorithm</em>) <a class='self-link' href='#TypedArrayCreateSameType%40%40ecmascript%25%25abstract-op' aria-label="Permalink for TypedArrayCreateSameType">§</a></dt>
@@ -10100,8 +10146,7 @@ layout: base
 
 <dd>Defined in 
                     <strong title='TypedArraySpeciesCreate is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;indexed-collections.html#typedarray-species-create>ECMAScript</a></strong> </dd>
-<dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-change-array-by-copy&#x2F; title='TypedArraySpeciesCreate is referenced by Change Array by copy'>Change Array by copy</a></dd>
+
 
 
 <dt id="typedef@@webidl%%dfn"><code class=prefix></code><strong>typedef</strong> (<em>concept</em>) <a class='self-link' href='#typedef%40%40webidl%25%25dfn' aria-label="Permalink for typedef">§</a></dt>
@@ -10141,6 +10186,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;digital-goods&#x2F; title='TypeError is referenced by Digital Goods API'>Digital Goods API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;direct-sockets&#x2F; title='TypeError is referenced by Direct Sockets API'>Direct Sockets API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;entries-api&#x2F; title='TypeError is referenced by File and Directory Entries API'>File and Directory Entries API</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F; title='TypeError is referenced by Fenced Frame'>Fenced Frame</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;file-system-access&#x2F; title='TypeError is referenced by File System Access'>File System Access</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;idle-detection&#x2F; title='TypeError is referenced by Idle Detection API'>Idle Detection API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;prefer-current-tab&#x2F; title='TypeError is referenced by preferCurrentTab'>preferCurrentTab</a>, 
@@ -10152,6 +10198,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;trust-token-api&#x2F; title='TypeError is referenced by Private State Token API'>Private State Token API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;turtledove&#x2F; title='TypeError is referenced by Protected Audience'>Protected Audience</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;urlpattern&#x2F; title='TypeError is referenced by URLPattern API'>URLPattern API</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;web-preferences-api&#x2F; title='TypeError is referenced by Web Preferences API'>Web Preferences API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;webhid&#x2F; title='TypeError is referenced by WebHID API'>WebHID API</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;autoplay&#x2F; title='TypeError is referenced by Autoplay Policy Detection'>Autoplay Policy Detection</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;beacon&#x2F; title='TypeError is referenced by Beacon'>Beacon</a>, 

@@ -1264,7 +1264,7 @@ layout: base
 <dd>Defined in 
                     <strong title='IdentityProvider is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#identityprovider>Federated Credential Management API</a></strong> </dd>
 
-<dd>Related terms: <code>IdentityProvider.</code><a href='g.html#getUserInfo(config)@@IdentityProvider@method'><code>getUserInfo(config)</code></a></dd>
+<dd>Related terms: <code>IdentityProvider.</code><a href='c.html#close()@@IdentityProvider@method'><code>close()</code></a>, <code>IdentityProvider.</code><a href='g.html#getUserInfo(config)@@IdentityProvider@method'><code>getUserInfo(config)</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/IdentityProvider.html' title='IdentityProvider entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="IdentityProviderAccount@@@@dictionary"><code class=prefix></code><strong><code class=webidl>IdentityProviderAccount</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#IdentityProviderAccount%40%40%40%40dictionary' aria-label="Permalink for IdentityProviderAccount">§</a></dt>
 
@@ -1285,7 +1285,7 @@ layout: base
 <dd>Defined in 
                     <strong title='IdentityProviderAPIConfig is defined in Federated Credential Management API'><a href=https:&#x2F;&#x2F;fedidcg.github.io&#x2F;FedCM&#x2F;#dictdef-identityproviderapiconfig>Federated Credential Management API</a></strong> </dd>
 
-<dd>Related terms: <code>IdentityProviderAPIConfig.</code><a href='a.html#accounts_endpoint@@IdentityProviderAPIConfig@dict-member'><code>accounts_endpoint</code></a>, <code>IdentityProviderAPIConfig.</code><a href='b.html#branding@@IdentityProviderAPIConfig@dict-member'><code>branding</code></a>, <code>IdentityProviderAPIConfig.</code><a href='c.html#client_metadata_endpoint@@IdentityProviderAPIConfig@dict-member'><code>client_metadata_endpoint</code></a>, <code>IdentityProviderAPIConfig.</code><a href='i.html#id_assertion_endpoint@@IdentityProviderAPIConfig@dict-member'><code>id_assertion_endpoint</code></a></dd>
+<dd>Related terms: <code>IdentityProviderAPIConfig.</code><a href='a.html#accounts_endpoint@@IdentityProviderAPIConfig@dict-member'><code>accounts_endpoint</code></a>, <code>IdentityProviderAPIConfig.</code><a href='b.html#branding@@IdentityProviderAPIConfig@dict-member'><code>branding</code></a>, <code>IdentityProviderAPIConfig.</code><a href='c.html#client_metadata_endpoint@@IdentityProviderAPIConfig@dict-member'><code>client_metadata_endpoint</code></a>, <code>IdentityProviderAPIConfig.</code><a href='i.html#id_assertion_endpoint@@IdentityProviderAPIConfig@dict-member'><code>id_assertion_endpoint</code></a>, <code>IdentityProviderAPIConfig.</code><a href='l.html#login_url@@IdentityProviderAPIConfig@dict-member'><code>login_url</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/IdentityProviderAPIConfig.html' title='IdentityProviderAPIConfig entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="IdentityProviderBranding@@@@dictionary"><code class=prefix></code><strong><code class=webidl>IdentityProviderBranding</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#IdentityProviderBranding%40%40%40%40dictionary' aria-label="Permalink for IdentityProviderBranding">§</a></dt>
 
@@ -4874,6 +4874,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='initiator type is referenced by HTML'>HTML</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver-bidi&#x2F; title='initiator type is referenced by WebDriver BiDi'>WebDriver BiDi</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prefetch.html title='initiator type is referenced by Prefetch'>Prefetch</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;turtledove&#x2F; title='initiator type is referenced by Protected Audience'>Protected Audience</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;beacon&#x2F; title='initiator type is referenced by Beacon'>Beacon</a>, 
                     <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-values-4&#x2F; title='initiator type is referenced by CSS Values 4'>CSS Values 4</a>, 
                     <a href=https:&#x2F;&#x2F;xhr.spec.whatwg.org&#x2F; title='initiator type is referenced by XMLHttpRequest'>XMLHttpRequest</a></dd>
@@ -5694,7 +5695,9 @@ layout: base
 
 <dd>Defined in 
                     <strong title='inner box-shadow is defined in CSS Backgrounds 3'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-backgrounds-3&#x2F;#box-shadow-inner-box-shadow>CSS Backgrounds 3</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2022&#x2F; title='inner box-shadow is referenced by CSS Snapshot 2022'>CSS Snapshot 2022</a>, 
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-2023&#x2F; title='inner box-shadow is referenced by CSS Snapshot 2023'>CSS Snapshot 2023</a></dd>
 
 
 <dt id="inner display type@@css-display%%dfn"><code class=prefix></code><strong>inner display type</strong> (<em>concept</em>) <a class='self-link' href='#inner%20display%20type%40%40css-display%25%25dfn' aria-label="Permalink for inner display type">§</a></dt>
@@ -9073,13 +9076,6 @@ layout: base
 
 <dd>Defined in 
                     <strong title='IsCompatiblePropertyDescriptor is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;ordinary-and-exotic-objects-behaviours.html#sec-iscompatiblepropertydescriptor>ECMAScript</a></strong> </dd>
-
-
-
-<dt id="isComposing@@EditContext@attribute"><code class=prefix><a href='e.html#EditContext@@@@interface'>EditContext</a>.</code><strong><code class=webidl>isComposing</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#isComposing%40%40EditContext%40attribute' aria-label="Permalink for <a href='e.html#EditContext@@@@interface'>EditContext</a>.isComposing">§</a></dt>
-
-<dd>Defined in 
-                    <strong title='isComposing is defined in EditContext API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;edit-context&#x2F;#dom-editcontext-iscomposing>EditContext API</a></strong> </dd>
 
 
 

@@ -1082,10 +1082,10 @@ layout: base
 
 
 
-<dt id="read(view)@@ReadableStreamBYOBReader@method"><code class=prefix><a href='r.html#ReadableStreamBYOBReader@@@@interface'>ReadableStreamBYOBReader</a>.</code><strong><code class=webidl>read(view)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#read(view)%40%40ReadableStreamBYOBReader%40method' aria-label="Permalink for <a href='r.html#ReadableStreamBYOBReader@@@@interface'>ReadableStreamBYOBReader</a>.read(view)">§</a></dt>
+<dt id="read(view, options)@@ReadableStreamBYOBReader@method"><code class=prefix><a href='r.html#ReadableStreamBYOBReader@@@@interface'>ReadableStreamBYOBReader</a>.</code><strong><code class=webidl>read(view, options)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#read(view%2C%20options)%40%40ReadableStreamBYOBReader%40method' aria-label="Permalink for <a href='r.html#ReadableStreamBYOBReader@@@@interface'>ReadableStreamBYOBReader</a>.read(view, options)">§</a></dt>
 
 <dd>Defined in 
-                    <strong title='read(view) is defined in Streams'><a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F;#byob-reader-read>Streams</a></strong> </dd>
+                    <strong title='read(view, options) is defined in Streams'><a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F;#byob-reader-read>Streams</a></strong> </dd>
 
 
 
@@ -1479,7 +1479,7 @@ layout: base
 <dd>Defined in 
                     <strong title='ReadableStreamBYOBReader is defined in Streams'><a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F;#readablestreambyobreader>Streams</a></strong> </dd>
 
-<dd>Related terms: <code>new </code><a href='r.html#ReadableStreamBYOBReader(stream)@@ReadableStreamBYOBReader@constructor'><code>ReadableStreamBYOBReader(stream)</code></a>, <code>ReadableStreamBYOBReader.</code><a href='r.html#read(view)@@ReadableStreamBYOBReader@method'><code>read(view)</code></a>, <code>ReadableStreamBYOBReader.</code><a href='r.html#releaseLock()@@ReadableStreamBYOBReader@method'><code>releaseLock()</code></a></dd>
+<dd>Related terms: <code>new </code><a href='r.html#ReadableStreamBYOBReader(stream)@@ReadableStreamBYOBReader@constructor'><code>ReadableStreamBYOBReader(stream)</code></a>, <code>ReadableStreamBYOBReader.</code><a href='r.html#read(view, options)@@ReadableStreamBYOBReader@method'><code>read(view, options)</code></a>, <code>ReadableStreamBYOBReader.</code><a href='r.html#releaseLock()@@ReadableStreamBYOBReader@method'><code>releaseLock()</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/ReadableStreamBYOBReader.html' title='ReadableStreamBYOBReader entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="ReadableStreamBYOBReader(stream)@@ReadableStreamBYOBReader@constructor"><code class=prefix>new </code><strong><code class=webidl>ReadableStreamBYOBReader(stream)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#ReadableStreamBYOBReader(stream)%40%40ReadableStreamBYOBReader%40constructor' aria-label="Permalink for new ReadableStreamBYOBReader(stream)">§</a></dt>
 
@@ -1502,7 +1502,14 @@ layout: base
 
 
 
-<dt id="ReadableStreamBYOBReaderRelease@@streams%%abstract-op"><code class=prefix></code><strong><code class=concept>ReadableStreamBYOBReaderRelease</code></strong> (<em>algorithm</em>) <a class='self-link' href='#ReadableStreamBYOBReaderRelease%40%40streams%25%25abstract-op' aria-label="Permalink for ReadableStreamBYOBReaderRelease">§</a></dt>
+<dt id="ReadableStreamBYOBReaderReadOptions@@@@dictionary"><code class=prefix></code><strong><code class=webidl>ReadableStreamBYOBReaderReadOptions</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#ReadableStreamBYOBReaderReadOptions%40%40%40%40dictionary' aria-label="Permalink for ReadableStreamBYOBReaderReadOptions">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='ReadableStreamBYOBReaderReadOptions is defined in Streams'><a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F;#dictdef-readablestreambyobreaderreadoptions>Streams</a></strong> </dd>
+
+<dd>Related terms: <code>ReadableStreamBYOBReaderReadOptions.</code><a href='m.html#min@@ReadableStreamBYOBReaderReadOptions@dict-member'><code>min</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/ReadableStreamBYOBReaderReadOptions.html' title='ReadableStreamBYOBReaderReadOptions entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="ReadableStreamBYOBReaderRelease@@streams%%abstract-op"><code class=prefix></code><strong><code class=concept>ReadableStreamBYOBReaderRelease</code></strong> (<em>algorithm</em>) <a class='self-link' href='#ReadableStreamBYOBReaderRelease%40%40streams%25%25abstract-op' aria-label="Permalink for ReadableStreamBYOBReaderRelease">§</a></dt>
 
 <dd>Defined in 
                     <strong title='ReadableStreamBYOBReaderRelease is defined in Streams'><a href=https:&#x2F;&#x2F;streams.spec.whatwg.org&#x2F;#abstract-opdef-readablestreambyobreaderrelease>Streams</a></strong> </dd>
@@ -6868,6 +6875,7 @@ layout: base
 <dd>Defined in 
                     <strong title='report is defined in Reporting API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;reporting&#x2F;#report>Reporting API</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;reporting&#x2F;network-reporting.html title='report is referenced by Network Reporting API'>Network Reporting API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;crash-reporting&#x2F; title='report is referenced by Crash Reporting'>Crash Reporting</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;deprecation-reporting&#x2F; title='report is referenced by Deprecation Reporting'>Deprecation Reporting</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;intervention-reporting&#x2F; title='report is referenced by Intervention Reporting'>Intervention Reporting</a>, 
@@ -7183,6 +7191,7 @@ layout: base
 <dd>Defined in 
                     <strong title='reports is defined in Reporting API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;reporting&#x2F;#windoworworkerglobalscope-reports>Reporting API</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;reporting&#x2F;network-reporting.html title='reports is referenced by Network Reporting API'>Network Reporting API</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;csp-next&#x2F;scripting-policy.html title='reports is referenced by Scripting Policy'>Scripting Policy</a></dd>
 
 
@@ -9734,6 +9743,13 @@ layout: base
 
 <dd>Defined in 
                     <strong title='Retrieve a list of credentials is defined in Credential Management 1'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-credential-management&#x2F;#abstract-opdef-credential-store-retrieve-a-list-of-credentials>Credential Management 1</a></strong> </dd>
+
+
+
+<dt id="retry_after@@network reporting endpoint@attribute"><code class=prefix></code><strong><code class=webidl>retry_after</code></strong> (<em>WebIDL attribute for <code>network reporting endpoint</code> </em>) <a class='self-link' href='#retry_after%40%40network%20reporting%20endpoint%40attribute' aria-label="Permalink for retry_after">§</a></dt>
+
+<dd>Defined in 
+                    <strong title='retry_after is defined in Network Reporting API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;reporting&#x2F;network-reporting.html#dom-network-reporting-endpoint-retry_after>Network Reporting API</a></strong> </dd>
 
 
 

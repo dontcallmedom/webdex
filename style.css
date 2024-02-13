@@ -264,7 +264,7 @@ blockquote {
   margin-top: 3rem;
 }
 
-.prefix { text-align: right; display: inline-block; width: 12em; font-size:0.7em; overflow: hidden;  text-overflow: ellipsis; vertical-align: bottom;}
+.prefix { text-align: right; display: inline-block; min-width: 12em; max-width: 12em; font-size:0.7em; overflow: hidden;  text-overflow: ellipsis;}
 
 
 dd {
@@ -273,7 +273,8 @@ dd {
 }
 
 dt {
-
+  display: flex;
+  align-items: baseline;  
   margin-top: 1rem;
 }
 

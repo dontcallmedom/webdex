@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "escape-html-template-tag": "^1.2.0",
+    "jsdom": "^24.0.0",
     "node-fetch": "^2.6.1",
     "reffy": "^6.0.0",
     "vnu-jar": "^20.6.30"

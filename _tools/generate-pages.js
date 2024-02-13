@@ -1,5 +1,7 @@
 const fs = require("fs/promises");
 const html = require('escape-html-template-tag');
+const {safe} = html;
+const {JSDOM} = require("jsdom");
 
 const { expandCrawlResult } = require('reffy/src/lib/util');
 
@@ -7,6 +9,8 @@ const termIndex = new Map();
 const aliasIndex = new Map();
 const linksIndex = new Map();
 const letters = new Map();
+
+let results;
 
 const typeInfo = {
   "grammar": {
@@ -193,6 +197,33 @@ function sortByArea([relatedTerm1, relatedTermId1], [relatedTerm2, relatedTermId
   const {type: type1} = termIndex.get(relatedTerm1)[relatedTermId1];
   const {type: type2} = termIndex.get(relatedTerm2)[relatedTermId2];
   return typeInfo[type1].area.localeCompare(typeInfo[type2].area) || type1.localeCompare(type2) || relatedTerm1.localeCompare(relatedTerm2);
+}
+
+function findDfn(link) {
+  console.log("searching for " + link + " in " + results.length + " specs");
+  for (const spec of results) {
+    const dfn = spec.dfns?.find(d => d.href === link);
+    if (dfn) return {dfn, spec};
+  }
+}
+
+function substituteProseLinks(html) {
+  // TODO: how reliably can we assume that the html can be put inside a <div>?
+  const frag = JSDOM.fragment("<div>" + html + "</div>");
+  frag.querySelectorAll('a[href^="https://"]').forEach(link => {
+    const dfnData = findDfn(link.href);
+    if (dfnData) {
+      const {dfn, spec} = dfnData;
+      const term = cleanTerm(dfn.linkingText[0], dfn.type);
+      const termId = generateTermId(dfn, spec);
+      console.log(link.href, term, termId);
+      const dfnLink = getLink(term, termId);
+      if (dfnLink) {
+	link.href = dfnLink;
+      }
+    }
+  });
+  return frag.firstChild.innerHTML;
 }
 
 function getScopingTermId(type, _for, displayTerm, dfns) {
@@ -413,10 +444,23 @@ ${content}`);
 }
 
 
+function generateTermId(dfn, spec) {
+  if (dfn.for.length === 0) {
+    if (typeInfo[dfn.type]?.exclusiveNamespace) {
+      return `@@${dfn.type}`;
+    } else {
+      return `${spec.series.shortname}%%${dfn.type}`;
+    }
+  } else {
+    // by convention, we use the first 'for' by alphabetical order
+    return `${dfn.for.sort()[0]}@${dfn.type}`;
+  }
+}
+
 (async function() {
   const jsonIndex = await fs.readFile("./webref/ed/index.json", "utf-8");
   const index = JSON.parse(jsonIndex);
-  const {results} = await expandCrawlResult(index, './webref/ed/', ['dfns', 'links']);
+  results = (await expandCrawlResult(index, './webref/ed/', ['dfns', 'links'])).results;
   for (const spec of results) {
     for (const dfn of (spec.dfns || [])) {
       if (dfn.access === "private") continue;
@@ -425,22 +469,14 @@ ${content}`);
       const term = cleanTerm(dfn.linkingText[0], dfn.type);
       const displayTerm = dfn.linkingText[0].replace(/^"/, '').replace(/"$/, '');
       const termEntry = termIndex.get(term) ?? {};
-      let termId;
+      const termId = generateTermId(dfn, spec);
       let prefixes = [];
-      if (dfn.for.length === 0) {
-        if (typeInfo[dfn.type]?.exclusiveNamespace) {
-          termId = `@@${dfn.type}`;
-        } else {
-          termId = `${spec.series.shortname}%%${dfn.type}`;
-        }
-      } else {
+      if (dfn.for.length) {
         if (dfn.type === "constructor" && term !== 'constructor()') {
           prefixes = ['new '];
         } else if (['method', 'const', 'attribute', 'dict-member'].includes(dfn.type)) {
           prefixes = dfn.for.map(_for => `${_for}.`);
         }
-        // by convention, we use the first 'for' by alphabetical order
-        termId = `${dfn.for.sort()[0]}@${dfn.type}`;
       }
       const subtermEntry = termEntry[termId] ?? {shortname: spec.series.shortname, type: dfn.type, _for: dfn.for, dfns: [], prefixes: [], refs: [], related: [], displayTerm, sortTerm: `${displayTerm}-${prefixes[0] ?? ''}`};
       subtermEntry.dfns.push({...dfn, spec: spec.shortTitle});
@@ -510,16 +546,29 @@ ${content}`);
 <p class=legend>Color key: <code class=webidl>WebIDL</code> <code class='css'>CSS</code> <code class='markup'>Markup</code> <code class='http'>HTTP</code></p>
 <dl>
 ${letters.get(entry).sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase())).map(term => {
+  
   return html`${Object.keys(termIndex.get(term)).sort((a,b) =>  termIndex.get(term)[a].sortTerm.localeCompare(termIndex.get(term)[b].sortTerm))
                 .map(termId => {
                   const {displayTerm, type, _for, dfns, prefixes, refs, related} = termIndex.get(term)[termId];
+		  let definitionContent = ``;
+		  const withProse = dfns.some(d => d.htmlProse && d.access === "public");
+		  if (!withProse) {
+		    definitionContent = html.join(dfns.map(dfn => {
+			return html`<strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong> `;
+		      }), ', ');
+		  } else if (dfns.length === 1) {
+		    const dfn = dfns[0];
+		    definitionContent =  html`<strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong>: ${safe(substituteProseLinks(dfn.htmlProse))}`;
+		  } else {
+		    definitionContent = html`<ul> ${html.join(dfns.map(dfn => {
+			  return html`<li><strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong>${dfn.htmlProse? html`: ${safe(substituteProseLinks(dfn.htmlProse))}` : ""}</li>`;
+		      }), '')}`;
+		  }
+		  const definitionList = html`<dd>Defined in ${definitionContent}</dd>`; 
                   const webidlpedia = ['interface', 'dictionary', 'enum', 'typedef'].includes(type) ? html`<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/${displayTerm}.html' title='${displayTerm} entry on WebIDLpedia'>WebIDLPedia</a></dd>` : '';
                   return html`<dt id="${displayTerm}@@${termId}">${composeDisplayName(displayTerm, type, _for, prefixes[0] || '', dfns, termId)}</dt>
 ${prefixes.slice(1).map(p => html`<dt>${composeDisplayName(displayTerm, type, _for, p, dfns, termId)}</dt>`)}
-<dd>Defined in ${html.join(dfns.map(dfn => {
-                    return html`
-                    <strong title='${displayTerm} is defined in ${dfn.spec}'><a href=${dfn.href}>${dfn.spec}</a></strong> `;
-            }), ', ')}</dd>
+${definitionList}
 ${refs.length ? html`<dd>Referenced in ${html.join(refs.map(ref => {
                     return html`
                     <a href=${ref.url} title='${displayTerm} is referenced by ${ref.title}'>${ref.title}</a>`;

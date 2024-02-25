@@ -1421,20 +1421,6 @@ layout: base
 
 
 
-<dt id="vc@@vc-data-model%%dfn"><code class=prefix></code><span><strong>vc</strong> (<em>concept</em>) <a class='self-link' href='#vc%40%40vc-data-model%25%25dfn' aria-label="Permalink for vc">§</a></span></dt>
-
-<dd>Defined in <strong title='vc is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-vc>Verifiable Credentials Data Model v2.0</a></strong>: A verifiable credential is a tamper-evident credential that has authorship that
-can be cryptographically verified. Verifiable credentials can be used to build
-<a href="v.html#vp@@vc-data-model%25%25dfn">verifiable presentations</a>, which can also be cryptographically verified.</dd>
-
-
-
-<dt id="VC cryptographic suite@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>VC cryptographic suite</strong> (<em>concept</em>) <a class='self-link' href='#VC%20cryptographic%20suite%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for VC cryptographic suite">§</a></span></dt>
-
-<dd>Defined in <strong title='VC cryptographic suite is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-vc-cryptographic-suite>Verifiable Credential Data Integrity 1.0</a></strong> </dd>
-
-
-
 <dt id="vector-effect@@@@property"><code class=prefix></code><span><strong><code class=css>vector-effect</code></strong> (<em>CSS property</em>) <a class='self-link' href='#vector-effect%40%40%40%40property' aria-label="Permalink for vector-effect">§</a></span></dt>
 
 <dd>Defined in <strong title='vector-effect is defined in SVG 2'><a href=https:&#x2F;&#x2F;svgwg.org&#x2F;svg2-draft&#x2F;coords.html#VectorEffectProperty>SVG 2</a></strong> </dd>
@@ -1509,6 +1495,14 @@ can be cryptographically verified. Verifiable credentials can be used to build
 
 
 
+<dt id="verifiable credential@@vc-data-model%%dfn"><code class=prefix></code><span><strong>verifiable credential</strong> (<em>concept</em>) <a class='self-link' href='#verifiable%20credential%40%40vc-data-model%25%25dfn' aria-label="Permalink for verifiable credential">§</a></span></dt>
+
+<dd>Defined in <strong title='verifiable credential is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verifiable-credential>Verifiable Credentials Data Model v2.0</a></strong>: A verifiable credential is a tamper-evident credential that has authorship that
+can be cryptographically verified. Verifiable credentials can be used to build
+<a href="v.html#verifiable presentation@@vc-data-model%25%25dfn">verifiable presentations</a>, which can also be cryptographically verified.</dd>
+
+
+
 <dt id="verifiable credential graph@@vc-data-model%%dfn"><code class=prefix></code><span><strong>verifiable credential graph</strong> (<em>concept</em>) <a class='self-link' href='#verifiable%20credential%20graph%40%40vc-data-model%25%25dfn' aria-label="Permalink for verifiable credential graph">§</a></span></dt>
 
 <dd>Defined in <strong title='verifiable credential graph is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verifiable-credential-graph>Verifiable Credentials Data Model v2.0</a></strong> </dd>
@@ -1519,11 +1513,20 @@ can be cryptographically verified. Verifiable credentials can be used to build
 
 <dd>Defined in <strong title='verifiable data registries is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verifiable-data-registries>Verifiable Credentials Data Model v2.0</a></strong>: A role a system might perform by mediating the creation and <a href="v.html#verify@@vc-data-model%25%25dfn">verification</a>
 of identifiers, keys, and other relevant data, such as
-<a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credential</a> schemas, revocation registries, issuer public keys,
-and so on, which might be required to use <a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credentials</a>. Some
+<a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credential</a> schemas, revocation registries, issuer public keys,
+and so on, which might be required to use <a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credentials</a>. Some
 configurations might require correlatable identifiers for <a href="s.html#subjects@@vc-data-model%25%25dfn">subjects</a>. Some
 registries, such as ones for UUIDs and public keys, might just act as namespaces
 for identifiers.</dd>
+
+
+
+<dt id="verifiable presentation@@vc-data-model%%dfn"><code class=prefix></code><span><strong>verifiable presentation</strong> (<em>concept</em>) <a class='self-link' href='#verifiable%20presentation%40%40vc-data-model%25%25dfn' aria-label="Permalink for verifiable presentation">§</a></span></dt>
+
+<dd>Defined in <strong title='verifiable presentation is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verifiable-presentation>Verifiable Credentials Data Model v2.0</a></strong>: A verifiable presentation is a tamper-evident presentation encoded in such a way
+that authorship of the data can be trusted after a process of cryptographic
+verification. Certain types of verifiable presentations might contain data that
+is synthesized from, but do not contain, the original <a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credentials</a> (for example, zero-knowledge proofs).</dd>
 
 
 
@@ -1533,18 +1536,47 @@ for identifiers.</dd>
 
 
 
+<dt id="verification method@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>verification method</strong> (<em>concept</em>) <a class='self-link' href='#verification%20method%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for verification method">§</a></span></dt>
+
+<dd>Defined in <strong title='verification method is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-verification-method>Verifiable Credential Data Integrity 1.0</a></strong>: <p>
+A set of parameters that can be used together with a process to independently
+verify a proof. For example, a cryptographic public key can be used as a
+verification method with respect to a digital signature; in such usage, it
+verifies that the signer possessed the associated cryptographic private key.
+            </p>
+            <p>
+"Verification" and "proof" in this definition are intended to apply broadly. For
+example, a cryptographic public key might be used during Diffie-Hellman key
+exchange to negotiate a shared symmetric key for encryption. This guarantees the
+integrity of the key agreement process. It is thus another type of verification
+method, even though descriptions of the process might not use the words
+"verification" or "proof."
+            </p></dd>
+
+
+
+<dt id="verification relationship@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>verification relationship</strong> (<em>concept</em>) <a class='self-link' href='#verification%20relationship%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for verification relationship">§</a></span></dt>
+
+<dd>Defined in <strong title='verification relationship is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-verification-relationship>Verifiable Credential Data Integrity 1.0</a></strong>: <p>
+An expression of the relationship between the <a href="https://w3c.github.io/vc-data-integrity/#dfn-subjects">subject</a> and a
+<a href="v.html#verification method@@vc-data-integrity%25%25dfn">verification method</a>. An example of a verification relationship is
+<a href="https://w3c.github.io/vc-data-integrity/#authentication"><bdi>2.3.2.1 </bdi>Authentication</a>.
+            </p></dd>
+
+
+
 <dt id="verifier@@vc-data-model%%dfn"><code class=prefix></code><span><strong>verifier</strong> (<em>concept</em>) <a class='self-link' href='#verifier%40%40vc-data-model%25%25dfn' aria-label="Permalink for verifier">§</a></span></dt>
 
 <dd>Defined in <strong title='verifier is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verifier>Verifiable Credentials Data Model v2.0</a></strong>: A role an <a href="https://w3c.github.io/vc-data-model/#dfn-entities">entity</a> performs by receiving one or more
-<a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credentials</a>, optionally inside a
-<a href="v.html#vp@@vc-data-model%25%25dfn">verifiable presentation</a> for processing. Other specifications might refer
+<a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credentials</a>, optionally inside a
+<a href="v.html#verifiable presentation@@vc-data-model%25%25dfn">verifiable presentation</a> for processing. Other specifications might refer
 to this concept as a <dfn>relying party</dfn>.</dd>
 
 
 
 <dt id="verify@@vc-data-model%%dfn"><code class=prefix></code><span><strong>verify</strong> (<em>concept</em>) <a class='self-link' href='#verify%40%40vc-data-model%25%25dfn' aria-label="Permalink for verify">§</a></span></dt>
 
-<dd>Defined in <strong title='verify is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verify>Verifiable Credentials Data Model v2.0</a></strong>: The evaluation of whether a <a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credential</a> or <a href="v.html#vp@@vc-data-model%25%25dfn">verifiable presentation</a> is an authentic and current statement of the issuer or
+<dd>Defined in <strong title='verify is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-verify>Verifiable Credentials Data Model v2.0</a></strong>: The evaluation of whether a <a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credential</a> or <a href="v.html#verifiable presentation@@vc-data-model%25%25dfn">verifiable presentation</a> is an authentic and current statement of the issuer or
 presenter, respectively. This includes checking that: the credential (or
 presentation) conforms to the specification; the proof method is satisfied; and,
 if present, the status check succeeds. Verification of a credential does not
@@ -3411,15 +3443,6 @@ imply evaluation of the truth of <a href="c.html#claims@@vc-data-model%25%25dfn"
 <dt id="volumechange@@HTMLMediaElement@event"><code class=prefix></code><span><strong><code class=webidl>volumechange</code></strong> (<em>event for <a href='h.html#HTMLMediaElement@@@@interface'><code>HTMLMediaElement</code></a> </em>) <a class='self-link' href='#volumechange%40%40HTMLMediaElement%40event' aria-label="Permalink for volumechange">§</a></span></dt>
 
 <dd>Defined in <strong title='volumechange is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;media.html#event-media-volumechange>HTML</a></strong> </dd>
-
-
-
-<dt id="vp@@vc-data-model%%dfn"><code class=prefix></code><span><strong>vp</strong> (<em>concept</em>) <a class='self-link' href='#vp%40%40vc-data-model%25%25dfn' aria-label="Permalink for vp">§</a></span></dt>
-
-<dd>Defined in <strong title='vp is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-vp>Verifiable Credentials Data Model v2.0</a></strong>: A verifiable presentation is a tamper-evident presentation encoded in such a way
-that authorship of the data can be trusted after a process of cryptographic
-verification. Certain types of verifiable presentations might contain data that
-is synthesized from, but do not contain, the original <a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credentials</a> (for example, zero-knowledge proofs).</dd>
 
 
 

@@ -3824,9 +3824,9 @@ layout: base
 
 <dd>Defined in <strong title='claim validation is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-claim-validation>Verifiable Credentials Data Model v2.0</a></strong>: The assurance that a <a href="c.html#claims@@vc-data-model%25%25dfn">claim</a> from a specific <a href="i.html#issuers@@vc-data-model%25%25dfn">issuer</a> satisfies the
 business requirements of a <a href="v.html#verifier@@vc-data-model%25%25dfn">verifier</a> for a particular use. This
-specification defines how verifiers verify <a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credentials</a> and
-<a href="v.html#vp@@vc-data-model%25%25dfn">verifiable presentations</a>.<br>
-It also specifies that <a href="v.html#verifier@@vc-data-model%25%25dfn">verifiers</a> validate claims in <a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credentials</a> before relying on them. However, the means for such validation
+specification defines how verifiers verify <a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credentials</a> and
+<a href="v.html#verifiable presentation@@vc-data-model%25%25dfn">verifiable presentations</a>.<br>
+It also specifies that <a href="v.html#verifier@@vc-data-model%25%25dfn">verifiers</a> validate claims in <a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credentials</a> before relying on them. However, the means for such validation
 vary widely and are outside the scope of this specification. It is expected
 that <a href="v.html#verifier@@vc-data-model%25%25dfn">verifiers</a> will trust certain <a href="i.html#issuers@@vc-data-model%25%25dfn">issuers</a> for certain claims and
 apply their own rules to determine which claims in which <a href="c.html#credential@@vc-data-model%25%25dfn">credentials</a>
@@ -11878,6 +11878,20 @@ are suitable for use by their systems.</dd>
 
 
 
+<dt id="controller documents@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>controller documents</strong> (<em>concept</em>) <a class='self-link' href='#controller%20documents%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for controller documents">§</a></span></dt>
+
+<dd>Defined in <strong title='controller documents is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-controller-documents>Verifiable Credential Data Integrity 1.0</a></strong>: A set of data that specifies one or more relationships between a
+<a href="c.html#controller(s)@@vc-data-integrity%25%25dfn">controller</a> and a set of data, such as a set of public cryptographic keys.</dd>
+
+
+
+<dt id="controller(s)@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>controller(s)</strong> (<em>concept</em>) <a class='self-link' href='#controller(s)%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for controller(s)">§</a></span></dt>
+
+<dd>Defined in <strong title='controller(s) is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-controller-s>Verifiable Credential Data Integrity 1.0</a></strong>: An entity that has the capability to make changes to a
+<a href="c.html#controller documents@@vc-data-integrity%25%25dfn">controller document</a>.</dd>
+
+
+
 <dt id="controllerchange@@ServiceWorkerContainer@event"><code class=prefix></code><span><strong><code class=webidl>controllerchange</code></strong> (<em>event for <a href='s.html#ServiceWorkerContainer@@@@interface'><code>ServiceWorkerContainer</code></a> </em>) <a class='self-link' href='#controllerchange%40%40ServiceWorkerContainer%40event' aria-label="Permalink for controllerchange">§</a></span></dt>
 
 <dd>Defined in <strong title='controllerchange is defined in Service Workers'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F;#service-worker-container-controllerchange-event>Service Workers</a></strong> </dd>
@@ -14609,9 +14623,9 @@ credential</a>.</dd>
 
 <dt id="credential repository@@vc-data-model%%dfn"><code class=prefix></code><span><strong>credential repository</strong> (<em>concept</em>) <a class='self-link' href='#credential%20repository%40%40vc-data-model%25%25dfn' aria-label="Permalink for credential repository">§</a></span></dt>
 
-<dd>Defined in <strong title='credential repository is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-credential-repository>Verifiable Credentials Data Model v2.0</a></strong>: A program, such as a storage vault or personal <a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credential</a>
+<dd>Defined in <strong title='credential repository is defined in Verifiable Credentials Data Model v2.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-model&#x2F;#dfn-credential-repository>Verifiable Credentials Data Model v2.0</a></strong>: A program, such as a storage vault or personal <a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credential</a>
 wallet, that stores and protects access to <a href="h.html#holders@@vc-data-model%25%25dfn">holders'</a>
-<a href="v.html#vc@@vc-data-model%25%25dfn">verifiable credentials</a>.</dd>
+<a href="v.html#verifiable credential@@vc-data-model%25%25dfn">verifiable credentials</a>.</dd>
 
 
 
@@ -15225,7 +15239,23 @@ wallet, that stores and protects access to <a href="h.html#holders@@vc-data-mode
 
 <dd>Related terms: <code>CryptoKeyPair.</code><a href='p.html#privateKey@@CryptoKeyPair@dict-member'><code>privateKey</code></a>, <code>CryptoKeyPair.</code><a href='p.html#publicKey@@CryptoKeyPair@dict-member'><code>publicKey</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/CryptoKeyPair.html' title='CryptoKeyPair entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="csp@@iframe@element-attr"><code class=prefix></code><span><strong><code class=markup>csp</code></strong> (<em>markup attribute for <a href='i.html#iframe@@html%25%25element'><code>iframe</code></a> </em>) <a class='self-link' href='#csp%40%40iframe%40element-attr' aria-label="Permalink for csp">§</a></span></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/CryptoKeyPair.html' title='CryptoKeyPair entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="cryptosuite@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>cryptosuite</strong> (<em>concept</em>) <a class='self-link' href='#cryptosuite%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for cryptosuite">§</a></span></dt>
+
+<dd>Defined in <strong title='cryptosuite is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-cryptosuite>Verifiable Credential Data Integrity 1.0</a></strong>: A specification defining the usage of specific cryptographic primitives in
+order to achieve a particular security goal. These documents are often used
+to specify <a href="v.html#verification method@@vc-data-integrity%25%25dfn">verification methods</a>, digital signature types,
+their identifiers, and other related properties. See Section
+<a href="https://w3c.github.io/vc-data-integrity/#cryptographic-suites"><bdi>3. </bdi>Cryptographic Suites</a> for further detail.</dd>
+
+
+
+<dt id="cryptosuite instantiation algorithm@@vc-data-integrity%%dfn"><code class=prefix></code><span><strong>cryptosuite instantiation algorithm</strong> (<em>concept</em>) <a class='self-link' href='#cryptosuite%20instantiation%20algorithm%40%40vc-data-integrity%25%25dfn' aria-label="Permalink for cryptosuite instantiation algorithm">§</a></span></dt>
+
+<dd>Defined in <strong title='cryptosuite instantiation algorithm is defined in Verifiable Credential Data Integrity 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-data-integrity&#x2F;#dfn-cryptosuite-instantiation-algorithm>Verifiable Credential Data Integrity 1.0</a></strong> </dd>
+
+
+
+<dt id="csp@@iframe@element-attr"><code class=prefix></code><span><strong><code class=markup>csp</code></strong> (<em>markup attribute for <a href='i.html#iframe@@html%25%25element'><code>iframe</code></a> </em>) <a class='self-link' href='#csp%40%40iframe%40element-attr' aria-label="Permalink for csp">§</a></span></dt>
 
 <dd>Defined in <strong title='csp is defined in Content Security Policy: Embedded Enforcement'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webappsec-cspee&#x2F;#element-attrdef-iframe-csp>Content Security Policy: Embedded Enforcement</a></strong> </dd>
 

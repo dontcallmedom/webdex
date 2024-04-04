@@ -512,7 +512,7 @@ function generateTermId(dfn, spec) {
       acc.push((spec.links?.rawlinks[link]?.anchors || []).concat(spec.links?.autolinks[link]?.anchors || []).map(frag => link + "#" + frag));
       return acc;
     }, []).flat();
-    for (const link of fullLinks) {
+    for (const link of [...new Set(fullLinks)]) {
       const [term, termId] = linksIndex.get(link) || [];
       if (link === "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#allowed-to-use") {
       }

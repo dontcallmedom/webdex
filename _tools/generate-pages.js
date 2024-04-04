@@ -508,7 +508,7 @@ function generateTermId(dfn, spec) {
   }
   // await fs.writeFile('terms.json', JSON.stringify([...termIndex.entries()], null, 2));
   for (const spec of results) {
-    const fullLinks = Object.keys(spec.links || {}).reduce((acc, link) => {
+    const fullLinks = Object.keys(spec.links.rawlinks || {}).concat(Object.keys(spec.links.autolinks || {})).reduce((acc, link) => {
       acc.push((spec.links[link].anchors || []).map(frag => link + "#" + frag));
       return acc;
     }, []).flat();

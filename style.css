@@ -427,6 +427,10 @@ dt strong code, .legend code {
 .webidl {
     background-color: #f7df1e;
 }
+.cddl {
+    background-color: #dff71e;
+}
+
 .http {
     background-color: #eee;
 }

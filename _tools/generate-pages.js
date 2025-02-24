@@ -176,6 +176,18 @@ const typeInfo = {
     human: 'permission name',
     area: "webidl",
     exclusiveNamespace: true
+  },
+  "cddl-module": {
+    area: "cddl",
+    human: "CDDL module"
+  },
+  "cddl-type": {
+    area: "cddl",
+    human: "CDDL type"
+  },
+  "cddl-parameter": {
+    area: "cddl",
+    human: "CDDL parameter"
   }
 };
 

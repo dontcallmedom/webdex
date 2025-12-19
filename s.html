@@ -7266,6 +7266,7 @@ information to share.</dd>
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F; title='set is referenced by Web Authentication'>Web Authentication</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver-bidi&#x2F; title='set is referenced by WebDriver BiDi'>WebDriver BiDi</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver&#x2F; title='set is referenced by WebDriver'>WebDriver</a>, 
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F; title='set is referenced by WebRTC Encoded Transform'>WebRTC Encoded Transform</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webtransport&#x2F; title='set is referenced by WebTransport'>WebTransport</a>, 
                     <a href=https:&#x2F;&#x2F;xhr.spec.whatwg.org&#x2F; title='set is referenced by XMLHttpRequest'>XMLHttpRequest</a></dd>
 
@@ -8051,15 +8052,9 @@ information to share.</dd>
 
 
 
-<dt id="setEncryptionKey(key, keyID)@@SFrameKeyManagement@method"><code class=prefix><a href='s.html#SFrameKeyManagement@@@@interface'>SFrameKeyManagement</a>.</code><span><strong><code class=webidl>setEncryptionKey(key, keyID)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#setEncryptionKey(key%2C%20keyID)%40%40SFrameKeyManagement%40method' aria-label="Permalink for <a href='s.html#SFrameKeyManagement@@@@interface'>SFrameKeyManagement</a>.setEncryptionKey(key, keyID)">§</a></span></dt>
+<dt id="setEncryptionKey(key, keyId)@@SFrameEncrypterManager@method"><code class=prefix><a href='s.html#SFrameEncrypterManager@@@@interface'>SFrameEncrypterManager</a>.</code><span><strong><code class=webidl>setEncryptionKey(key, keyId)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#setEncryptionKey(key%2C%20keyId)%40%40SFrameEncrypterManager%40method' aria-label="Permalink for <a href='s.html#SFrameEncrypterManager@@@@interface'>SFrameEncrypterManager</a>.setEncryptionKey(key, keyId)">§</a></span></dt>
 
-<dd>Defined in <strong title='setEncryptionKey(key, keyID) is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#dom-sframekeymanagement-setencryptionkey>WebRTC Encoded Transform</a></strong> </dd>
-
-
-
-<dt id="setEncryptionKey(key, keyID)@@SFrameTransform@method"><code class=prefix><a href='s.html#SFrameTransform@@@@interface'>SFrameTransform</a>.</code><span><strong><code class=webidl>setEncryptionKey(key, keyID)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#setEncryptionKey(key%2C%20keyID)%40%40SFrameTransform%40method' aria-label="Permalink for <a href='s.html#SFrameTransform@@@@interface'>SFrameTransform</a>.setEncryptionKey(key, keyID)">§</a></span></dt>
-
-<dd>Defined in <strong title='setEncryptionKey(key, keyID) is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#dom-sframetransform-setencryptionkey>WebRTC Encoded Transform</a></strong> </dd>
+<dd>Defined in <strong title='setEncryptionKey(key, keyId) is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#dom-sframeencryptermanager-setencryptionkey>WebRTC Encoded Transform</a></strong> </dd>
 
 
 
@@ -9079,7 +9074,13 @@ information to share.</dd>
 
 <dd>Related terms: <em>value</em> <a href='a.html#AES_128_CTR_HMAC_SHA256_32@@SFrameCipherSuite@enum-value'><code>AES_128_CTR_HMAC_SHA256_32</code></a>, <em>value</em> <a href='a.html#AES_128_CTR_HMAC_SHA256_64@@SFrameCipherSuite@enum-value'><code>AES_128_CTR_HMAC_SHA256_64</code></a>, <em>value</em> <a href='a.html#AES_128_CTR_HMAC_SHA256_80@@SFrameCipherSuite@enum-value'><code>AES_128_CTR_HMAC_SHA256_80</code></a>, <em>value</em> <a href='a.html#AES_128_GCM_SHA256_128@@SFrameCipherSuite@enum-value'><code>AES_128_GCM_SHA256_128</code></a>, <em>value</em> <a href='a.html#AES_256_GCM_SHA512_128@@SFrameCipherSuite@enum-value'><code>AES_256_GCM_SHA512_128</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameCipherSuite.html' title='SFrameCipherSuite entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameDecrypterStream@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameDecrypterStream</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameDecrypterStream%40%40%40%40interface' aria-label="Permalink for SFrameDecrypterStream">§</a></span></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameCipherSuite.html' title='SFrameCipherSuite entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameDecrypterManager@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameDecrypterManager</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameDecrypterManager%40%40%40%40interface' aria-label="Permalink for SFrameDecrypterManager">§</a></span></dt>
+
+<dd>Defined in <strong title='SFrameDecrypterManager is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframedecryptermanager>WebRTC Encoded Transform</a></strong> </dd>
+
+<dd>Related terms: <code>SFrameDecrypterManager.</code><a href='o.html#onerror@@SFrameDecrypterManager@attribute'><code>onerror</code></a>, <code>SFrameDecrypterManager.</code><a href='a.html#addDecryptionKey(key, keyId)@@SFrameDecrypterManager@method'><code>addDecryptionKey(key, keyId)</code></a>, <code>SFrameDecrypterManager.</code><a href='r.html#removeDecryptionKey(keyId)@@SFrameDecrypterManager@method'><code>removeDecryptionKey(keyId)</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameDecrypterManager.html' title='SFrameDecrypterManager entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameDecrypterStream@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameDecrypterStream</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameDecrypterStream%40%40%40%40interface' aria-label="Permalink for SFrameDecrypterStream">§</a></span></dt>
 
 <dd>Defined in <strong title='SFrameDecrypterStream is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframedecrypterstream>WebRTC Encoded Transform</a></strong> </dd>
 
@@ -9091,7 +9092,13 @@ information to share.</dd>
 
 
 
-<dt id="SFrameEncrypterStream@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameEncrypterStream</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameEncrypterStream%40%40%40%40interface' aria-label="Permalink for SFrameEncrypterStream">§</a></span></dt>
+<dt id="SFrameEncrypterManager@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameEncrypterManager</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameEncrypterManager%40%40%40%40interface' aria-label="Permalink for SFrameEncrypterManager">§</a></span></dt>
+
+<dd>Defined in <strong title='SFrameEncrypterManager is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframeencryptermanager>WebRTC Encoded Transform</a></strong> </dd>
+
+<dd>Related terms: <code>SFrameEncrypterManager.</code><a href='o.html#onerror@@SFrameEncrypterManager@attribute'><code>onerror</code></a>, <code>SFrameEncrypterManager.</code><a href='s.html#setEncryptionKey(key, keyId)@@SFrameEncrypterManager@method'><code>setEncryptionKey(key, keyId)</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameEncrypterManager.html' title='SFrameEncrypterManager entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameEncrypterStream@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameEncrypterStream</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameEncrypterStream%40%40%40%40interface' aria-label="Permalink for SFrameEncrypterStream">§</a></span></dt>
 
 <dd>Defined in <strong title='SFrameEncrypterStream is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframeencrypterstream>WebRTC Encoded Transform</a></strong> </dd>
 
@@ -9103,21 +9110,27 @@ information to share.</dd>
 
 
 
-<dt id="SFrameKeyManagement@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameKeyManagement</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameKeyManagement%40%40%40%40interface' aria-label="Permalink for SFrameKeyManagement">§</a></span></dt>
+<dt id="SFrameReceiverTransform@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameReceiverTransform</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameReceiverTransform%40%40%40%40interface' aria-label="Permalink for SFrameReceiverTransform">§</a></span></dt>
 
-<dd>Defined in <strong title='SFrameKeyManagement is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframekeymanagement>WebRTC Encoded Transform</a></strong> </dd>
+<dd>Defined in <strong title='SFrameReceiverTransform is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframereceivertransform>WebRTC Encoded Transform</a></strong> </dd>
 
-<dd>Related terms: <code>SFrameKeyManagement.</code><a href='o.html#onerror@@SFrameKeyManagement@attribute'><code>onerror</code></a>, <code>SFrameKeyManagement.</code><a href='s.html#setEncryptionKey(key, keyID)@@SFrameKeyManagement@method'><code>setEncryptionKey(key, keyID)</code></a></dd>
+<dd>Related terms: <code>new </code><a href='s.html#SFrameReceiverTransform(options)@@SFrameReceiverTransform@constructor'><code>SFrameReceiverTransform(options)</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameKeyManagement.html' title='SFrameKeyManagement entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameTransform@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameTransform</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameTransform%40%40%40%40interface' aria-label="Permalink for SFrameTransform">§</a></span></dt>
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameReceiverTransform.html' title='SFrameReceiverTransform entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameReceiverTransform(options)@@SFrameReceiverTransform@constructor"><code class=prefix>new </code><span><strong><code class=webidl>SFrameReceiverTransform(options)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#SFrameReceiverTransform(options)%40%40SFrameReceiverTransform%40constructor' aria-label="Permalink for new SFrameReceiverTransform(options)">§</a></span></dt>
 
-<dd>Defined in <strong title='SFrameTransform is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframetransform>WebRTC Encoded Transform</a></strong> </dd>
+<dd>Defined in <strong title='SFrameReceiverTransform(options) is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#dom-sframereceivertransform-sframereceivertransform>WebRTC Encoded Transform</a></strong> </dd>
 
-<dd>Related terms: <code>new </code><a href='s.html#SFrameTransform(options)@@SFrameTransform@constructor'><code>SFrameTransform(options)</code></a>, <code>SFrameTransform.</code><a href='s.html#setEncryptionKey(key, keyID)@@SFrameTransform@method'><code>setEncryptionKey(key, keyID)</code></a></dd>
 
-<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameTransform.html' title='SFrameTransform entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameTransform(options)@@SFrameTransform@constructor"><code class=prefix>new </code><span><strong><code class=webidl>SFrameTransform(options)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#SFrameTransform(options)%40%40SFrameTransform%40constructor' aria-label="Permalink for new SFrameTransform(options)">§</a></span></dt>
 
-<dd>Defined in <strong title='SFrameTransform(options) is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#dom-sframetransform-sframetransform>WebRTC Encoded Transform</a></strong> </dd>
+<dt id="SFrameSenderTransform@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SFrameSenderTransform</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SFrameSenderTransform%40%40%40%40interface' aria-label="Permalink for SFrameSenderTransform">§</a></span></dt>
+
+<dd>Defined in <strong title='SFrameSenderTransform is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#sframesendertransform>WebRTC Encoded Transform</a></strong> </dd>
+
+<dd>Related terms: <code>new </code><a href='s.html#SFrameSenderTransform(options)@@SFrameSenderTransform@constructor'><code>SFrameSenderTransform(options)</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SFrameSenderTransform.html' title='SFrameSenderTransform entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SFrameSenderTransform(options)@@SFrameSenderTransform@constructor"><code class=prefix>new </code><span><strong><code class=webidl>SFrameSenderTransform(options)</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#SFrameSenderTransform(options)%40%40SFrameSenderTransform%40constructor' aria-label="Permalink for new SFrameSenderTransform(options)">§</a></span></dt>
+
+<dd>Defined in <strong title='SFrameSenderTransform(options) is defined in WebRTC Encoded Transform'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F;#dom-sframesendertransform-sframesendertransform>WebRTC Encoded Transform</a></strong> </dd>
 
 
 
@@ -10844,8 +10857,7 @@ information to share.</dd>
                     <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;writing-assistance-apis&#x2F; title='signal is referenced by Writing Assistance APIs'>Writing Assistance APIs</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;observable&#x2F; title='signal is referenced by Observable'>Observable</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;scheduling-apis&#x2F; title='signal is referenced by Prioritized Task Scheduling'>Prioritized Task Scheduling</a>, 
-                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F; title='signal is referenced by Service Workers Nightly'>Service Workers Nightly</a>, 
-                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F; title='signal is referenced by WebRTC Encoded Transform'>WebRTC Encoded Transform</a></dd>
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F; title='signal is referenced by Service Workers Nightly'>Service Workers Nightly</a></dd>
 
 
 <dt id="signal@@WritableStream@dfn"><code class=prefix></code><span><strong>signal</strong> (<em>concept for <a href='w.html#WritableStream@@@@interface'><code>WritableStream</code></a> </em>) <a class='self-link' href='#signal%40%40WritableStream%40dfn' aria-label="Permalink for signal">§</a></span></dt>
@@ -11100,8 +11112,7 @@ information to share.</dd>
                     <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;writing-assistance-apis&#x2F; title='signal abort is referenced by Writing Assistance APIs'>Writing Assistance APIs</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;observable&#x2F; title='signal abort is referenced by Observable'>Observable</a>, 
                     <a href=https:&#x2F;&#x2F;w3ctag.github.io&#x2F;design-principles&#x2F; title='signal abort is referenced by Web Platform Design Principles'>Web Platform Design Principles</a>, 
-                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F; title='signal abort is referenced by Service Workers Nightly'>Service Workers Nightly</a>, 
-                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-encoded-transform&#x2F; title='signal abort is referenced by WebRTC Encoded Transform'>WebRTC Encoded Transform</a></dd>
+                    <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;ServiceWorker&#x2F; title='signal abort is referenced by Service Workers Nightly'>Service Workers Nightly</a></dd>
 
 
 <dt id="signalAllAcceptedCredentials@@ClientCapability@enum-value"><code class=prefix></code><span><strong><code class=webidl>"signalAllAcceptedCredentials"</code></strong> (<em>value for <a href='c.html#ClientCapability@@@@enum'><code>ClientCapability</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#signalAllAcceptedCredentials%40%40ClientCapability%40enum-value' aria-label="Permalink for signalAllAcceptedCredentials">§</a></span></dt>

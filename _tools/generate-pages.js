@@ -188,6 +188,14 @@ const typeInfo = {
   "cddl-parameter": {
     area: "cddl",
     human: "CDDL parameter"
+  },
+  "cddl-value": {
+    area: "cddl",
+    human: "CDDL value"
+  },
+  "cddl-key": {
+    area: "cddl",
+    human: "CDDL key"
   }
 };
 
@@ -439,7 +447,7 @@ function composeDisplayName(displayTerm, type, _for, prefix, dfns, termId) {
   try {
     return html`<code class=prefix>${displayPrefix}</code><span><strong>${wrapWithCode(html`${wrap}${displayTerm}${wrap}`, isCode(displayTerm, type), typeInfo[type].area)}</strong>${suffix}${typeDesc} <a class='self-link' href='#${encodeURIComponent(displayTerm + '@@' + termId)}' aria-label="Permalink for ${displayPrefix}${displayTerm}${suffix}">§</a></span>`;
   } catch (e) {
-    console.error(type);
+    console.error(displayTerm, type);
     throw e;
   }
 }

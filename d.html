@@ -1946,7 +1946,7 @@ proof.</dd>
 
 <dd>Defined in <strong title='Declarative Environment Record is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-declarative-environment-records>ECMAScript</a></strong> </dd>
 
-<dd>Related terms: <em>algorithm</em> <a href='c.html#CreateImmutableBinding(N, S)@@Declarative Environment Records@abstract-op'><code>CreateImmutableBinding(N, S)</code></a>, <em>algorithm</em> <a href='c.html#CreateMutableBinding(N, D)@@Declarative Environment Records@abstract-op'><code>CreateMutableBinding(N, D)</code></a>, <em>algorithm</em> <a href='d.html#DeleteBinding(N)@@Declarative Environment Records@abstract-op'><code>DeleteBinding(N)</code></a>, <em>algorithm</em> <a href='g.html#GetBindingValue(N, S)@@Declarative Environment Records@abstract-op'><code>GetBindingValue(N, S)</code></a>, <em>algorithm</em> <a href='g.html#GetThisBinding()@@Declarative Environment Records@abstract-op'><code>GetThisBinding()</code></a>, <em>algorithm</em> <a href='h.html#HasBinding(N)@@Declarative Environment Records@abstract-op'><code>HasBinding(N)</code></a>, <em>algorithm</em> <a href='h.html#HasSuperBinding()@@Declarative Environment Records@abstract-op'><code>HasSuperBinding()</code></a>, <em>algorithm</em> <a href='h.html#HasThisBinding()@@Declarative Environment Records@abstract-op'><code>HasThisBinding()</code></a>, <em>algorithm</em> <a href='i.html#InitializeBinding(N, V)@@Declarative Environment Records@abstract-op'><code>InitializeBinding(N, V)</code></a>, <em>algorithm</em> <a href='s.html#SetMutableBinding(N, V, S)@@Declarative Environment Records@abstract-op'><code>SetMutableBinding(N, V, S)</code></a>, <em>algorithm</em> <a href='w.html#WithBaseObject()@@Declarative Environment Records@abstract-op'><code>WithBaseObject()</code></a></dd>
+<dd>Related terms: <em>algorithm</em> <a href='c.html#CreateImmutableBinding(name, strict)@@Declarative Environment Records@abstract-op'><code>CreateImmutableBinding(name, strict)</code></a>, <em>algorithm</em> <a href='c.html#CreateMutableBinding(name, deletable)@@Declarative Environment Records@abstract-op'><code>CreateMutableBinding(name, deletable)</code></a>, <em>algorithm</em> <a href='d.html#DeleteBinding(name)@@Declarative Environment Records@abstract-op'><code>DeleteBinding(name)</code></a>, <em>algorithm</em> <a href='g.html#GetBindingValue(name, strict)@@Declarative Environment Records@abstract-op'><code>GetBindingValue(name, strict)</code></a>, <em>algorithm</em> <a href='g.html#GetThisBinding()@@Declarative Environment Records@abstract-op'><code>GetThisBinding()</code></a>, <em>algorithm</em> <a href='h.html#HasBinding(name)@@Declarative Environment Records@abstract-op'><code>HasBinding(name)</code></a>, <em>algorithm</em> <a href='h.html#HasSuperBinding()@@Declarative Environment Records@abstract-op'><code>HasSuperBinding()</code></a>, <em>algorithm</em> <a href='h.html#HasThisBinding()@@Declarative Environment Records@abstract-op'><code>HasThisBinding()</code></a>, <em>algorithm</em> <a href='i.html#InitializeBinding(name, value)@@Declarative Environment Records@abstract-op'><code>InitializeBinding(name, value)</code></a>, <em>algorithm</em> <a href='s.html#SetMutableBinding(name, value, strict)@@Declarative Environment Records@abstract-op'><code>SetMutableBinding(name, value, strict)</code></a>, <em>algorithm</em> <a href='w.html#WithBaseObject()@@Declarative Environment Records@abstract-op'><code>WithBaseObject()</code></a></dd>
 
 <dt id="declare@@object@element-attr"><code class=prefix></code><span><strong><code class=markup>declare</code></strong> (<em>markup attribute for <a href='o.html#object@@html%25%25element'><code>object</code></a> </em>) <a class='self-link' href='#declare%40%40object%40element-attr' aria-label="Permalink for declare">§</a></span></dt>
 
@@ -3005,15 +3005,15 @@ proof.</dd>
                     <a href=https:&#x2F;&#x2F;webassembly.github.io&#x2F;spec&#x2F;js-api&#x2F; title='DefineMethodProperty is referenced by WebAssembly JavaScript Interface'>WebAssembly JavaScript Interface</a></dd>
 
 
-<dt id="defineProperties(O, Properties)@@Object@method"><code class=prefix><a href='o.html#Object@@@@interface'>Object</a>.</code><span><strong><code class=webidl>defineProperties(O, Properties)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#defineProperties(O%2C%20Properties)%40%40Object%40method' aria-label="Permalink for <a href='o.html#Object@@@@interface'>Object</a>.defineProperties(O, Properties)">§</a></span></dt>
+<dt id="defineProperties(obj, properties)@@Object@method"><code class=prefix><a href='o.html#Object@@@@interface'>Object</a>.</code><span><strong><code class=webidl>defineProperties(obj, properties)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#defineProperties(obj%2C%20properties)%40%40Object%40method' aria-label="Permalink for <a href='o.html#Object@@@@interface'>Object</a>.defineProperties(obj, properties)">§</a></span></dt>
 
-<dd>Defined in <strong title='defineProperties(O, Properties) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;fundamental-objects.html#sec-object.defineproperties>ECMAScript</a></strong> </dd>
+<dd>Defined in <strong title='defineProperties(obj, properties) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;fundamental-objects.html#sec-object.defineproperties>ECMAScript</a></strong> </dd>
 
 
 
-<dt id="defineProperty(O, P, Attributes)@@Object@method"><code class=prefix><a href='o.html#Object@@@@interface'>Object</a>.</code><span><strong><code class=webidl>defineProperty(O, P, Attributes)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#defineProperty(O%2C%20P%2C%20Attributes)%40%40Object%40method' aria-label="Permalink for <a href='o.html#Object@@@@interface'>Object</a>.defineProperty(O, P, Attributes)">§</a></span></dt>
+<dt id="defineProperty(obj, propertyKey, attributes)@@Object@method"><code class=prefix><a href='o.html#Object@@@@interface'>Object</a>.</code><span><strong><code class=webidl>defineProperty(obj, propertyKey, attributes)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#defineProperty(obj%2C%20propertyKey%2C%20attributes)%40%40Object%40method' aria-label="Permalink for <a href='o.html#Object@@@@interface'>Object</a>.defineProperty(obj, propertyKey, attributes)">§</a></span></dt>
 
-<dd>Defined in <strong title='defineProperty(O, P, Attributes) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;fundamental-objects.html#sec-object.defineproperty>ECMAScript</a></strong> </dd>
+<dd>Defined in <strong title='defineProperty(obj, propertyKey, attributes) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;fundamental-objects.html#sec-object.defineproperty>ECMAScript</a></strong> </dd>
 
 
 
@@ -3382,27 +3382,27 @@ proof.</dd>
 
 
 
-<dt id="DeleteBinding(N)@@Declarative Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(N)</code></strong> (<em>algorithm for <a href='d.html#Declarative Environment Record@@ECMAScript@dfn'>Declarative Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(N)%40%40Declarative%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(N)">§</a></span></dt>
+<dt id="DeleteBinding(name)@@Declarative Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(name)</code></strong> (<em>algorithm for <a href='d.html#Declarative Environment Record@@ECMAScript@dfn'>Declarative Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(name)%40%40Declarative%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(name)">§</a></span></dt>
 
-<dd>Defined in <strong title='DeleteBinding(N) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-declarative-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
-
-
-
-<dt id="DeleteBinding(N)@@Object Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(N)</code></strong> (<em>algorithm for <a href='o.html#Object Environment Record@@ECMAScript@dfn'>Object Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(N)%40%40Object%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(N)">§</a></span></dt>
-
-<dd>Defined in <strong title='DeleteBinding(N) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-object-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
+<dd>Defined in <strong title='DeleteBinding(name) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-declarative-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
 
 
 
-<dt id="DeleteBinding(N)@@Global Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(N)</code></strong> (<em>algorithm for <a href='g.html#Global Environment Record@@ECMAScript@dfn'>Global Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(N)%40%40Global%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(N)">§</a></span></dt>
+<dt id="DeleteBinding(name)@@Object Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(name)</code></strong> (<em>algorithm for <a href='o.html#Object Environment Record@@ECMAScript@dfn'>Object Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(name)%40%40Object%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(name)">§</a></span></dt>
 
-<dd>Defined in <strong title='DeleteBinding(N) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-global-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
+<dd>Defined in <strong title='DeleteBinding(name) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-object-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
 
 
 
-<dt id="DeleteBinding(N)@@Module Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(N)</code></strong> (<em>algorithm for <a href='m.html#Module Environment Record@@ECMAScript@dfn'>Module Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(N)%40%40Module%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(N)">§</a></span></dt>
+<dt id="DeleteBinding(name)@@Global Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(name)</code></strong> (<em>algorithm for <a href='g.html#Global Environment Record@@ECMAScript@dfn'>Global Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(name)%40%40Global%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(name)">§</a></span></dt>
 
-<dd>Defined in <strong title='DeleteBinding(N) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-module-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
+<dd>Defined in <strong title='DeleteBinding(name) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-global-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="DeleteBinding(name)@@Module Environment Records@abstract-op"><code class=prefix></code><span><strong><code class=concept>DeleteBinding(name)</code></strong> (<em>algorithm for <a href='m.html#Module Environment Record@@ECMAScript@dfn'>Module Environment Record</a> </em>) <a class='self-link' href='#DeleteBinding(name)%40%40Module%20Environment%20Records%40abstract-op' aria-label="Permalink for DeleteBinding(name)">§</a></span></dt>
+
+<dd>Defined in <strong title='DeleteBinding(name) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;executable-code-and-execution-contexts.html#sec-module-environment-records-deletebinding-n>ECMAScript</a></strong> </dd>
 
 
 

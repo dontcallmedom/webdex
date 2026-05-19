@@ -340,6 +340,7 @@ layout: base
                     <a href=https:&#x2F;&#x2F;storage.spec.whatwg.org&#x2F; title='same origin is referenced by Storage'>Storage</a>, 
                     <a href=https:&#x2F;&#x2F;url.spec.whatwg.org&#x2F; title='same origin is referenced by URL'>URL</a>, 
                     <a href=https:&#x2F;&#x2F;w3c-fedid.github.io&#x2F;login-status&#x2F; title='same origin is referenced by Login Status API'>Login Status API</a>, 
+                    <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webmcp&#x2F; title='same origin is referenced by WebMCP'>WebMCP</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;client-hints-infrastructure&#x2F; title='same origin is referenced by Client Hints Infrastructure'>Client Hints Infrastructure</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;document-picture-in-picture&#x2F; title='same origin is referenced by Document Picture-in-Picture'>Document Picture-in-Picture</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F; title='same origin is referenced by Fenced Frame'>Fenced Frame</a>, 
@@ -501,7 +502,6 @@ layout: base
                     <a href=https:&#x2F;&#x2F;w3c-cg.github.io&#x2F;web-nfc&#x2F; title='SameObject is referenced by Web NFC'>Web NFC</a>, 
                     <a href=https:&#x2F;&#x2F;webaudio.github.io&#x2F;web-speech-api&#x2F; title='SameObject is referenced by Web Speech API'>Web Speech API</a>, 
                     <a href=https:&#x2F;&#x2F;webbluetoothcg.github.io&#x2F;web-bluetooth&#x2F; title='SameObject is referenced by Web Bluetooth'>Web Bluetooth</a>, 
-                    <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webmcp&#x2F; title='SameObject is referenced by WebMCP'>WebMCP</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;audio-context-playout-stats&#x2F; title='SameObject is referenced by Playout Statistics API for WebAudio'>Playout Statistics API for WebAudio</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;document-picture-in-picture&#x2F; title='SameObject is referenced by Document Picture-in-Picture'>Document Picture-in-Picture</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F; title='SameObject is referenced by Fenced Frame'>Fenced Frame</a>, 
@@ -4765,12 +4765,6 @@ layout: base
 <dt id="[[SelectedCandidatePair]]@@RTCIceTransport@attribute"><code class=prefix><a href='r.html#RTCIceTransport@@@@interface'>RTCIceTransport</a>.</code><span><strong><code class=webidl>[[SelectedCandidatePair]]</code></strong> (<em>internal slot</em>) <a class='self-link' href='#%5B%5BSelectedCandidatePair%5D%5D%40%40RTCIceTransport%40attribute' aria-label="Permalink for <a href='r.html#RTCIceTransport@@@@interface'>RTCIceTransport</a>.[[SelectedCandidatePair]]">§</a></span></dt>
 
 <dd>Defined in <strong title='[[SelectedCandidatePair]] is defined in WebRTC 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F;#dfn-selectedcandidatepair>WebRTC 1.0</a></strong> </dd>
-
-
-
-<dt id="selectedcandidatepairchange@@RTCIceTransport@event"><code class=prefix></code><span><strong><code class=webidl>selectedcandidatepairchange</code></strong> (<em>event for <a href='r.html#RTCIceTransport@@@@interface'><code>RTCIceTransport</code></a> </em>) <a class='self-link' href='#selectedcandidatepairchange%40%40RTCIceTransport%40event' aria-label="Permalink for selectedcandidatepairchange">§</a></span></dt>
-
-<dd>Defined in <strong title='selectedcandidatepairchange is defined in WebRTC 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F;#event-icetransport-selectedcandidatepairchange>WebRTC 1.0</a></strong> </dd>
 
 
 
@@ -11017,12 +11011,6 @@ information to share.</li></dd>
 
 
 
-<dt id="signalingstatechange@@RTCPeerConnection@event"><code class=prefix></code><span><strong><code class=webidl>signalingstatechange</code></strong> (<em>event for <a href='r.html#RTCPeerConnection@@@@interface'><code>RTCPeerConnection</code></a> </em>) <a class='self-link' href='#signalingstatechange%40%40RTCPeerConnection%40event' aria-label="Permalink for signalingstatechange">§</a></span></dt>
-
-<dd>Defined in <strong title='signalingstatechange is defined in WebRTC 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F;#event-signalingstatechange>WebRTC 1.0</a></strong> </dd>
-
-
-
 <dt id="signalUnknownCredential@@ClientCapability@enum-value"><code class=prefix></code><span><strong><code class=webidl>"signalUnknownCredential"</code></strong> (<em>value for <a href='c.html#ClientCapability@@@@enum'><code>ClientCapability</code></a>  WebIDL enumeration</em>) <a class='self-link' href='#signalUnknownCredential%40%40ClientCapability%40enum-value' aria-label="Permalink for signalUnknownCredential">§</a></span></dt>
 
 <dd>Defined in <strong title='signalUnknownCredential is defined in Web Authentication'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webauthn&#x2F;#dom-clientcapability-signalunknowncredential>Web Authentication</a></strong> </dd>
@@ -12233,7 +12221,8 @@ information to share.</li></dd>
 <dt id="slice@@list@dfn"><code class=prefix></code><span><strong>slice</strong> (<em>concept for <a href='l.html#list@@infra%25%25dfn'>list</a>, <a href='q.html#queue@@infra%25%25dfn'>queue</a> , <a href='s.html#set@@svg-animations%25%25element'><code>set</code></a> element, <a href='s.html#stack@@infra%25%25dfn'>stack</a>  </em>) <a class='self-link' href='#slice%40%40list%40dfn' aria-label="Permalink for slice">§</a></span></dt>
 
 <dd>Defined in <strong title='slice is defined in Infra'><a href=https:&#x2F;&#x2F;infra.spec.whatwg.org&#x2F;#list-slice>Infra</a></strong> </dd>
-
+<dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='slice is referenced by HTML'>HTML</a></dd>
 <dd>Related terms: <em>concept</em> <a href='f.html#from@@list&#x2F;slice@dfn'>from</a>, <em>concept</em> <a href='t.html#to@@list&#x2F;slice@dfn'>to</a></dd>
 
 <dt id="slice@@box-decoration-break@value"><code class=prefix></code><span><strong><code class=css>slice</code></strong> (<em>CSS value for <a href='b.html#box-decoration-break@@@@property'><code>box-decoration-break</code></a> </em>) <a class='self-link' href='#slice%40%40box-decoration-break%40value' aria-label="Permalink for slice">§</a></span></dt>
@@ -14414,6 +14403,12 @@ information to share.</li></dd>
 <dt id="span-y-start@@&lt;position-area-query&gt;@value"><code class=prefix></code><span><strong><code class=css>span-y-start</code></strong> (<em>CSS value for <a href='p.html#&lt;position-area-query&gt;@@@@type'><code>&lt;position-area-query&gt;</code></a> </em>) <a class='self-link' href='#span-y-start%40%40%3Cposition-area-query%3E%40value' aria-label="Permalink for span-y-start">§</a></span></dt>
 
 <dd>Defined in <strong title='span-y-start is defined in CSS Anchor Positioning 2'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-anchor-position-2&#x2F;#valdef-position-area-query-span-y-start>CSS Anchor Positioning 2</a></strong> </dd>
+
+
+
+<dt id="SPARQL version label@@sparql-query%%dfn"><code class=prefix></code><span><strong>SPARQL version label</strong> (<em>concept</em>) <a class='self-link' href='#SPARQL%20version%20label%40%40sparql-query%25%25dfn' aria-label="Permalink for SPARQL version label">§</a></span></dt>
+
+<dd>Defined in <strong title='SPARQL version label is defined in SPARQL 1.2 Query Language'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;sparql-query&#x2F;spec&#x2F;#dfn-sparql-version-label>SPARQL 1.2 Query Language</a></strong> </dd>
 
 
 
@@ -17021,24 +17016,6 @@ information to share.</li></dd>
 
 
 
-<dt id="statechange@@RTCIceTransport@event"><code class=prefix></code><span><strong><code class=webidl>statechange</code></strong> (<em>event for <a href='r.html#RTCIceTransport@@@@interface'><code>RTCIceTransport</code></a> </em>) <a class='self-link' href='#statechange%40%40RTCIceTransport%40event' aria-label="Permalink for statechange">§</a></span></dt>
-
-<dd>Defined in <strong title='statechange is defined in WebRTC 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F;#event-icetransport-statechange>WebRTC 1.0</a></strong> </dd>
-
-
-
-<dt id="statechange@@RTCDtlsTransport@event"><code class=prefix></code><span><strong><code class=webidl>statechange</code></strong> (<em>event for <a href='r.html#RTCDtlsTransport@@@@interface'><code>RTCDtlsTransport</code></a> </em>) <a class='self-link' href='#statechange%40%40RTCDtlsTransport%40event' aria-label="Permalink for statechange">§</a></span></dt>
-
-<dd>Defined in <strong title='statechange is defined in WebRTC 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F;#event-dtlstransport-statechange>WebRTC 1.0</a></strong> </dd>
-
-
-
-<dt id="statechange@@RTCSctpTransport@event"><code class=prefix></code><span><strong><code class=webidl>statechange</code></strong> (<em>event for <a href='r.html#RTCSctpTransport@@@@interface'><code>RTCSctpTransport</code></a> </em>) <a class='self-link' href='#statechange%40%40RTCSctpTransport%40event' aria-label="Permalink for statechange">§</a></span></dt>
-
-<dd>Defined in <strong title='statechange is defined in WebRTC 1.0'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webrtc-pc&#x2F;#event-sctptransport-statechange>WebRTC 1.0</a></strong> </dd>
-
-
-
 <dt id="statement at-rule@@css-syntax%%dfn"><code class=prefix></code><span><strong>statement at-rule</strong> (<em>concept</em>) <a class='self-link' href='#statement%20at-rule%40%40css-syntax%25%25dfn' aria-label="Permalink for statement at-rule">§</a></span></dt>
 
 <dd>Defined in <strong title='statement at-rule is defined in CSS Syntax 3'><a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-syntax-3&#x2F;#statement-at-rule>CSS Syntax 3</a></strong> </dd>
@@ -18826,7 +18803,8 @@ information to share.</li></dd>
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;vc-render-method&#x2F; title='string is referenced by Verifiable Credential Rendering Methods v1.0'>Verifiable Credential Rendering Methods v1.0</a>, 
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;web-locks&#x2F; title='string is referenced by Web Locks API'>Web Locks API</a>, 
                     <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webnn&#x2F; title='string is referenced by Web Neural Network API'>Web Neural Network API</a>, 
-                    <a href=https:&#x2F;&#x2F;immersive-web.github.io&#x2F;webxr&#x2F; title='string is referenced by WebXR Device API'>WebXR Device API</a></dd>
+                    <a href=https:&#x2F;&#x2F;immersive-web.github.io&#x2F;webxr&#x2F; title='string is referenced by WebXR Device API'>WebXR Device API</a>, 
+                    <a href=https:&#x2F;&#x2F;xhr.spec.whatwg.org&#x2F; title='string is referenced by XMLHttpRequest'>XMLHttpRequest</a></dd>
 <dd>Related terms: <em>concept</em> <a href='c.html#code point length@@ASCII string@dfn'>code point length</a>, <em>concept</em> <a href='c.html#code point length@@ASCII string@dfn'>code point length</a>, <em>concept</em> <a href='c.html#concatenate@@string@dfn'>concatenate</a>, <em>concept</em> <a href='c.html#convert@@JavaScript string@dfn'>convert</a>, <em>concept</em> <a href='c.html#convert@@JavaScript string@dfn'>convert</a>, <em>concept</em> <a href='e.html#ends with@@string@dfn'>ends with</a>, <em>concept</em> <a href='i.html#is@@string@dfn'>is</a>, <em>concept</em> <a href='l.html#length@@ASCII string@dfn'>length</a>, <em>concept</em> <a href='l.html#length@@ASCII string@dfn'>length</a>, <em>concept</em> <a href='p.html#percent-decode@@string@dfn'>percent-decode</a>, <em>concept</em> <a href='p.html#position variable@@string@dfn'>position variable</a>, <em>concept</em> <a href='s.html#starts with@@string@dfn'>starts with</a>, <em>concept</em> <a href='u.html#UTF-8 percent-encode@@string@dfn'>UTF-8 percent-encode</a></dd>
 
 <dt id="String@@@@interface"><code class=prefix></code><span><strong><code class=webidl>String</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#String%40%40%40%40interface' aria-label="Permalink for String">§</a></span></dt>
@@ -22567,7 +22545,7 @@ information to share.</li></dd>
 
 <dd>Defined in <strong title='SVGAElement is defined in SVG 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;svgwg&#x2F;svg2-draft&#x2F;linking.html#InterfaceSVGAElement>SVG 2</a></strong> </dd>
 
-<dd>Related terms: <code>SVGAElement.</code><a href='d.html#download@@SVGAElement@attribute'><code>download</code></a>, <code>SVGAElement.</code><a href='h.html#hreflang@@SVGAElement@attribute'><code>hreflang</code></a>, <code>SVGAElement.</code><a href='p.html#ping@@SVGAElement@attribute'><code>ping</code></a>, <code>SVGAElement.</code><a href='r.html#referrerPolicy@@SVGAElement@attribute'><code>referrerPolicy</code></a>, <code>SVGAElement.</code><a href='r.html#rel@@SVGAElement@attribute'><code>rel</code></a>, <code>SVGAElement.</code><a href='r.html#relList@@SVGAElement@attribute'><code>relList</code></a>, <code>SVGAElement.</code><a href='t.html#target@@SVGAElement@attribute'><code>target</code></a>, <code>SVGAElement.</code><a href='t.html#type@@SVGAElement@attribute'><code>type</code></a></dd>
+<dd>Related terms: <code>SVGAElement.</code><a href='r.html#referrerPolicy@@SVGAElement@attribute'><code>referrerPolicy</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SVGAElement.html' title='SVGAElement entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SVGAngle@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SVGAngle</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SVGAngle%40%40%40%40interface' aria-label="Permalink for SVGAngle">§</a></span></dt>
 
@@ -23051,7 +23029,7 @@ information to share.</li></dd>
 
 <dd>Defined in <strong title='SVGScriptElement is defined in SVG 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;svgwg&#x2F;svg2-draft&#x2F;interact.html#InterfaceSVGScriptElement>SVG 2</a></strong> </dd>
 
-<dd>Related terms: <em>concept</em> <a href='s.html#script text@@HTMLScriptElement@dfn'>script text</a>, <code>SVGScriptElement.</code><a href='c.html#crossOrigin@@SVGScriptElement@attribute'><code>crossOrigin</code></a>, <code>SVGScriptElement.</code><a href='t.html#type@@SVGScriptElement@attribute'><code>type</code></a></dd>
+<dd>Related terms: <em>concept</em> <a href='s.html#script text@@HTMLScriptElement@dfn'>script text</a>, <code>SVGScriptElement.</code><a href='c.html#crossOrigin@@SVGScriptElement@attribute'><code>crossOrigin</code></a></dd>
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SVGScriptElement.html' title='SVGScriptElement entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SVGStopElement@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SVGStopElement</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SVGStopElement%40%40%40%40interface' aria-label="Permalink for SVGStopElement">§</a></span></dt>
 
@@ -23069,7 +23047,7 @@ information to share.</li></dd>
 
 <dd>Defined in <strong title='SVGStyleElement is defined in SVG 2'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;svgwg&#x2F;svg2-draft&#x2F;styling.html#InterfaceSVGStyleElement>SVG 2</a></strong> </dd>
 
-<dd>Related terms: <code>SVGStyleElement.</code><a href='m.html#media@@SVGStyleElement@attribute'><code>media</code></a>, <code>SVGStyleElement.</code><a href='t.html#title@@SVGStyleElement@attribute'><code>title</code></a>, <code>SVGStyleElement.</code><a href='t.html#type@@SVGStyleElement@attribute'><code>type</code></a></dd>
+
 
 <dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/SVGStyleElement.html' title='SVGStyleElement entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="SVGSVGElement@@@@interface"><code class=prefix></code><span><strong><code class=webidl>SVGSVGElement</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#SVGSVGElement%40%40%40%40interface' aria-label="Permalink for SVGSVGElement">§</a></span></dt>
 

@@ -4833,6 +4833,7 @@ their systems.</li></dd>
                     <a href=https:&#x2F;&#x2F;websockets.spec.whatwg.org&#x2F; title='client is referenced by WebSockets'>WebSockets</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;background-fetch&#x2F; title='client is referenced by Background Fetch'>Background Fetch</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;client-hints-infrastructure&#x2F; title='client is referenced by Client Hints Infrastructure'>Client Hints Infrastructure</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F; title='client is referenced by Connection Allowlists'>Connection Allowlists</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;content-index&#x2F;spec&#x2F; title='client is referenced by Content Index'>Content Index</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;csp-next&#x2F;scripting-policy.html title='client is referenced by Scripting Policy'>Scripting Policy</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;document-isolation-policy&#x2F; title='client is referenced by Document-Isolation-Policy'>Document-Isolation-Policy</a>, 
@@ -10373,6 +10374,12 @@ their systems.</li></dd>
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webtransport&#x2F; title='connection is referenced by WebTransport'>WebTransport</a></dd>
 <dd>Related terms: <em>concept</em> <a href='i.html#IP address@@connection@dfn'>IP address</a></dd>
 
+<dt id="connection@@ConnectionAllowlistViolationReport@dict-member"><code class=prefix><a href='c.html#ConnectionAllowlistViolationReport@@@@dictionary'>ConnectionAllowlistViolationReport</a>.</code><span><strong><code class=webidl>connection</code></strong> (<em>WebIDL dictionary member</em>) <a class='self-link' href='#connection%40%40ConnectionAllowlistViolationReport%40dict-member' aria-label="Permalink for <a href='c.html#ConnectionAllowlistViolationReport@@@@dictionary'>ConnectionAllowlistViolationReport</a>.connection">§</a></span></dt>
+
+<dd>Defined in <strong title='connection is defined in Connection Allowlists'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F;#dom-connectionallowlistviolationreport-connection>Connection Allowlists</a></strong> </dd>
+
+
+
 <dt id="connection@@MIDIPort@attribute"><code class=prefix><a href='m.html#MIDIPort@@@@interface'>MIDIPort</a>.</code><span><strong><code class=webidl>connection</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#connection%40%40MIDIPort%40attribute' aria-label="Permalink for <a href='m.html#MIDIPort@@@@interface'>MIDIPort</a>.connection">§</a></span></dt>
 
 <dd>Defined in <strong title='connection is defined in Web MIDI API'><a href=https:&#x2F;&#x2F;webaudio.github.io&#x2F;web-midi-api&#x2F;#dom-midiport-connection>Web MIDI API</a></strong> </dd>
@@ -10433,7 +10440,31 @@ their systems.</li></dd>
                     <a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;webdriver-bidi&#x2F; title='connection timing info is referenced by WebDriver BiDi'>WebDriver BiDi</a></dd>
 <dd>Related terms: <em>concept</em> <a href='a.html#ALPN negotiated protocol@@connection timing info@dfn'>ALPN negotiated protocol</a>, <em>concept</em> <a href='c.html#connection end time@@connection timing info@dfn'>connection end time</a>, <em>concept</em> <a href='c.html#connection start time@@connection timing info@dfn'>connection start time</a>, <em>concept</em> <a href='d.html#domain lookup end time@@connection timing info@dfn'>domain lookup end time</a>, <em>concept</em> <a href='d.html#domain lookup start time@@connection timing info@dfn'>domain lookup start time</a>, <em>concept</em> <a href='s.html#secure connection start time@@connection timing info@dfn'>secure connection start time</a></dd>
 
-<dt id="connectionList@@PresentationReceiver@attribute"><code class=prefix><a href='p.html#PresentationReceiver@@@@interface'>PresentationReceiver</a>.</code><span><strong><code class=webidl>connectionList</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#connectionList%40%40PresentationReceiver%40attribute' aria-label="Permalink for <a href='p.html#PresentationReceiver@@@@interface'>PresentationReceiver</a>.connectionList">§</a></span></dt>
+<dt id="Connection-Allowlist@@@@http-header"><code class=prefix></code><span><strong><code class=http>Connection-Allowlist</code></strong>: (<em>HTTP header</em>) <a class='self-link' href='#Connection-Allowlist%40%40%40%40http-header' aria-label="Permalink for Connection-Allowlist:">§</a></span></dt>
+
+<dd>Defined in <strong title='Connection-Allowlist is defined in Connection Allowlists'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F;#http-headerdef-connection-allowlist>Connection Allowlists</a></strong> </dd>
+
+
+
+<dt id="Connection-Allowlist-Report-Only@@@@http-header"><code class=prefix></code><span><strong><code class=http>Connection-Allowlist-Report-Only</code></strong>: (<em>HTTP header</em>) <a class='self-link' href='#Connection-Allowlist-Report-Only%40%40%40%40http-header' aria-label="Permalink for Connection-Allowlist-Report-Only:">§</a></span></dt>
+
+<dd>Defined in <strong title='Connection-Allowlist-Report-Only is defined in Connection Allowlists'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F;#http-headerdef-connection-allowlist-report-only>Connection Allowlists</a></strong> </dd>
+
+
+
+<dt id="ConnectionAllowlistDisposition@@@@enum"><code class=prefix></code><span><strong><code class=webidl>ConnectionAllowlistDisposition</code></strong> (<em>WebIDL enumeration</em>) <a class='self-link' href='#ConnectionAllowlistDisposition%40%40%40%40enum' aria-label="Permalink for ConnectionAllowlistDisposition">§</a></span></dt>
+
+<dd>Defined in <strong title='ConnectionAllowlistDisposition is defined in Connection Allowlists'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F;#enumdef-connectionallowlistdisposition>Connection Allowlists</a></strong> </dd>
+
+<dd>Related terms: <em>value</em> <a href='e.html#enforce@@ConnectionAllowlistDisposition@enum-value'><code>enforce</code></a>, <em>value</em> <a href='r.html#report@@ConnectionAllowlistDisposition@enum-value'><code>report</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/ConnectionAllowlistDisposition.html' title='ConnectionAllowlistDisposition entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="ConnectionAllowlistViolationReport@@@@dictionary"><code class=prefix></code><span><strong><code class=webidl>ConnectionAllowlistViolationReport</code></strong> (<em>WebIDL dictionary</em>) <a class='self-link' href='#ConnectionAllowlistViolationReport%40%40%40%40dictionary' aria-label="Permalink for ConnectionAllowlistViolationReport">§</a></span></dt>
+
+<dd>Defined in <strong title='ConnectionAllowlistViolationReport is defined in Connection Allowlists'><a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F;#dictdef-connectionallowlistviolationreport>Connection Allowlists</a></strong> </dd>
+
+<dd>Related terms: <code>ConnectionAllowlistViolationReport.</code><a href='a.html#allowlist@@ConnectionAllowlistViolationReport@dict-member'><code>allowlist</code></a>, <code>ConnectionAllowlistViolationReport.</code><a href='c.html#connection@@ConnectionAllowlistViolationReport@dict-member'><code>connection</code></a>, <code>ConnectionAllowlistViolationReport.</code><a href='d.html#disposition@@ConnectionAllowlistViolationReport@dict-member'><code>disposition</code></a>, <code>ConnectionAllowlistViolationReport.</code><a href='u.html#url@@ConnectionAllowlistViolationReport@dict-member'><code>url</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/ConnectionAllowlistViolationReport.html' title='ConnectionAllowlistViolationReport entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="connectionList@@PresentationReceiver@attribute"><code class=prefix><a href='p.html#PresentationReceiver@@@@interface'>PresentationReceiver</a>.</code><span><strong><code class=webidl>connectionList</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#connectionList%40%40PresentationReceiver%40attribute' aria-label="Permalink for <a href='p.html#PresentationReceiver@@@@interface'>PresentationReceiver</a>.connectionList">§</a></span></dt>
 
 <dd>Defined in <strong title='connectionList is defined in Presentation API'><a href=https:&#x2F;&#x2F;w3c.github.io&#x2F;presentation-api&#x2F;#dom-presentationreceiver-connectionlist>Presentation API</a></strong> </dd>
 
@@ -13133,6 +13164,7 @@ their systems.</li></dd>
                     <a href=https:&#x2F;&#x2F;webidl.spec.whatwg.org&#x2F; title='continue is referenced by Web IDL'>Web IDL</a>, 
                     <a href=https:&#x2F;&#x2F;webmachinelearning.github.io&#x2F;webmcp&#x2F; title='continue is referenced by WebMCP'>WebMCP</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;background-fetch&#x2F; title='continue is referenced by Background Fetch'>Background Fetch</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F; title='continue is referenced by Connection Allowlists'>Connection Allowlists</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;csp-next&#x2F;scripting-policy.html title='continue is referenced by Scripting Policy'>Scripting Policy</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F; title='continue is referenced by Fenced Frame'>Fenced Frame</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;get-installed-related-apps&#x2F;spec&#x2F; title='continue is referenced by Get Installed Related Apps API'>Get Installed Related Apps API</a>, 
@@ -14954,7 +14986,8 @@ as updating a <a href="c.html#controlled identifier document@@cid%25%25dfn">cont
 
 <dd>Defined in <strong title='create is defined in URL Pattern'><a href=https:&#x2F;&#x2F;urlpattern.spec.whatwg.org&#x2F;#url-pattern-create>URL Pattern</a></strong> </dd>
 <dd>Referenced in 
-                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-navigation-1&#x2F; title='create is referenced by CSS Route Matching'>CSS Route Matching</a></dd>
+                    <a href=https:&#x2F;&#x2F;drafts.csswg.org&#x2F;css-navigation-1&#x2F; title='create is referenced by CSS Route Matching'>CSS Route Matching</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F; title='create is referenced by Connection Allowlists'>Connection Allowlists</a></dd>
 
 
 <dt id="create@@exception@dfn"><code class=prefix></code><span><strong>create</strong> (<em>concept for <a href='e.html#exception@@webidl%25%25dfn'>exception</a> </em>) <a class='self-link' href='#create%40%40exception%40dfn' aria-label="Permalink for create">§</a></span></dt>
@@ -16625,6 +16658,7 @@ as updating a <a href="c.html#controlled identifier document@@cid%25%25dfn">cont
 
 <dd>Defined in <strong title='creating a policy container from a fetch response is defined in HTML'><a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F;browsers.html#creating-a-policy-container-from-a-fetch-response>HTML</a></strong> </dd>
 <dd>Referenced in 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F; title='creating a policy container from a fetch response is referenced by Connection Allowlists'>Connection Allowlists</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;document-isolation-policy&#x2F; title='creating a policy container from a fetch response is referenced by Document-Isolation-Policy'>Document-Isolation-Policy</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;local-network-access&#x2F; title='creating a policy container from a fetch response is referenced by Local Network Access'>Local Network Access</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prefetch.html title='creating a policy container from a fetch response is referenced by Prefetch'>Prefetch</a>, 
@@ -16692,6 +16726,7 @@ as updating a <a href="c.html#controlled identifier document@@cid%25%25dfn">cont
                     <a href=https:&#x2F;&#x2F;fetch.spec.whatwg.org&#x2F; title='creation URL is referenced by Fetch'>Fetch</a>, 
                     <a href=https:&#x2F;&#x2F;storage.spec.whatwg.org&#x2F; title='creation URL is referenced by Storage'>Storage</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;anonymous-iframe&#x2F; title='creation URL is referenced by Iframe credentialless'>Iframe credentialless</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F; title='creation URL is referenced by Connection Allowlists'>Connection Allowlists</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;content-index&#x2F;spec&#x2F; title='creation URL is referenced by Content Index'>Content Index</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;fenced-frame&#x2F; title='creation URL is referenced by Fenced Frame'>Fenced Frame</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;isolated-web-apps&#x2F;isolated-contexts.html title='creation URL is referenced by Isolated Contexts'>Isolated Contexts</a>, 
@@ -19316,6 +19351,7 @@ their identifiers, and other related properties. See Section
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='current URL is referenced by HTML'>HTML</a>, 
                     <a href=https:&#x2F;&#x2F;privacycg.github.io&#x2F;storage-access&#x2F; title='current URL is referenced by The Storage Access API'>The Storage Access API</a>, 
+                    <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;connection-allowlists&#x2F; title='current URL is referenced by Connection Allowlists'>Connection Allowlists</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;document-isolation-policy&#x2F; title='current URL is referenced by Document-Isolation-Policy'>Document-Isolation-Policy</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;local-network-access&#x2F; title='current URL is referenced by Local Network Access'>Local Network Access</a>, 
                     <a href=https:&#x2F;&#x2F;wicg.github.io&#x2F;nav-speculation&#x2F;prefetch.html title='current URL is referenced by Prefetch'>Prefetch</a>, 

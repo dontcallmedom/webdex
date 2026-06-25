@@ -2598,6 +2598,12 @@ layout: base
 
 
 
+<dt id="AddDisposableResource@@ecmascript%%abstract-op"><code class=prefix></code><span><strong><code class=concept>AddDisposableResource</code></strong> (<em>algorithm</em>) <a class='self-link' href='#AddDisposableResource%40%40ecmascript%25%25abstract-op' aria-label="Permalink for AddDisposableResource">§</a></span></dt>
+
+<dd>Defined in <strong title='AddDisposableResource is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;abstract-operations.html#sec-adddisposableresource>ECMAScript</a></strong> </dd>
+
+
+
 <dt id="added@@XRInputSourcesChangeEvent@attribute"><code class=prefix><a href='x.html#XRInputSourcesChangeEvent@@@@interface'>XRInputSourcesChangeEvent</a>.</code><span><strong><code class=webidl>added</code></strong> (<em>WebIDL attribute</em>) <a class='self-link' href='#added%40%40XRInputSourcesChangeEvent%40attribute' aria-label="Permalink for <a href='x.html#XRInputSourcesChangeEvent@@@@interface'>XRInputSourcesChangeEvent</a>.added">§</a></span></dt>
 
 <dd>Defined in <strong title='added is defined in WebXR Device API'><a href=https:&#x2F;&#x2F;immersive-web.github.io&#x2F;webxr&#x2F;#dom-xrinputsourceschangeevent-added>WebXR Device API</a></strong> </dd>
@@ -3090,6 +3096,18 @@ layout: base
 <dd>Defined in <strong title='adopt is defined in DOM'><a href=https:&#x2F;&#x2F;dom.spec.whatwg.org&#x2F;#concept-node-adopt>DOM</a></strong> </dd>
 <dd>Referenced in 
                     <a href=https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;multipage&#x2F; title='adopt is referenced by HTML'>HTML</a></dd>
+
+
+<dt id="adopt(value, onDispose)@@DisposableStack@method"><code class=prefix><a href='d.html#DisposableStack@@@@interface'>DisposableStack</a>.</code><span><strong><code class=webidl>adopt(value, onDispose)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#adopt(value%2C%20onDispose)%40%40DisposableStack%40method' aria-label="Permalink for <a href='d.html#DisposableStack@@@@interface'>DisposableStack</a>.adopt(value, onDispose)">§</a></span></dt>
+
+<dd>Defined in <strong title='adopt(value, onDispose) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-disposablestack.prototype.adopt>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="adopt(value, onDisposeAsync)@@AsyncDisposableStack@method"><code class=prefix><a href='a.html#AsyncDisposableStack@@@@interface'>AsyncDisposableStack</a>.</code><span><strong><code class=webidl>adopt(value, onDisposeAsync)</code></strong> (<em>WebIDL operation</em>) <a class='self-link' href='#adopt(value%2C%20onDisposeAsync)%40%40AsyncDisposableStack%40method' aria-label="Permalink for <a href='a.html#AsyncDisposableStack@@@@interface'>AsyncDisposableStack</a>.adopt(value, onDisposeAsync)">§</a></span></dt>
+
+<dd>Defined in <strong title='adopt(value, onDisposeAsync) is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncdisposablestack.prototype.adopt>ECMAScript</a></strong> </dd>
+
 
 
 <dt id="Adopted Draft@@w3c-process%%dfn"><code class=prefix></code><span><strong>Adopted Draft</strong> (<em>concept</em>) <a class='self-link' href='#Adopted%20Draft%40%40w3c-process%25%25dfn' aria-label="Permalink for Adopted Draft">§</a></span></dt>
@@ -9712,7 +9730,43 @@ layout: base
                     <a href=https:&#x2F;&#x2F;tc39.es&#x2F;proposal-explicit-resource-management&#x2F; title='AsyncBlockStart is referenced by ECMAScript Explicit Resource Management'>ECMAScript Explicit Resource Management</a></dd>
 
 
-<dt id="AsyncFromSyncIteratorContinuation@@ecmascript%%abstract-op"><code class=prefix></code><span><strong><code class=concept>AsyncFromSyncIteratorContinuation</code></strong> (<em>algorithm</em>) <a class='self-link' href='#AsyncFromSyncIteratorContinuation%40%40ecmascript%25%25abstract-op' aria-label="Permalink for AsyncFromSyncIteratorContinuation">§</a></span></dt>
+<dt id="AsyncDisposable@@ECMAScript@dfn"><code class=prefix></code><span><strong>AsyncDisposable</strong> (<em>concept for <code>ECMAScript</code> </em>) <a class='self-link' href='#AsyncDisposable%40%40ECMAScript%40dfn' aria-label="Permalink for AsyncDisposable">§</a></span></dt>
+
+<dd>Defined in <strong title='AsyncDisposable is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncdisposable-interface>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="AsyncDisposableStack@@@@interface"><code class=prefix></code><span><strong><code class=webidl>AsyncDisposableStack</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#AsyncDisposableStack%40%40%40%40interface' aria-label="Permalink for AsyncDisposableStack">§</a></span></dt>
+
+<dd>Defined in <strong title='AsyncDisposableStack is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncdisposablestack-objects>ECMAScript</a></strong> </dd>
+
+<dd>Related terms: <code>AsyncDisposableStack.</code><a href='d.html#disposed@@AsyncDisposableStack@attribute'><code>disposed</code></a>, <code>new </code><a href='a.html#AsyncDisposableStack()@@AsyncDisposableStack@constructor'><code>AsyncDisposableStack()</code></a>, <code>AsyncDisposableStack.</code><a href='a.html#adopt(value, onDisposeAsync)@@AsyncDisposableStack@method'><code>adopt(value, onDisposeAsync)</code></a>, <code>AsyncDisposableStack.</code><a href='d.html#defer(onDisposeAsync)@@AsyncDisposableStack@method'><code>defer(onDisposeAsync)</code></a>, <code>AsyncDisposableStack.</code><a href='d.html#disposeAsync()@@AsyncDisposableStack@method'><code>disposeAsync()</code></a>, <code>AsyncDisposableStack.</code><a href='m.html#move()@@AsyncDisposableStack@method'><code>move()</code></a>, <code>AsyncDisposableStack.</code><a href='u.html#use(value)@@AsyncDisposableStack@method'><code>use(value)</code></a></dd>
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/AsyncDisposableStack.html' title='AsyncDisposableStack entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="AsyncDisposableStack.prototype %Symbol.asyncDispose% ()@@AsyncDisposableStack.prototype [ %Symbol.asyncDispose% ] ( )@method"><code class=prefix></code><span><strong><code class=webidl>AsyncDisposableStack.prototype %Symbol.asyncDispose% ()</code></strong> (<em>WebIDL operation for <code>AsyncDisposableStack.prototype [ %Symbol.asyncDispose% ] ( )</code> </em>) <a class='self-link' href='#AsyncDisposableStack.prototype%20%25Symbol.asyncDispose%25%20()%40%40AsyncDisposableStack.prototype%20%5B%20%25Symbol.asyncDispose%25%20%5D%20(%20)%40method' aria-label="Permalink for AsyncDisposableStack.prototype %Symbol.asyncDispose% ()">§</a></span></dt>
+
+<dd>Defined in <strong title='AsyncDisposableStack.prototype %Symbol.asyncDispose% () is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncdisposablestack.prototype-%25symbol.asyncdispose%25>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="%AsyncDisposableStack.prototype%@@@@interface"><code class=prefix></code><span><strong><code class=webidl>%AsyncDisposableStack.prototype%</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#%25AsyncDisposableStack.prototype%25%40%40%40%40interface' aria-label="Permalink for %AsyncDisposableStack.prototype%">§</a></span></dt>
+
+<dd>Defined in <strong title='%AsyncDisposableStack.prototype% is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-properties-of-the-asyncdisposablestack-prototype-object>ECMAScript</a></strong> </dd>
+
+
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/%AsyncDisposableStack.prototype%.html' title='%AsyncDisposableStack.prototype% entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="AsyncDisposableStack()@@AsyncDisposableStack@constructor"><code class=prefix>new </code><span><strong><code class=webidl>AsyncDisposableStack()</code></strong> (<em>WebIDL constructor</em>) <a class='self-link' href='#AsyncDisposableStack()%40%40AsyncDisposableStack%40constructor' aria-label="Permalink for new AsyncDisposableStack()">§</a></span></dt>
+
+<dd>Defined in <strong title='AsyncDisposableStack() is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncdisposablestack>ECMAScript</a></strong> </dd>
+
+
+
+<dt id="%AsyncDisposableStack%@@@@interface"><code class=prefix></code><span><strong><code class=webidl>%AsyncDisposableStack%</code></strong> (<em>WebIDL interface</em>) <a class='self-link' href='#%25AsyncDisposableStack%25%40%40%40%40interface' aria-label="Permalink for %AsyncDisposableStack%">§</a></span></dt>
+
+<dd>Defined in <strong title='%AsyncDisposableStack% is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncdisposablestack-constructor>ECMAScript</a></strong> </dd>
+
+
+
+<dd>see also <a href='https://dontcallmedom.github.io/webidlpedia/names/%AsyncDisposableStack%.html' title='%AsyncDisposableStack% entry on WebIDLpedia'>WebIDLPedia</a></dd><dt id="AsyncFromSyncIteratorContinuation@@ecmascript%%abstract-op"><code class=prefix></code><span><strong><code class=concept>AsyncFromSyncIteratorContinuation</code></strong> (<em>algorithm</em>) <a class='self-link' href='#AsyncFromSyncIteratorContinuation%40%40ecmascript%25%25abstract-op' aria-label="Permalink for AsyncFromSyncIteratorContinuation">§</a></span></dt>
 
 <dd>Defined in <strong title='AsyncFromSyncIteratorContinuation is defined in ECMAScript'><a href=https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;multipage&#x2F;control-abstraction-objects.html#sec-asyncfromsynciteratorcontinuation>ECMAScript</a></strong> </dd>
 
